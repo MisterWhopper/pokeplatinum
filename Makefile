@@ -31,7 +31,7 @@ MESON ?= $(MESON_SUB)
 NINJA ?= ninja
 GIT ?= git
 
-BUILD ?= build
+BUILD ?= .build
 ROOT_INI := $(BUILD)/root.ini
 
 UNAME_R := $(shell uname -r)

@@ -1,6 +1,8 @@
 # Build directory
-/build/
+/.build/
 
+# Any .nds file, for that matter.
+/*.nds
 # Metroskrew artifacts
 /metroskrew-*.tar.xz
 /metroskrew-*.7z
