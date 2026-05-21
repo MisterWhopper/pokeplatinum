@@ -135,6 +135,9 @@ TwinleafTownPlayerHouse1F_OnFrame_CutsceneAfterRivalBattle:
     Message TwinleafTownPlayerHouse1F_Text_PlayerReceivedRunningShoes
     PlayFanfare SEQ_FANFA4
     WaitFanfare
+    SetVar VAR_0x8004, ITEM_BOX_OF_CANDY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     Message TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions
     WaitButton
     CloseMessage

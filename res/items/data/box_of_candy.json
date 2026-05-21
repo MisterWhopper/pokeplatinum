@@ -1,0 +1,35 @@
+{
+  "name": "Box of Candy",
+  "plural": "Boxes of Candy ",
+  "article": "the",
+  "description": [
+    "From your $50 per-2-week subscription\n",
+    "to Maniac Magazine. Bought with \n",
+    "Moms *missing* credit card"
+  ],
+  "icon": {
+    "sprite": "rare_candy_NCGR",
+    "palette": "rare_candy_NCLR"
+  },
+  "gbaID": "GBA_ITEM_NONE",
+  "price": 65535,
+  "effectParam": 0,
+  "holdEffect": "HOLD_EFFECT_NONE",
+  "pluckEffect": "PLUCK_EFFECT_NONE",
+  "flingEffect": "FLING_EFFECT_NONE",
+  "flingPower": 60,
+  "naturalGiftPower": 0,
+  "naturalGiftType": null,
+  "preventToss": true,
+  "canRegister": false,
+  "fieldPocket": "POCKET_KEY_ITEMS",
+  "battlePocket": "BATTLE_POCKET_MASK_NONE",
+  "fieldUseFunc": "ITEM_USE_FUNC_HEALING",
+  "battleUseFunc": 0,
+  "itemUseParams": {
+    "levelUp": true,
+    "friendshipLow": 5,
+    "friendshipMed": 3,
+    "friendshipHigh": 2
+  }
+}

@@ -179,7 +179,7 @@ static BagItem *Bag_FindSlotWithItemQuantity(Bag *bag, u16 item, u16 count, enum
 BOOL Bag_TryRemoveItem(Bag *bag, u16 item, u16 count, enum HeapID heapID)
 {
     BagItem *slot = Bag_FindSlotWithItemQuantity(bag, item, count, heapID);
-    if (slot == NULL) {
+    if (slot == NULL || item == ITEM_BOX_OF_CANDY) {
         return FALSE;
     }
 
@@ -199,7 +199,7 @@ BOOL Bag_TryRemoveItem(Bag *bag, u16 item, u16 count, enum HeapID heapID)
 BOOL Pocket_TryRemoveItem(BagItem *pocket, u32 pocketSize, u16 item, u16 count, enum HeapID heapID)
 {
     BagItem *slot = Pocket_FindSlotWithItemQuantity(pocket, pocketSize, item, count);
-    if (slot == NULL) {
+    if (slot == NULL || item == ITEM_BOX_OF_CANDY) {
         return FALSE;
     }
 
