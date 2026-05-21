@@ -62,6 +62,17 @@ u16 SystemVars_GetPartnerTrainerID(VarsFlags *varsFlags)
     return TryGetVarValue(varsFlags, VAR_PARTNER_TRAINER_ID);
 }
 
+BOOL SystemVars_SetStarterOption(VarsFlags *varsFlags, u16 slotNum, u16 species)
+{
+    u16 selectedSlot = VAR_STARTER_2;
+    if (slotNum == 0) {
+       selectedSlot = VAR_STARTER_0; 
+    } else if (slotNum == 1) {
+        selectedSlot = VAR_STARTER_1;
+    }
+    return TrySetVarToValue(varsFlags, selectedSlot, species);
+}
+
 BOOL SystemVars_SetPlayerStarter(VarsFlags *varsFlags, u16 species)
 {
     return TrySetVarToValue(varsFlags, VAR_PLAYER_STARTER, species);
@@ -76,13 +87,16 @@ u16 SystemVars_GetRivalStarter(VarsFlags *varsFlags)
 {
     u16 rivalStarter;
     u16 playerStarter = TryGetVarValue(varsFlags, VAR_PLAYER_STARTER);
+    u16 slot_0 = TryGetVarValue(varsFlags, VAR_STARTER_0);
+    u16 slot_1 = TryGetVarValue(varsFlags, VAR_STARTER_1);
+    u16 slot_2 = TryGetVarValue(varsFlags, VAR_STARTER_2);
 
-    if (playerStarter == SPECIES_TURTWIG) {
-        rivalStarter = SPECIES_CHIMCHAR;
-    } else if (playerStarter == SPECIES_CHIMCHAR) {
-        rivalStarter = SPECIES_PIPLUP;
+    if (playerStarter == slot_0) {
+        rivalStarter = slot_1;
+    } else if (playerStarter == slot_1) {
+        rivalStarter = slot_2;
     } else {
-        rivalStarter = SPECIES_TURTWIG;
+        rivalStarter = slot_0;
     }
 
     return rivalStarter;
@@ -92,13 +106,16 @@ u16 SystemVars_GetPlayerCounterpartStarter(VarsFlags *varsFlags)
 {
     u16 counterpartStarter;
     u16 playerStarter = TryGetVarValue(varsFlags, VAR_PLAYER_STARTER);
+    u16 slot_0 = TryGetVarValue(varsFlags, VAR_STARTER_0);
+    u16 slot_1 = TryGetVarValue(varsFlags, VAR_STARTER_1);
+    u16 slot_2 = TryGetVarValue(varsFlags, VAR_STARTER_2);
 
-    if (playerStarter == SPECIES_TURTWIG) {
-        counterpartStarter = SPECIES_PIPLUP;
-    } else if (playerStarter == SPECIES_CHIMCHAR) {
-        counterpartStarter = SPECIES_TURTWIG;
+    if (playerStarter == slot_0) {
+        counterpartStarter = slot_2;
+    } else if (playerStarter == slot_1) {
+        counterpartStarter = slot_0;
     } else {
-        counterpartStarter = SPECIES_CHIMCHAR;
+        counterpartStarter = slot_1;
     }
 
     return counterpartStarter;

@@ -41,6 +41,7 @@
 #include "party.h"
 #include "pokemon_anim.h"
 #include "pokemon_sprite.h"
+#include "randomizer.h"
 #include "rtc.h"
 #include "sound_chatot.h"
 #include "sound_playback.h"
@@ -3830,7 +3831,8 @@ static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
 
     for (int i = 0; monLevelUpMoves[i] != LEARNSET_SENTINEL_ENTRY; i++) {
         if ((monLevelUpMoves[i] & 0xFE00) <= monLevel << 9) {
-            u16 monLevelUpMoveID = monLevelUpMoves[i] & 0x1FF;
+            // u16 monLevelUpMoveID = monLevelUpMoves[i] & 0x1FF;
+            u16 monLevelUpMoveID = GetRandomMonMove();
             if (BoxPokemon_AddMove(boxMon, monLevelUpMoveID) == LEARNSET_ALL_SLOTS_FILLED) {
                 BoxPokemon_ReplaceMove(boxMon, monLevelUpMoveID);
             }

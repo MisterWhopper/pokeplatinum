@@ -284,6 +284,7 @@ pokeplatinum_c = files(
     'type_icon.c',
     'bag_context.c',
     'bag.c',
+    'randomizer.c',
     'unk_0207DA28.c',
     'unk_0207DFAC.c',
     'unk_0207E060.c',
