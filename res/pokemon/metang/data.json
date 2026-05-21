@@ -1,198 +1,252 @@
 {
-    "base_stats": {
-        "hp": 60,
-        "attack": 75,
-        "defense": 100,
-        "speed": 50,
-        "special_attack": 55,
-        "special_defense": 80
-    },
-    "types": [ "TYPE_STEEL", "TYPE_PSYCHIC" ],
-    "catch_rate": 3,
-    "base_exp_reward": 153,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 2,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
-    },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_METAL_COAT"
-    },
-    "gender_ratio": "GENDER_RATIO_NO_GENDER",
-    "hatch_cycles": 40,
-    "base_friendship": 35,
-    "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_CLEAR_BODY", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_BLUE",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_MAGNET_RISE" ],
-            [ 1, "MOVE_TAKE_DOWN" ],
-            [ 1, "MOVE_METAL_CLAW" ],
-            [ 1, "MOVE_CONFUSION" ],
-            [ 20, "MOVE_METAL_CLAW" ],
-            [ 20, "MOVE_CONFUSION" ],
-            [ 24, "MOVE_SCARY_FACE" ],
-            [ 28, "MOVE_PURSUIT" ],
-            [ 32, "MOVE_BULLET_PUNCH" ],
-            [ 36, "MOVE_PSYCHIC" ],
-            [ 40, "MOVE_IRON_DEFENSE" ],
-            [ 44, "MOVE_AGILITY" ],
-            [ 48, "MOVE_METEOR_MASH" ],
-            [ 52, "MOVE_ZEN_HEADBUTT" ],
-            [ 56, "MOVE_HYPER_BEAM" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM26",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM36",
-            "TM37",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM58",
-            "TM64",
-            "TM69",
-            "TM70",
-            "TM74",
-            "TM76",
-            "TM77",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM01",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_MAGNET_RISE",
-            "MOVE_TRICK",
-            "MOVE_SWIFT"
-        ]
-    },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            45,
-            "SPECIES_METAGROSS"
-        ]
+  "base_stats": {
+    "hp": 60,
+    "attack": 75,
+    "defense": 100,
+    "speed": 50,
+    "special_attack": 55,
+    "special_defense": 80
+  },
+  "types": [
+    "TYPE_STEEL",
+    "TYPE_PSYCHIC"
+  ],
+  "catch_rate": 3,
+  "base_exp_reward": 153,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 2,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_METAL_COAT"
+  },
+  "gender_ratio": "GENDER_RATIO_NO_GENDER",
+  "hatch_cycles": 40,
+  "base_friendship": 35,
+  "exp_rate": "EXP_RATE_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_MINERAL",
+    "EGG_GROUP_MINERAL"
+  ],
+  "abilities": [
+    "ABILITY_CLEAR_BODY",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_BLUE",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_MAGNET_RISE"
+      ],
+      [
+        1,
+        "MOVE_TAKE_DOWN"
+      ],
+      [
+        1,
+        "MOVE_METAL_CLAW"
+      ],
+      [
+        1,
+        "MOVE_CONFUSION"
+      ],
+      [
+        20,
+        "MOVE_METAL_CLAW"
+      ],
+      [
+        20,
+        "MOVE_CONFUSION"
+      ],
+      [
+        24,
+        "MOVE_SCARY_FACE"
+      ],
+      [
+        28,
+        "MOVE_PURSUIT"
+      ],
+      [
+        32,
+        "MOVE_BULLET_PUNCH"
+      ],
+      [
+        36,
+        "MOVE_PSYCHIC"
+      ],
+      [
+        40,
+        "MOVE_IRON_DEFENSE"
+      ],
+      [
+        44,
+        "MOVE_AGILITY"
+      ],
+      [
+        48,
+        "MOVE_METEOR_MASH"
+      ],
+      [
+        52,
+        "MOVE_ZEN_HEADBUTT"
+      ],
+      [
+        56,
+        "MOVE_HYPER_BEAM"
+      ]
     ],
-    "offspring": "SPECIES_BELDUM",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_SILENT"
+    "by_tm": [
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM16",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM26",
+      "TM27",
+      "TM29",
+      "TM30",
+      "TM31",
+      "TM32",
+      "TM33",
+      "TM36",
+      "TM37",
+      "TM39",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM58",
+      "TM64",
+      "TM69",
+      "TM70",
+      "TM74",
+      "TM76",
+      "TM77",
+      "TM80",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90",
+      "TM91",
+      "HM01",
+      "HM04",
+      "HM06"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_ICY_WIND",
+      "MOVE_ROLLOUT",
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_IRON_HEAD",
+      "MOVE_SNORE",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_ZEN_HEADBUTT",
+      "MOVE_IRON_DEFENSE",
+      "MOVE_MAGNET_RISE",
+      "MOVE_TRICK",
+      "MOVE_SWIFT"
+    ]
+  },
+  "evolutions": [
+    [
+      "EVO_LEVEL",
+      45,
+      "SPECIES_METAGROSS"
+    ]
+  ],
+  "offspring": "SPECIES_BELDUM",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_SILENT"
+  },
+  "pokedex_data": {
+    "height_inches": 47,
+    "weight_pounds": 446.4,
+    "body_shape": "SHAPE_HEAD_ARMS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 274,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 274,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 65534,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 65534,
+    "en": {
+      "name": "Metang",
+      "category": "Iron Claw Pok\u00e9mon",
+      "entry_text": [
+        "It is formed by two BELDUM joining\n",
+        "together. Its steel body won\u2019t be\n",
+        "scratched if it collides with a jet."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 47,
-        "weight_pounds": 446.4,
-        "body_shape": "SHAPE_HEAD_ARMS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 274,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 274,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 65534,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 65534,
-        "en": {
-            "name": "METANG",
-            "category": "Iron Claw Pokémon",
-            "entry_text": [
-                "It is formed by two BELDUM joining\n",
-                "together. Its steel body won’t be\n",
-                "scratched if it collides with a jet."
-            ]
-        },
-        "fr": {
-            "name": "METANG",
-            "category": "Pokémon Pincefer",
-            "entry_text": [
-                "Il est formé de deux TERHAL\n",
-                "soudés. Son corps de fer résiste à\n",
-                "un choc avec un avion à réaction."
-            ]
-        },
-        "de": {
-            "name": "METANG",
-            "category": "Eisenklaue",
-            "entry_text": [
-                "Das PKMN besteht aus zwei TANHEL.\n",
-                "Es bekommt selbst dann keinen\n",
-                "Kratzer, wenn ein Jet es streift."
-            ]
-        },
-        "it": {
-            "name": "METANG",
-            "category": "Pokémon Ferrunghia",
-            "entry_text": [
-                "È sorto dalla fusione di due BELDUM.\n",
-                "Il suo corpo d’acciaio non viene\n",
-                "scalfito neanche se urta un jet."
-            ]
-        },
-        "es": {
-            "name": "METANG",
-            "category": "Pokémon Garrahierro",
-            "entry_text": [
-                "Lo forman dos BELDUM unidos. Puede\n",
-                "chocarse con un avión sin que su\n",
-                "cuerpo de acero sufra ni rasguño."
-            ]
-        },
-        "jp": {
-            "name": "メタング",
-            "category": "てつツメポケモン",
-            "entry_text": [
-                "２ひきの　ダンバルが　がったいした。\n",
-                "はがねの　ボディは　ジェットきと\n",
-                "しょうとつしても　きずつかない。"
-            ]
-        }
+    "fr": {
+      "name": "METANG",
+      "category": "Pok\u00e9mon Pincefer",
+      "entry_text": [
+        "Il est form\u00e9 de deux TERHAL\n",
+        "soud\u00e9s. Son corps de fer r\u00e9siste \u00e0\n",
+        "un choc avec un avion \u00e0 r\u00e9action."
+      ]
     },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 2574
+    "de": {
+      "name": "METANG",
+      "category": "Eisenklaue",
+      "entry_text": [
+        "Das PKMN besteht aus zwei TANHEL.\n",
+        "Es bekommt selbst dann keinen\n",
+        "Kratzer, wenn ein Jet es streift."
+      ]
+    },
+    "it": {
+      "name": "METANG",
+      "category": "Pok\u00e9mon Ferrunghia",
+      "entry_text": [
+        "\u00c8 sorto dalla fusione di due BELDUM.\n",
+        "Il suo corpo d\u2019acciaio non viene\n",
+        "scalfito neanche se urta un jet."
+      ]
+    },
+    "es": {
+      "name": "METANG",
+      "category": "Pok\u00e9mon Garrahierro",
+      "entry_text": [
+        "Lo forman dos BELDUM unidos. Puede\n",
+        "chocarse con un avi\u00f3n sin que su\n",
+        "cuerpo de acero sufra ni rasgu\u00f1o."
+      ]
+    },
+    "jp": {
+      "name": "\u30e1\u30bf\u30f3\u30b0",
+      "category": "\u3066\u3064\u30c4\u30e1\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\uff12\u3072\u304d\u306e\u3000\u30c0\u30f3\u30d0\u30eb\u304c\u3000\u304c\u3063\u305f\u3044\u3057\u305f\u3002\n",
+        "\u306f\u304c\u306d\u306e\u3000\u30dc\u30c7\u30a3\u306f\u3000\u30b8\u30a7\u30c3\u30c8\u304d\u3068\n",
+        "\u3057\u3087\u3046\u3068\u3064\u3057\u3066\u3082\u3000\u304d\u305a\u3064\u304b\u306a\u3044\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 2574
+  }
 }

@@ -1,189 +1,237 @@
 {
-    "base_stats": {
-        "hp": 50,
-        "attack": 92,
-        "defense": 108,
-        "speed": 35,
-        "special_attack": 92,
-        "special_defense": 108
+  "base_stats": {
+    "hp": 50,
+    "attack": 92,
+    "defense": 108,
+    "speed": 35,
+    "special_attack": 92,
+    "special_defense": 108
+  },
+  "types": [
+    "TYPE_GHOST",
+    "TYPE_DARK"
+  ],
+  "catch_rate": 100,
+  "base_exp_reward": 168,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 1,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 1
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 30,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_AMORPHOUS",
+    "EGG_GROUP_AMORPHOUS"
+  ],
+  "abilities": [
+    "ABILITY_PRESSURE",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_PURPLE",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_CURSE"
+      ],
+      [
+        1,
+        "MOVE_PURSUIT"
+      ],
+      [
+        1,
+        "MOVE_CONFUSE_RAY"
+      ],
+      [
+        1,
+        "MOVE_SPITE"
+      ],
+      [
+        1,
+        "MOVE_SHADOW_SNEAK"
+      ],
+      [
+        7,
+        "MOVE_FAINT_ATTACK"
+      ],
+      [
+        13,
+        "MOVE_HYPNOSIS"
+      ],
+      [
+        19,
+        "MOVE_DREAM_EATER"
+      ],
+      [
+        25,
+        "MOVE_OMINOUS_WIND"
+      ],
+      [
+        31,
+        "MOVE_SUCKER_PUNCH"
+      ],
+      [
+        37,
+        "MOVE_NASTY_PLOT"
+      ],
+      [
+        43,
+        "MOVE_MEMENTO"
+      ],
+      [
+        49,
+        "MOVE_DARK_PULSE"
+      ]
+    ],
+    "by_tm": [
+      "TM03",
+      "TM04",
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM12",
+      "TM15",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM27",
+      "TM29",
+      "TM30",
+      "TM32",
+      "TM34",
+      "TM39",
+      "TM41",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM46",
+      "TM49",
+      "TM58",
+      "TM61",
+      "TM62",
+      "TM63",
+      "TM68",
+      "TM70",
+      "TM77",
+      "TM78",
+      "TM79",
+      "TM82",
+      "TM83",
+      "TM85",
+      "TM87",
+      "TM90"
+    ],
+    "by_tutor": [
+      "MOVE_ICY_WIND",
+      "MOVE_OMINOUS_WIND",
+      "MOVE_SNORE",
+      "MOVE_SPITE",
+      "MOVE_TRICK",
+      "MOVE_SUCKER_PUNCH",
+      "MOVE_UPROAR"
+    ],
+    "egg_moves": [
+      "MOVE_DESTINY_BOND",
+      "MOVE_PAIN_SPLIT",
+      "MOVE_SMOKE_SCREEN",
+      "MOVE_IMPRISON",
+      "MOVE_GRUDGE",
+      "MOVE_SHADOW_SNEAK"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_SPIRITOMB",
+  "footprint": {
+    "has": false,
+    "size": "FOOTPRINT_LARGE",
+    "type": "FOOTPRINT_TYPE_SCARY"
+  },
+  "pokedex_data": {
+    "height_inches": 39,
+    "weight_pounds": 238.1,
+    "body_shape": "SHAPE_HEAD_BASE",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 281,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 281,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 14,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 14,
+    "en": {
+      "name": "Spiritomb",
+      "category": "Forbidden Pok\u00e9mon",
+      "entry_text": [
+        "Its constant mischief and misdeeds\n",
+        "resulted in it being bound to an Odd\n",
+        "Keystone by a mysterious spell."
+      ]
     },
-    "types": [ "TYPE_GHOST", "TYPE_DARK" ],
-    "catch_rate": 100,
-    "base_exp_reward": 168,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 1,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 1
+    "fr": {
+      "name": "SPIRITOMB",
+      "category": "Pok\u00e9mon Interdit",
+      "entry_text": [
+        "Un Pok\u00e9mon compos\u00e9 de 108\n",
+        "esprits. Il provient d\u2019une fissure\n",
+        "dans une cl\u00e9 de vo\u00fbte \u00e9trange."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "KRYPPUK",
+      "category": "Verboten",
+      "entry_text": [
+        "Ein PKMN, das aus 108 Geistern\n",
+        "besteht. Es ist an einen Spalt in\n",
+        "einem mysteri\u00f6sen Stein gebunden."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 30,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_AMORPHOUS", "EGG_GROUP_AMORPHOUS" ],
-    "abilities": [ "ABILITY_PRESSURE", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_PURPLE",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_CURSE" ],
-            [ 1, "MOVE_PURSUIT" ],
-            [ 1, "MOVE_CONFUSE_RAY" ],
-            [ 1, "MOVE_SPITE" ],
-            [ 1, "MOVE_SHADOW_SNEAK" ],
-            [ 7, "MOVE_FAINT_ATTACK" ],
-            [ 13, "MOVE_HYPNOSIS" ],
-            [ 19, "MOVE_DREAM_EATER" ],
-            [ 25, "MOVE_OMINOUS_WIND" ],
-            [ 31, "MOVE_SUCKER_PUNCH" ],
-            [ 37, "MOVE_NASTY_PLOT" ],
-            [ 43, "MOVE_MEMENTO" ],
-            [ 49, "MOVE_DARK_PULSE" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM58",
-            "TM61",
-            "TM62",
-            "TM63",
-            "TM68",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ICY_WIND",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH",
-            "MOVE_UPROAR"
-        ],
-        "egg_moves": [
-            "MOVE_DESTINY_BOND",
-            "MOVE_PAIN_SPLIT",
-            "MOVE_SMOKE_SCREEN",
-            "MOVE_IMPRISON",
-            "MOVE_GRUDGE",
-            "MOVE_SHADOW_SNEAK"
-        ]
+    "it": {
+      "name": "SPIRITOMB",
+      "category": "Pok\u00e9mon Proibito",
+      "entry_text": [
+        "Pok\u00e9mon formato da 108 spiriti. \u00c8\n",
+        "stato imprigionato nella fessura di\n",
+        "una Roccianima."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_SPIRITOMB",
-    "footprint": {
-        "has": false,
-        "size": "FOOTPRINT_LARGE",
-        "type": "FOOTPRINT_TYPE_SCARY"
+    "es": {
+      "name": "SPIRITOMB",
+      "category": "Pok\u00e9mon Prohibido",
+      "entry_text": [
+        "Se form\u00f3 a partir de 108 esp\u00edritus.\n",
+        "Est\u00e1 unido a la fisura de una\n",
+        "piedra angular m\u00edstica."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 39,
-        "weight_pounds": 238.1,
-        "body_shape": "SHAPE_HEAD_BASE",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 281,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 281,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 14,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 14,
-        "en": {
-            "name": "SPIRITOMB",
-            "category": "Forbidden Pokémon",
-            "entry_text": [
-                "Its constant mischief and misdeeds\n",
-                "resulted in it being bound to an Odd\n",
-                "Keystone by a mysterious spell."
-            ]
-        },
-        "fr": {
-            "name": "SPIRITOMB",
-            "category": "Pokémon Interdit",
-            "entry_text": [
-                "Un Pokémon composé de 108\n",
-                "esprits. Il provient d’une fissure\n",
-                "dans une clé de voûte étrange."
-            ]
-        },
-        "de": {
-            "name": "KRYPPUK",
-            "category": "Verboten",
-            "entry_text": [
-                "Ein PKMN, das aus 108 Geistern\n",
-                "besteht. Es ist an einen Spalt in\n",
-                "einem mysteriösen Stein gebunden."
-            ]
-        },
-        "it": {
-            "name": "SPIRITOMB",
-            "category": "Pokémon Proibito",
-            "entry_text": [
-                "Pokémon formato da 108 spiriti. È\n",
-                "stato imprigionato nella fessura di\n",
-                "una Roccianima."
-            ]
-        },
-        "es": {
-            "name": "SPIRITOMB",
-            "category": "Pokémon Prohibido",
-            "entry_text": [
-                "Se formó a partir de 108 espíritus.\n",
-                "Está unido a la fisura de una\n",
-                "piedra angular mística."
-            ]
-        },
-        "jp": {
-            "name": "ミカルゲ",
-            "category": "ふういんポケモン",
-            "entry_text": [
-                "１０８この　たましいが　あつまって\n",
-                "うまれた　ポケモン。かなめいしの\n",
-                "ひびわれに　つながれている。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 1285
+    "jp": {
+      "name": "\u30df\u30ab\u30eb\u30b2",
+      "category": "\u3075\u3046\u3044\u3093\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\uff11\uff10\uff18\u3053\u306e\u3000\u305f\u307e\u3057\u3044\u304c\u3000\u3042\u3064\u307e\u3063\u3066\n",
+        "\u3046\u307e\u308c\u305f\u3000\u30dd\u30b1\u30e2\u30f3\u3002\u304b\u306a\u3081\u3044\u3057\u306e\n",
+        "\u3072\u3073\u308f\u308c\u306b\u3000\u3064\u306a\u304c\u308c\u3066\u3044\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 1285
+  }
 }

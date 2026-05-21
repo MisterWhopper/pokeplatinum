@@ -1,183 +1,240 @@
 {
-    "base_stats": {
-        "hp": 110,
-        "attack": 80,
-        "defense": 90,
-        "speed": 65,
-        "special_attack": 95,
-        "special_defense": 90
+  "base_stats": {
+    "hp": 110,
+    "attack": 80,
+    "defense": 90,
+    "speed": 65,
+    "special_attack": 95,
+    "special_defense": 90
+  },
+  "types": [
+    "TYPE_ICE",
+    "TYPE_WATER"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 192,
+  "ev_yields": {
+    "hp": 3,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_WATER_1",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_THICK_FAT",
+    "ABILITY_ICE_BODY"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_BLUE",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_CRUNCH"
+      ],
+      [
+        1,
+        "MOVE_POWDER_SNOW"
+      ],
+      [
+        1,
+        "MOVE_GROWL"
+      ],
+      [
+        1,
+        "MOVE_WATER_GUN"
+      ],
+      [
+        1,
+        "MOVE_ENCORE"
+      ],
+      [
+        7,
+        "MOVE_ENCORE"
+      ],
+      [
+        13,
+        "MOVE_ICE_BALL"
+      ],
+      [
+        19,
+        "MOVE_BODY_SLAM"
+      ],
+      [
+        25,
+        "MOVE_AURORA_BEAM"
+      ],
+      [
+        31,
+        "MOVE_HAIL"
+      ],
+      [
+        32,
+        "MOVE_SWAGGER"
+      ],
+      [
+        39,
+        "MOVE_REST"
+      ],
+      [
+        39,
+        "MOVE_SNORE"
+      ],
+      [
+        44,
+        "MOVE_ICE_FANG"
+      ],
+      [
+        52,
+        "MOVE_BLIZZARD"
+      ],
+      [
+        65,
+        "MOVE_SHEER_COLD"
+      ]
+    ],
+    "by_tm": [
+      "TM03",
+      "TM05",
+      "TM06",
+      "TM07",
+      "TM10",
+      "TM13",
+      "TM14",
+      "TM15",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM23",
+      "TM26",
+      "TM27",
+      "TM32",
+      "TM39",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM55",
+      "TM58",
+      "TM68",
+      "TM72",
+      "TM78",
+      "TM80",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "HM03",
+      "HM04",
+      "HM06",
+      "HM07"
+    ],
+    "by_tutor": [
+      "MOVE_DIVE",
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_ICY_WIND",
+      "MOVE_ROLLOUT",
+      "MOVE_IRON_HEAD",
+      "MOVE_AQUA_TAIL",
+      "MOVE_SNORE",
+      "MOVE_SIGNAL_BEAM"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_SPHEAL",
+  "footprint": {
+    "has": false,
+    "size": "FOOTPRINT_LARGE",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 55,
+    "weight_pounds": 332.0,
+    "body_shape": "SHAPE_QUADRUPED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 256,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 256,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 8,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 8,
+    "en": {
+      "name": "Walrein",
+      "category": "Ice Break Pok\u00e9mon",
+      "entry_text": [
+        "It shatters ice with its big tusks.\n",
+        "Its thick blubber repels not only\n",
+        "the cold, but also enemy attacks."
+      ]
     },
-    "types": [ "TYPE_ICE", "TYPE_WATER" ],
-    "catch_rate": 45,
-    "base_exp_reward": 192,
-    "ev_yields": {
-        "hp": 3,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "KAIMORSE",
+      "category": "Pok\u00e9mon Brise Glace",
+      "entry_text": [
+        "Il brise la glace avec ses grosses\n",
+        "d\u00e9fenses. Sa graisse le prot\u00e8ge du \n",
+        "froid, mais aussi des attaques."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "WALRAISA",
+      "category": "Eisbrecher",
+      "entry_text": [
+        "Mit seinen Sto\u00dfz\u00e4hnen bricht es\n",
+        "durch Eis. Eine Speckschicht\n",
+        "sch\u00fctzt es vor K\u00e4lte und Angriffen."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_THICK_FAT", "ABILITY_ICE_BODY" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_BLUE",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_CRUNCH" ],
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 1, "MOVE_GROWL" ],
-            [ 1, "MOVE_WATER_GUN" ],
-            [ 1, "MOVE_ENCORE" ],
-            [ 7, "MOVE_ENCORE" ],
-            [ 13, "MOVE_ICE_BALL" ],
-            [ 19, "MOVE_BODY_SLAM" ],
-            [ 25, "MOVE_AURORA_BEAM" ],
-            [ 31, "MOVE_HAIL" ],
-            [ 32, "MOVE_SWAGGER" ],
-            [ 39, "MOVE_REST" ],
-            [ 39, "MOVE_SNORE" ],
-            [ 44, "MOVE_ICE_FANG" ],
-            [ 52, "MOVE_BLIZZARD" ],
-            [ 65, "MOVE_SHEER_COLD" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM26",
-            "TM27",
-            "TM32",
-            "TM39",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM58",
-            "TM68",
-            "TM72",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_IRON_HEAD",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM"
-        ]
+    "it": {
+      "name": "WALREIN",
+      "category": "Pok\u00e9mon Spaccagelo",
+      "entry_text": [
+        "Frantuma il ghiaccio con le zanne.\n",
+        "Lo spesso strato adiposo respinge\n",
+        "il freddo e gli attacchi nemici."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_SPHEAL",
-    "footprint": {
-        "has": false,
-        "size": "FOOTPRINT_LARGE",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "WALREIN",
+      "category": "Pok\u00e9mon Rompehielo",
+      "entry_text": [
+        "Rompe el hielo con sus colmillos.\n",
+        "Su gruesa capa de grasa le protege\n",
+        "del fr\u00edo y de los enemigos."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 55,
-        "weight_pounds": 332.0,
-        "body_shape": "SHAPE_QUADRUPED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 256,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 256,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 8,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 8,
-        "en": {
-            "name": "WALREIN",
-            "category": "Ice Break Pokémon",
-            "entry_text": [
-                "It shatters ice with its big tusks.\n",
-                "Its thick blubber repels not only\n",
-                "the cold, but also enemy attacks."
-            ]
-        },
-        "fr": {
-            "name": "KAIMORSE",
-            "category": "Pokémon Brise Glace",
-            "entry_text": [
-                "Il brise la glace avec ses grosses\n",
-                "défenses. Sa graisse le protège du \n",
-                "froid, mais aussi des attaques."
-            ]
-        },
-        "de": {
-            "name": "WALRAISA",
-            "category": "Eisbrecher",
-            "entry_text": [
-                "Mit seinen Stoßzähnen bricht es\n",
-                "durch Eis. Eine Speckschicht\n",
-                "schützt es vor Kälte und Angriffen."
-            ]
-        },
-        "it": {
-            "name": "WALREIN",
-            "category": "Pokémon Spaccagelo",
-            "entry_text": [
-                "Frantuma il ghiaccio con le zanne.\n",
-                "Lo spesso strato adiposo respinge\n",
-                "il freddo e gli attacchi nemici."
-            ]
-        },
-        "es": {
-            "name": "WALREIN",
-            "category": "Pokémon Rompehielo",
-            "entry_text": [
-                "Rompe el hielo con sus colmillos.\n",
-                "Su gruesa capa de grasa le protege\n",
-                "del frío y de los enemigos."
-            ]
-        },
-        "jp": {
-            "name": "トドゼルガ",
-            "category": "こおりわりポケモン",
-            "entry_text": [
-                "おおきな　こおりを　キバで　くだく。\n",
-                "あつい　しぼうは　さむさだけでなく\n",
-                "てきの　こうげきも　はねかえす。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NONE",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_SOUTH_EAST",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 781
+    "jp": {
+      "name": "\u30c8\u30c9\u30bc\u30eb\u30ac",
+      "category": "\u3053\u304a\u308a\u308f\u308a\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u304a\u304a\u304d\u306a\u3000\u3053\u304a\u308a\u3092\u3000\u30ad\u30d0\u3067\u3000\u304f\u3060\u304f\u3002\n",
+        "\u3042\u3064\u3044\u3000\u3057\u307c\u3046\u306f\u3000\u3055\u3080\u3055\u3060\u3051\u3067\u306a\u304f\n",
+        "\u3066\u304d\u306e\u3000\u3053\u3046\u3052\u304d\u3082\u3000\u306f\u306d\u304b\u3048\u3059\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NONE",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_SOUTH_EAST",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 781
+  }
 }

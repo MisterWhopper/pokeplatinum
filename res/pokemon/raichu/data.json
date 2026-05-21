@@ -1,173 +1,194 @@
 {
-    "base_stats": {
-        "hp": 60,
-        "attack": 90,
-        "defense": 55,
-        "speed": 100,
-        "special_attack": 90,
-        "special_defense": 80
+  "base_stats": {
+    "hp": 60,
+    "attack": 90,
+    "defense": 55,
+    "speed": 100,
+    "special_attack": 90,
+    "special_defense": 80
+  },
+  "types": [
+    "TYPE_ELECTRIC",
+    "TYPE_ELECTRIC"
+  ],
+  "catch_rate": 75,
+  "base_exp_reward": 122,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 3,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_ORAN_BERRY"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 10,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_FIELD",
+    "EGG_GROUP_FAIRY"
+  ],
+  "abilities": [
+    "ABILITY_STATIC",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_YELLOW",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_THUNDER_SHOCK"
+      ],
+      [
+        1,
+        "MOVE_TAIL_WHIP"
+      ],
+      [
+        1,
+        "MOVE_QUICK_ATTACK"
+      ],
+      [
+        1,
+        "MOVE_THUNDERBOLT"
+      ]
+    ],
+    "by_tm": [
+      "TM01",
+      "TM06",
+      "TM10",
+      "TM15",
+      "TM16",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM23",
+      "TM24",
+      "TM25",
+      "TM27",
+      "TM28",
+      "TM31",
+      "TM32",
+      "TM34",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM46",
+      "TM52",
+      "TM56",
+      "TM57",
+      "TM58",
+      "TM68",
+      "TM70",
+      "TM73",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90",
+      "HM04",
+      "HM06"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_ROLLOUT",
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_SNORE",
+      "MOVE_HELPING_HAND",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_MAGNET_RISE",
+      "MOVE_KNOCK_OFF",
+      "MOVE_SWIFT"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_PICHU",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_CUTE"
+  },
+  "pokedex_data": {
+    "height_inches": 31,
+    "weight_pounds": 66.1,
+    "body_shape": "SHAPE_BIPEDAL_TAILED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 395,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 395,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 21,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 21,
+    "en": {
+      "name": "Raichu",
+      "category": "Mouse Pok\u00e9mon",
+      "entry_text": [
+        "Its tail discharges electricity into\n",
+        "the ground, protecting it from\n",
+        "getting shocked."
+      ]
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
-    "catch_rate": 75,
-    "base_exp_reward": 122,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 3,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "RAICHU",
+      "category": "Pok\u00e9mon Souris",
+      "entry_text": [
+        "Il devient agressif lorsque son\n",
+        "corps contient trop d\u2019\u00e9lectricit\u00e9.\n",
+        "Il la d\u00e9charge par sa queue."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_ORAN_BERRY"
+    "de": {
+      "name": "RAICHU",
+      "category": "Maus",
+      "entry_text": [
+        "Bei zu viel Elektrizit\u00e4t im K\u00f6rper\n",
+        "wird es aggressiv. Es entl\u00e4dt sich\n",
+        "\u00fcber seinen Schweif."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 10,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FAIRY" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_YELLOW",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_THUNDER_SHOCK" ],
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_QUICK_ATTACK" ],
-            [ 1, "MOVE_THUNDERBOLT" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM52",
-            "TM56",
-            "TM57",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+    "it": {
+      "name": "RAICHU",
+      "category": "Pok\u00e9mon Topo",
+      "entry_text": [
+        "Diventa aggressivo se accumula\n",
+        "in s\u00e9 troppa carica elettrica.\n",
+        "Scarica l\u2019elettricit\u00e0 dalla coda."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_PICHU",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_CUTE"
+    "es": {
+      "name": "RAICHU",
+      "category": "Pok\u00e9mon Rat\u00f3n",
+      "entry_text": [
+        "Se vuelve agresivo si su cuerpo\n",
+        "acumula demasiada electricidad,\n",
+        "que descarga a trav\u00e9s de la cola."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 31,
-        "weight_pounds": 66.1,
-        "body_shape": "SHAPE_BIPEDAL_TAILED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 395,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 395,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 21,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 21,
-        "en": {
-            "name": "RAICHU",
-            "category": "Mouse Pokémon",
-            "entry_text": [
-                "Its tail discharges electricity into\n",
-                "the ground, protecting it from\n",
-                "getting shocked."
-            ]
-        },
-        "fr": {
-            "name": "RAICHU",
-            "category": "Pokémon Souris",
-            "entry_text": [
-                "Il devient agressif lorsque son\n",
-                "corps contient trop d’électricité.\n",
-                "Il la décharge par sa queue."
-            ]
-        },
-        "de": {
-            "name": "RAICHU",
-            "category": "Maus",
-            "entry_text": [
-                "Bei zu viel Elektrizität im Körper\n",
-                "wird es aggressiv. Es entlädt sich\n",
-                "über seinen Schweif."
-            ]
-        },
-        "it": {
-            "name": "RAICHU",
-            "category": "Pokémon Topo",
-            "entry_text": [
-                "Diventa aggressivo se accumula\n",
-                "in sé troppa carica elettrica.\n",
-                "Scarica l’elettricità dalla coda."
-            ]
-        },
-        "es": {
-            "name": "RAICHU",
-            "category": "Pokémon Ratón",
-            "entry_text": [
-                "Se vuelve agresivo si su cuerpo\n",
-                "acumula demasiada electricidad,\n",
-                "que descarga a través de la cola."
-            ]
-        },
-        "jp": {
-            "name": "ライチュウ",
-            "category": "ねずみポケモン",
-            "entry_text": [
-                "からだの　でんきが　たまりすぎると\n",
-                "こうげきてきな　きもちになる。\n",
-                "しっぽから　でんきを　にがす。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 90,
-        "rarity": 3,
-        "unused": 1799
+    "jp": {
+      "name": "\u30e9\u30a4\u30c1\u30e5\u30a6",
+      "category": "\u306d\u305a\u307f\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u304b\u3089\u3060\u306e\u3000\u3067\u3093\u304d\u304c\u3000\u305f\u307e\u308a\u3059\u304e\u308b\u3068\n",
+        "\u3053\u3046\u3052\u304d\u3066\u304d\u306a\u3000\u304d\u3082\u3061\u306b\u306a\u308b\u3002\n",
+        "\u3057\u3063\u307d\u304b\u3089\u3000\u3067\u3093\u304d\u3092\u3000\u306b\u304c\u3059\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 90,
+    "rarity": 3,
+    "unused": 1799
+  }
 }

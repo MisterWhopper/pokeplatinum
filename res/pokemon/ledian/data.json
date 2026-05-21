@@ -1,187 +1,241 @@
 {
-    "base_stats": {
-        "hp": 55,
-        "attack": 35,
-        "defense": 50,
-        "speed": 85,
-        "special_attack": 55,
-        "special_defense": 110
+  "base_stats": {
+    "hp": 55,
+    "attack": 35,
+    "defense": 50,
+    "speed": 85,
+    "special_attack": 55,
+    "special_defense": 110
+  },
+  "types": [
+    "TYPE_BUG",
+    "TYPE_FLYING"
+  ],
+  "catch_rate": 90,
+  "base_exp_reward": 134,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 2
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 15,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_FAST",
+  "egg_groups": [
+    "EGG_GROUP_BUG",
+    "EGG_GROUP_BUG"
+  ],
+  "abilities": [
+    "ABILITY_SWARM",
+    "ABILITY_EARLY_BIRD"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_RED",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_TACKLE"
+      ],
+      [
+        1,
+        "MOVE_SUPERSONIC"
+      ],
+      [
+        1,
+        "MOVE_COMET_PUNCH"
+      ],
+      [
+        6,
+        "MOVE_SUPERSONIC"
+      ],
+      [
+        9,
+        "MOVE_COMET_PUNCH"
+      ],
+      [
+        14,
+        "MOVE_LIGHT_SCREEN"
+      ],
+      [
+        14,
+        "MOVE_REFLECT"
+      ],
+      [
+        14,
+        "MOVE_SAFEGUARD"
+      ],
+      [
+        17,
+        "MOVE_MACH_PUNCH"
+      ],
+      [
+        24,
+        "MOVE_BATON_PASS"
+      ],
+      [
+        29,
+        "MOVE_SILVER_WIND"
+      ],
+      [
+        36,
+        "MOVE_AGILITY"
+      ],
+      [
+        41,
+        "MOVE_SWIFT"
+      ],
+      [
+        48,
+        "MOVE_DOUBLE_EDGE"
+      ],
+      [
+        53,
+        "MOVE_BUG_BUZZ"
+      ]
+    ],
+    "by_tm": [
+      "TM01",
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM16",
+      "TM17",
+      "TM19",
+      "TM20",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM28",
+      "TM31",
+      "TM32",
+      "TM33",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM46",
+      "TM51",
+      "TM52",
+      "TM56",
+      "TM58",
+      "TM60",
+      "TM62",
+      "TM68",
+      "TM70",
+      "TM75",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM89",
+      "TM90",
+      "HM04",
+      "HM06"
+    ],
+    "by_tutor": [
+      "MOVE_ROLLOUT",
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_OMINOUS_WIND",
+      "MOVE_SNORE",
+      "MOVE_AIR_CUTTER",
+      "MOVE_KNOCK_OFF",
+      "MOVE_SWIFT",
+      "MOVE_UPROAR"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_LEDYBA",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 55,
+    "weight_pounds": 78.5,
+    "body_shape": "SHAPE_WINGED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 238,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 238,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 65529,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 65529,
+    "en": {
+      "name": "Ledian",
+      "category": "Five Star Pok\u00e9mon",
+      "entry_text": [
+        "It uses starlight as energy. When\n",
+        "more stars appear at night, the\n",
+        "patterns on its back grow larger."
+      ]
     },
-    "types": [ "TYPE_BUG", "TYPE_FLYING" ],
-    "catch_rate": 90,
-    "base_exp_reward": 134,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 2
+    "fr": {
+      "name": "COXYCLAQUE",
+      "category": "Pok\u00e9mon 5 Etoiles",
+      "entry_text": [
+        "Il tire sa force de la lumi\u00e8re des\n",
+        "\u00e9toiles. Plus il y en a et plus ses\n",
+        "motifs dorsaux sont grands."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "LEDIAN",
+      "category": "F\u00fcnf-Punkt",
+      "entry_text": [
+        "Es zieht Energie aus dem Licht der\n",
+        "Sterne. Je mehr Sterne zu sehen\n",
+        "sind, desto gr\u00f6\u00dfer ist sein Muster."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 15,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SWARM", "ABILITY_EARLY_BIRD" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_RED",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_SUPERSONIC" ],
-            [ 1, "MOVE_COMET_PUNCH" ],
-            [ 6, "MOVE_SUPERSONIC" ],
-            [ 9, "MOVE_COMET_PUNCH" ],
-            [ 14, "MOVE_LIGHT_SCREEN" ],
-            [ 14, "MOVE_REFLECT" ],
-            [ 14, "MOVE_SAFEGUARD" ],
-            [ 17, "MOVE_MACH_PUNCH" ],
-            [ 24, "MOVE_BATON_PASS" ],
-            [ 29, "MOVE_SILVER_WIND" ],
-            [ 36, "MOVE_AGILITY" ],
-            [ 41, "MOVE_SWIFT" ],
-            [ 48, "MOVE_DOUBLE_EDGE" ],
-            [ 53, "MOVE_BUG_BUZZ" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM31",
-            "TM32",
-            "TM33",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM51",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM62",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM89",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_AIR_CUTTER",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT",
-            "MOVE_UPROAR"
-        ]
+    "it": {
+      "name": "LEDIAN",
+      "category": "Pok\u00e9mon Pentastra",
+      "entry_text": [
+        "La luce delle stelle \u00e8 la sua fonte\n",
+        "d\u2019energia. Un cielo pi\u00f9 stellato fa\n",
+        "ingrandire i disegni sul suo dorso."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_LEDYBA",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "LEDIAN",
+      "category": "Pok\u00e9mon 5estrellas",
+      "entry_text": [
+        "Se nutre de la luz de las estrellas.\n",
+        "Cuanto m\u00e1s estrellada es la noche,\n",
+        "m\u00e1s crecen los dibujos de su lomo."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 55,
-        "weight_pounds": 78.5,
-        "body_shape": "SHAPE_WINGED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 238,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 238,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 65529,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 65529,
-        "en": {
-            "name": "LEDIAN",
-            "category": "Five Star Pokémon",
-            "entry_text": [
-                "It uses starlight as energy. When\n",
-                "more stars appear at night, the\n",
-                "patterns on its back grow larger."
-            ]
-        },
-        "fr": {
-            "name": "COXYCLAQUE",
-            "category": "Pokémon 5 Etoiles",
-            "entry_text": [
-                "Il tire sa force de la lumière des\n",
-                "étoiles. Plus il y en a et plus ses\n",
-                "motifs dorsaux sont grands."
-            ]
-        },
-        "de": {
-            "name": "LEDIAN",
-            "category": "Fünf-Punkt",
-            "entry_text": [
-                "Es zieht Energie aus dem Licht der\n",
-                "Sterne. Je mehr Sterne zu sehen\n",
-                "sind, desto größer ist sein Muster."
-            ]
-        },
-        "it": {
-            "name": "LEDIAN",
-            "category": "Pokémon Pentastra",
-            "entry_text": [
-                "La luce delle stelle è la sua fonte\n",
-                "d’energia. Un cielo più stellato fa\n",
-                "ingrandire i disegni sul suo dorso."
-            ]
-        },
-        "es": {
-            "name": "LEDIAN",
-            "category": "Pokémon 5estrellas",
-            "entry_text": [
-                "Se nutre de la luz de las estrellas.\n",
-                "Cuanto más estrellada es la noche,\n",
-                "más crecen los dibujos de su lomo."
-            ]
-        },
-        "jp": {
-            "name": "レディアン",
-            "category": "いつつぼしポケモン",
-            "entry_text": [
-                "ほしあかりを　エネルギ－にする。\n",
-                "よぞらの　ほしの　かずが　ふえると\n",
-                "せなかの　もようが　おおきくなる。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 50,
-        "rarity": 30,
-        "unused": 4356
+    "jp": {
+      "name": "\u30ec\u30c7\u30a3\u30a2\u30f3",
+      "category": "\u3044\u3064\u3064\u307c\u3057\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u307b\u3057\u3042\u304b\u308a\u3092\u3000\u30a8\u30cd\u30eb\u30ae\uff0d\u306b\u3059\u308b\u3002\n",
+        "\u3088\u305e\u3089\u306e\u3000\u307b\u3057\u306e\u3000\u304b\u305a\u304c\u3000\u3075\u3048\u308b\u3068\n",
+        "\u305b\u306a\u304b\u306e\u3000\u3082\u3088\u3046\u304c\u3000\u304a\u304a\u304d\u304f\u306a\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 50,
+    "rarity": 30,
+    "unused": 4356
+  }
 }

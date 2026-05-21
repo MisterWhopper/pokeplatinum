@@ -1,168 +1,213 @@
 {
-    "base_stats": {
-        "hp": 70,
-        "attack": 60,
-        "defense": 70,
-        "speed": 85,
-        "special_attack": 87,
-        "special_defense": 78
+  "base_stats": {
+    "hp": 70,
+    "attack": 60,
+    "defense": 70,
+    "speed": 85,
+    "special_attack": 87,
+    "special_defense": 78
+  },
+  "types": [
+    "TYPE_GRASS",
+    "TYPE_GRASS"
+  ],
+  "catch_rate": 75,
+  "base_exp_reward": 133,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 2,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_MIRACLE_SEED"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_FAIRY",
+    "EGG_GROUP_GRASS"
+  ],
+  "abilities": [
+    "ABILITY_FLOWER_GIFT",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_PINK",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_TACKLE"
+      ],
+      [
+        1,
+        "MOVE_GROWTH"
+      ],
+      [
+        7,
+        "MOVE_GROWTH"
+      ],
+      [
+        10,
+        "MOVE_LEECH_SEED"
+      ],
+      [
+        13,
+        "MOVE_HELPING_HAND"
+      ],
+      [
+        19,
+        "MOVE_MAGICAL_LEAF"
+      ],
+      [
+        22,
+        "MOVE_SUNNY_DAY"
+      ],
+      [
+        25,
+        "MOVE_PETAL_DANCE"
+      ],
+      [
+        30,
+        "MOVE_WORRY_SEED"
+      ],
+      [
+        35,
+        "MOVE_TAKE_DOWN"
+      ],
+      [
+        43,
+        "MOVE_SOLAR_BEAM"
+      ],
+      [
+        48,
+        "MOVE_LUCKY_CHANT"
+      ]
+    ],
+    "by_tm": [
+      "TM06",
+      "TM09",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM19",
+      "TM20",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM32",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM53",
+      "TM58",
+      "TM68",
+      "TM70",
+      "TM75",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90"
+    ],
+    "by_tutor": [
+      "MOVE_ROLLOUT",
+      "MOVE_SNORE",
+      "MOVE_HELPING_HAND",
+      "MOVE_SYNTHESIS",
+      "MOVE_SEED_BOMB"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_CHERUBI",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_SMALL",
+    "type": "FOOTPRINT_TYPE_CUTE"
+  },
+  "pokedex_data": {
+    "height_inches": 20,
+    "weight_pounds": 20.5,
+    "body_shape": "SHAPE_HEAD_LEGS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 429,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 429,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 25,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 25,
+    "en": {
+      "name": "Cherrim",
+      "category": "Blossom Pok\u00e9mon",
+      "entry_text": [
+        "If it senses strong sunlight, it\n",
+        "opens its folded petals to absorb\n",
+        "the sun\u2019s rays with its whole body."
+      ]
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
-    "catch_rate": 75,
-    "base_exp_reward": 133,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 2,
-        "special_defense": 0
+    "fr": {
+      "name": "CERIFLOR",
+      "category": "Pok\u00e9mon Floraison",
+      "entry_text": [
+        "Il fleurit lorsque le soleil est au\n",
+        "beau fixe. Il cherche \u00e0 prendre sa\n",
+        "revanche sur une vie de bourgeon."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_MIRACLE_SEED"
+    "de": {
+      "name": "KINOSO",
+      "category": "Bl\u00fcte",
+      "entry_text": [
+        "In Zeiten mit viel Sonnenschein\n",
+        "bl\u00fcht es auf. Es holt nach, was ihm\n",
+        "als Knospe verwehrt blieb."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_FLOWER_GIFT", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_PINK",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_GROWTH" ],
-            [ 7, "MOVE_GROWTH" ],
-            [ 10, "MOVE_LEECH_SEED" ],
-            [ 13, "MOVE_HELPING_HAND" ],
-            [ 19, "MOVE_MAGICAL_LEAF" ],
-            [ 22, "MOVE_SUNNY_DAY" ],
-            [ 25, "MOVE_PETAL_DANCE" ],
-            [ 30, "MOVE_WORRY_SEED" ],
-            [ 35, "MOVE_TAKE_DOWN" ],
-            [ 43, "MOVE_SOLAR_BEAM" ],
-            [ 48, "MOVE_LUCKY_CHANT" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_ROLLOUT",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB"
-        ]
+    "it": {
+      "name": "CHERRIM",
+      "category": "Pok\u00e9mon Bocciolo",
+      "entry_text": [
+        "Sboccia quando fa caldo e cerca\n",
+        "di godersi fino all\u2019ultimo ogni mo-\n",
+        "mento che pu\u00f2 passare al sole."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_CHERUBI",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_SMALL",
-        "type": "FOOTPRINT_TYPE_CUTE"
+    "es": {
+      "name": "CHERRIM",
+      "category": "Pok\u00e9mon Floraci\u00f3n",
+      "entry_text": [
+        "Florece en \u00e9pocas de mucha\n",
+        "luz solar. Intenta compensar\n",
+        "lo que soport\u00f3 como capullo."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 20,
-        "weight_pounds": 20.5,
-        "body_shape": "SHAPE_HEAD_LEGS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 429,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 429,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 25,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 25,
-        "en": {
-            "name": "CHERRIM",
-            "category": "Blossom Pokémon",
-            "entry_text": [
-                "If it senses strong sunlight, it\n",
-                "opens its folded petals to absorb\n",
-                "the sun’s rays with its whole body."
-            ]
-        },
-        "fr": {
-            "name": "CERIFLOR",
-            "category": "Pokémon Floraison",
-            "entry_text": [
-                "Il fleurit lorsque le soleil est au\n",
-                "beau fixe. Il cherche à prendre sa\n",
-                "revanche sur une vie de bourgeon."
-            ]
-        },
-        "de": {
-            "name": "KINOSO",
-            "category": "Blüte",
-            "entry_text": [
-                "In Zeiten mit viel Sonnenschein\n",
-                "blüht es auf. Es holt nach, was ihm\n",
-                "als Knospe verwehrt blieb."
-            ]
-        },
-        "it": {
-            "name": "CHERRIM",
-            "category": "Pokémon Bocciolo",
-            "entry_text": [
-                "Sboccia quando fa caldo e cerca\n",
-                "di godersi fino all’ultimo ogni mo-\n",
-                "mento che può passare al sole."
-            ]
-        },
-        "es": {
-            "name": "CHERRIM",
-            "category": "Pokémon Floración",
-            "entry_text": [
-                "Florece en épocas de mucha\n",
-                "luz solar. Intenta compensar\n",
-                "lo que soportó como capullo."
-            ]
-        },
-        "jp": {
-            "name": "チェリム",
-            "category": "サクラポケモン",
-            "entry_text": [
-                "ひざしが　つよくなると　はなひらく。\n",
-                "つぼみの　ときに　たえしのんだ\n",
-                "うっぷんを　いっきに　はらすのだ。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 90,
-        "rarity": 3,
-        "unused": 1799
+    "jp": {
+      "name": "\u30c1\u30a7\u30ea\u30e0",
+      "category": "\u30b5\u30af\u30e9\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3072\u3056\u3057\u304c\u3000\u3064\u3088\u304f\u306a\u308b\u3068\u3000\u306f\u306a\u3072\u3089\u304f\u3002\n",
+        "\u3064\u307c\u307f\u306e\u3000\u3068\u304d\u306b\u3000\u305f\u3048\u3057\u306e\u3093\u3060\n",
+        "\u3046\u3063\u3077\u3093\u3092\u3000\u3044\u3063\u304d\u306b\u3000\u306f\u3089\u3059\u306e\u3060\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 90,
+    "rarity": 3,
+    "unused": 1799
+  }
 }

@@ -1,167 +1,191 @@
 {
-    "base_stats": {
-        "hp": 60,
-        "attack": 70,
-        "defense": 55,
-        "speed": 90,
-        "special_attack": 125,
-        "special_defense": 105
+  "base_stats": {
+    "hp": 60,
+    "attack": 70,
+    "defense": 55,
+    "speed": 90,
+    "special_attack": 125,
+    "special_defense": 105
+  },
+  "types": [
+    "TYPE_GRASS",
+    "TYPE_POISON"
+  ],
+  "catch_rate": 75,
+  "base_exp_reward": 204,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 3,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_POISON_BARB"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_FAIRY",
+    "EGG_GROUP_GRASS"
+  ],
+  "abilities": [
+    "ABILITY_NATURAL_CURE",
+    "ABILITY_POISON_POINT"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_GREEN",
+  "flip_sprite": true,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_WEATHER_BALL"
+      ],
+      [
+        1,
+        "MOVE_POISON_STING"
+      ],
+      [
+        1,
+        "MOVE_MEGA_DRAIN"
+      ],
+      [
+        1,
+        "MOVE_MAGICAL_LEAF"
+      ],
+      [
+        1,
+        "MOVE_SWEET_SCENT"
+      ]
+    ],
+    "by_tm": [
+      "TM06",
+      "TM09",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM18",
+      "TM19",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM30",
+      "TM32",
+      "TM36",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM53",
+      "TM58",
+      "TM68",
+      "TM70",
+      "TM75",
+      "TM77",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM84",
+      "TM86",
+      "TM87",
+      "TM90",
+      "HM01"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_SNORE",
+      "MOVE_SYNTHESIS",
+      "MOVE_SEED_BOMB",
+      "MOVE_SWIFT"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_BUDEW",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_SMALL",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 35,
+    "weight_pounds": 32.0,
+    "body_shape": "SHAPE_BIPEDAL_TAILLESS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 351,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 351,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 16,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 16,
+    "en": {
+      "name": "Roserade",
+      "category": "Bouquet Pok\u00e9mon",
+      "entry_text": [
+        "Each of its hands contains\n",
+        "different toxins, but both hands\n",
+        "can jab with near-fatal power."
+      ]
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
-    "catch_rate": 75,
-    "base_exp_reward": 204,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 3,
-        "special_defense": 0
+    "fr": {
+      "name": "ROSERADE",
+      "category": "Pok\u00e9mon Bouquet",
+      "entry_text": [
+        "Il attire ses proies avec son doux\n",
+        "parfum et les ach\u00e8ve gr\u00e2ce aux\n",
+        "fouets d\u2019\u00e9pines de ses bras."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_POISON_BARB"
+    "de": {
+      "name": "ROSERADE",
+      "category": "Blumenstrau\u00df",
+      "entry_text": [
+        "Mit einem s\u00fc\u00dfen Duft lockt es Beute\n",
+        "an, die es dann mit den dornigen\n",
+        "Ranken in seinen Armen schl\u00e4gt."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_NATURAL_CURE", "ABILITY_POISON_POINT" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_GREEN",
-    "flip_sprite": true,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_WEATHER_BALL" ],
-            [ 1, "MOVE_POISON_STING" ],
-            [ 1, "MOVE_MEGA_DRAIN" ],
-            [ 1, "MOVE_MAGICAL_LEAF" ],
-            [ 1, "MOVE_SWEET_SCENT" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM30",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_SWIFT"
-        ]
+    "it": {
+      "name": "ROSERADE",
+      "category": "Pok\u00e9mon Floreale",
+      "entry_text": [
+        "Attira la preda con un dolce aroma,\n",
+        "poi l\u2019abbatte con le fruste spinose\n",
+        "celate fra i bouquet delle braccia."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_BUDEW",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_SMALL",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "ROSERADE",
+      "category": "Pok\u00e9mon Ramillete",
+      "entry_text": [
+        "Atrae a las presas con un dulce\n",
+        "aroma y las derrota con los\n",
+        "l\u00e1tigos espinosos de sus brazos."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 35,
-        "weight_pounds": 32.0,
-        "body_shape": "SHAPE_BIPEDAL_TAILLESS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 351,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 351,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 16,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 16,
-        "en": {
-            "name": "ROSERADE",
-            "category": "Bouquet Pokémon",
-            "entry_text": [
-                "Each of its hands contains\n",
-                "different toxins, but both hands\n",
-                "can jab with near-fatal power."
-            ]
-        },
-        "fr": {
-            "name": "ROSERADE",
-            "category": "Pokémon Bouquet",
-            "entry_text": [
-                "Il attire ses proies avec son doux\n",
-                "parfum et les achève grâce aux\n",
-                "fouets d’épines de ses bras."
-            ]
-        },
-        "de": {
-            "name": "ROSERADE",
-            "category": "Blumenstrauß",
-            "entry_text": [
-                "Mit einem süßen Duft lockt es Beute\n",
-                "an, die es dann mit den dornigen\n",
-                "Ranken in seinen Armen schlägt."
-            ]
-        },
-        "it": {
-            "name": "ROSERADE",
-            "category": "Pokémon Floreale",
-            "entry_text": [
-                "Attira la preda con un dolce aroma,\n",
-                "poi l’abbatte con le fruste spinose\n",
-                "celate fra i bouquet delle braccia."
-            ]
-        },
-        "es": {
-            "name": "ROSERADE",
-            "category": "Pokémon Ramillete",
-            "entry_text": [
-                "Atrae a las presas con un dulce\n",
-                "aroma y las derrota con los\n",
-                "látigos espinosos de sus brazos."
-            ]
-        },
-        "jp": {
-            "name": "ロズレイド",
-            "category": "ブ－ケポケモン",
-            "entry_text": [
-                "あまい　かおりで　おびきよせて\n",
-                "りょううでの　はなたばの　なかに\n",
-                "ある　トゲの　ムチで　しとめる。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 1537
+    "jp": {
+      "name": "\u30ed\u30ba\u30ec\u30a4\u30c9",
+      "category": "\u30d6\uff0d\u30b1\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3042\u307e\u3044\u3000\u304b\u304a\u308a\u3067\u3000\u304a\u3073\u304d\u3088\u305b\u3066\n",
+        "\u308a\u3087\u3046\u3046\u3067\u306e\u3000\u306f\u306a\u305f\u3070\u306e\u3000\u306a\u304b\u306b\n",
+        "\u3042\u308b\u3000\u30c8\u30b2\u306e\u3000\u30e0\u30c1\u3067\u3000\u3057\u3068\u3081\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 1537
+  }
 }

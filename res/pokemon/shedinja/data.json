@@ -1,173 +1,218 @@
 {
-    "base_stats": {
-        "hp": 1,
-        "attack": 90,
-        "defense": 45,
-        "speed": 40,
-        "special_attack": 30,
-        "special_defense": 30
+  "base_stats": {
+    "hp": 1,
+    "attack": 90,
+    "defense": 45,
+    "speed": 40,
+    "special_attack": 30,
+    "special_defense": 30
+  },
+  "types": [
+    "TYPE_BUG",
+    "TYPE_GHOST"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 95,
+  "ev_yields": {
+    "hp": 2,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_NO_GENDER",
+  "hatch_cycles": 15,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_ERRATIC",
+  "egg_groups": [
+    "EGG_GROUP_MINERAL",
+    "EGG_GROUP_MINERAL"
+  ],
+  "abilities": [
+    "ABILITY_WONDER_GUARD",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_BROWN",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_SCRATCH"
+      ],
+      [
+        1,
+        "MOVE_HARDEN"
+      ],
+      [
+        5,
+        "MOVE_LEECH_LIFE"
+      ],
+      [
+        9,
+        "MOVE_SAND_ATTACK"
+      ],
+      [
+        14,
+        "MOVE_FURY_SWIPES"
+      ],
+      [
+        19,
+        "MOVE_MIND_READER"
+      ],
+      [
+        25,
+        "MOVE_SPITE"
+      ],
+      [
+        31,
+        "MOVE_CONFUSE_RAY"
+      ],
+      [
+        38,
+        "MOVE_SHADOW_SNEAK"
+      ],
+      [
+        45,
+        "MOVE_GRUDGE"
+      ],
+      [
+        52,
+        "MOVE_HEAL_BLOCK"
+      ],
+      [
+        59,
+        "MOVE_SHADOW_BALL"
+      ]
+    ],
+    "by_tm": [
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM19",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM28",
+      "TM30",
+      "TM32",
+      "TM37",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM46",
+      "TM54",
+      "TM58",
+      "TM61",
+      "TM65",
+      "TM68",
+      "TM70",
+      "TM81",
+      "TM82",
+      "TM83",
+      "TM85",
+      "TM87",
+      "TM90",
+      "HM01"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_SNORE",
+      "MOVE_SPITE",
+      "MOVE_TRICK",
+      "MOVE_SUCKER_PUNCH"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_NINCADA",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_SLOW"
+  },
+  "pokedex_data": {
+    "height_inches": 31,
+    "weight_pounds": 2.6,
+    "body_shape": "SHAPE_HEAD_BASE",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 256,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 256,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 65533,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 65533,
+    "en": {
+      "name": "Shedinja",
+      "category": "Shed Pok\u00e9mon",
+      "entry_text": [
+        "A discarded bug shell that came to\n",
+        "life. Peering into the crack on its\n",
+        "back is said to steal one\u2019s spirit."
+      ]
     },
-    "types": [ "TYPE_BUG", "TYPE_GHOST" ],
-    "catch_rate": 45,
-    "base_exp_reward": 95,
-    "ev_yields": {
-        "hp": 2,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "MUNJA",
+      "category": "Pok\u00e9mon Exuvie",
+      "entry_text": [
+        "Une carapace d\u2019insecte laiss\u00e9e \u00e0\n",
+        "l\u2019abandon. On dit qu\u2019il vole l\u2019\u00e2me\n",
+        "de celui qui regarde \u00e0 l\u2019int\u00e9rieur. "
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "NINJATOM",
+      "category": "H\u00e4utung",
+      "entry_text": [
+        "Ein weggeworfener K\u00e4ferpanzer, der\n",
+        "zum Leben erwachte. Schaut man\n",
+        "hinein, stiehlt es einem die Seele."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_NO_GENDER",
-    "hatch_cycles": 15,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_MINERAL", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_WONDER_GUARD", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_BROWN",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 5, "MOVE_LEECH_LIFE" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 14, "MOVE_FURY_SWIPES" ],
-            [ 19, "MOVE_MIND_READER" ],
-            [ 25, "MOVE_SPITE" ],
-            [ 31, "MOVE_CONFUSE_RAY" ],
-            [ 38, "MOVE_SHADOW_SNEAK" ],
-            [ 45, "MOVE_GRUDGE" ],
-            [ 52, "MOVE_HEAL_BLOCK" ],
-            [ 59, "MOVE_SHADOW_BALL" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM46",
-            "TM54",
-            "TM58",
-            "TM61",
-            "TM65",
-            "TM68",
-            "TM70",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH"
-        ]
+    "it": {
+      "name": "SHEDINJA",
+      "category": "Pok\u00e9mon Cambiapelle",
+      "entry_text": [
+        "\u00c8 nato dal guscio vuoto di un inset-\n",
+        "to. Pare che chi spia nella fessura\n",
+        "sul suo dorso perda l\u2019anima."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_NINCADA",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_SLOW"
+    "es": {
+      "name": "SHEDINJA",
+      "category": "Pok\u00e9mon Muda",
+      "entry_text": [
+        "Es el caparaz\u00f3n de un bicho que\n",
+        "cobr\u00f3 vida. Si alguien lo mira por\n",
+        "la espalda, le robar\u00e1 el alma."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 31,
-        "weight_pounds": 2.6,
-        "body_shape": "SHAPE_HEAD_BASE",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 256,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 256,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 65533,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 65533,
-        "en": {
-            "name": "SHEDINJA",
-            "category": "Shed Pokémon",
-            "entry_text": [
-                "A discarded bug shell that came to\n",
-                "life. Peering into the crack on its\n",
-                "back is said to steal one’s spirit."
-            ]
-        },
-        "fr": {
-            "name": "MUNJA",
-            "category": "Pokémon Exuvie",
-            "entry_text": [
-                "Une carapace d’insecte laissée à\n",
-                "l’abandon. On dit qu’il vole l’âme\n",
-                "de celui qui regarde à l’intérieur. "
-            ]
-        },
-        "de": {
-            "name": "NINJATOM",
-            "category": "Häutung",
-            "entry_text": [
-                "Ein weggeworfener Käferpanzer, der\n",
-                "zum Leben erwachte. Schaut man\n",
-                "hinein, stiehlt es einem die Seele."
-            ]
-        },
-        "it": {
-            "name": "SHEDINJA",
-            "category": "Pokémon Cambiapelle",
-            "entry_text": [
-                "È nato dal guscio vuoto di un inset-\n",
-                "to. Pare che chi spia nella fessura\n",
-                "sul suo dorso perda l’anima."
-            ]
-        },
-        "es": {
-            "name": "SHEDINJA",
-            "category": "Pokémon Muda",
-            "entry_text": [
-                "Es el caparazón de un bicho que\n",
-                "cobró vida. Si alguien lo mira por\n",
-                "la espalda, le robará el alma."
-            ]
-        },
-        "jp": {
-            "name": "ヌケニン",
-            "category": "ぬけがらポケモン",
-            "entry_text": [
-                "ぬけがらが　たましいを　やどした。\n",
-                "せなかの　すきまから　のぞきこむと\n",
-                "たましいを　すわれてしまうらしい。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 3076
+    "jp": {
+      "name": "\u30cc\u30b1\u30cb\u30f3",
+      "category": "\u306c\u3051\u304c\u3089\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u306c\u3051\u304c\u3089\u304c\u3000\u305f\u307e\u3057\u3044\u3092\u3000\u3084\u3069\u3057\u305f\u3002\n",
+        "\u305b\u306a\u304b\u306e\u3000\u3059\u304d\u307e\u304b\u3089\u3000\u306e\u305e\u304d\u3053\u3080\u3068\n",
+        "\u305f\u307e\u3057\u3044\u3092\u3000\u3059\u308f\u308c\u3066\u3057\u307e\u3046\u3089\u3057\u3044\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 3076
+  }
 }

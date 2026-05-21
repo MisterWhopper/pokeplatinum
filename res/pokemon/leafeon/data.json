@@ -1,182 +1,233 @@
 {
-    "base_stats": {
-        "hp": 65,
-        "attack": 110,
-        "defense": 130,
-        "speed": 95,
-        "special_attack": 60,
-        "special_defense": 65
+  "base_stats": {
+    "hp": 65,
+    "attack": 110,
+    "defense": 130,
+    "speed": 95,
+    "special_attack": 60,
+    "special_defense": 65
+  },
+  "types": [
+    "TYPE_GRASS",
+    "TYPE_GRASS"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 196,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 2,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
+  "hatch_cycles": 35,
+  "base_friendship": 35,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_FIELD",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_LEAF_GUARD",
+    "ABILITY_LEAF_GUARD"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_GREEN",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_TAIL_WHIP"
+      ],
+      [
+        1,
+        "MOVE_TACKLE"
+      ],
+      [
+        1,
+        "MOVE_HELPING_HAND"
+      ],
+      [
+        8,
+        "MOVE_SAND_ATTACK"
+      ],
+      [
+        15,
+        "MOVE_RAZOR_LEAF"
+      ],
+      [
+        22,
+        "MOVE_QUICK_ATTACK"
+      ],
+      [
+        29,
+        "MOVE_SYNTHESIS"
+      ],
+      [
+        36,
+        "MOVE_MAGICAL_LEAF"
+      ],
+      [
+        43,
+        "MOVE_GIGA_DRAIN"
+      ],
+      [
+        50,
+        "MOVE_LAST_RESORT"
+      ],
+      [
+        57,
+        "MOVE_GRASS_WHISTLE"
+      ],
+      [
+        64,
+        "MOVE_SUNNY_DAY"
+      ],
+      [
+        71,
+        "MOVE_LEAF_BLADE"
+      ],
+      [
+        78,
+        "MOVE_SWORDS_DANCE"
+      ]
+    ],
+    "by_tm": [
+      "TM05",
+      "TM06",
+      "TM09",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM18",
+      "TM19",
+      "TM21",
+      "TM22",
+      "TM23",
+      "TM27",
+      "TM28",
+      "TM30",
+      "TM32",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM53",
+      "TM58",
+      "TM68",
+      "TM70",
+      "TM75",
+      "TM78",
+      "TM81",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90",
+      "HM04",
+      "HM06"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_SNORE",
+      "MOVE_HELPING_HAND",
+      "MOVE_SYNTHESIS",
+      "MOVE_SEED_BOMB",
+      "MOVE_LAST_RESORT",
+      "MOVE_KNOCK_OFF",
+      "MOVE_SWIFT"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_EEVEE",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 39,
+    "weight_pounds": 56.2,
+    "body_shape": "SHAPE_QUADRUPED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 256,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 256,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 14,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 14,
+    "en": {
+      "name": "Leafeon",
+      "category": "Verdant Pok\u00e9mon",
+      "entry_text": [
+        "It basically does not fight. With\n",
+        "cells similar to those of plants, it\n",
+        "can perform photosynthesis."
+      ]
     },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
-    "catch_rate": 45,
-    "base_exp_reward": 196,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 2,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "PHYLLALI",
+      "category": "Pok\u00e9mon Verdoyant",
+      "entry_text": [
+        "Il utilise la photosynth\u00e8se comme\n",
+        "une plante. C\u2019est pourquoi il est \n",
+        "toujours entour\u00e9 d\u2019air pur."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "FOLIPURBA",
+      "category": "Unreif",
+      "entry_text": [
+        "Genau wie ein Pflanze f\u00fchrt es die\n",
+        "Photosynthese aus. Deshalb ist es\n",
+        "st\u00e4ndig von reiner Luft umgeben."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
-    "hatch_cycles": 35,
-    "base_friendship": 35,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_LEAF_GUARD", "ABILITY_LEAF_GUARD" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_GREEN",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 8, "MOVE_SAND_ATTACK" ],
-            [ 15, "MOVE_RAZOR_LEAF" ],
-            [ 22, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_SYNTHESIS" ],
-            [ 36, "MOVE_MAGICAL_LEAF" ],
-            [ 43, "MOVE_GIGA_DRAIN" ],
-            [ 50, "MOVE_LAST_RESORT" ],
-            [ 57, "MOVE_GRASS_WHISTLE" ],
-            [ 64, "MOVE_SUNNY_DAY" ],
-            [ 71, "MOVE_LEAF_BLADE" ],
-            [ 78, "MOVE_SWORDS_DANCE" ]
-        ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_LAST_RESORT",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ]
+    "it": {
+      "name": "LEAFEON",
+      "category": "Pok\u00e9mon Rigoglioso",
+      "entry_text": [
+        "Usa la fotosintesi, proprio come\n",
+        "una pianta. Pertanto \u00e8 sempre\n",
+        "circondato da aria pulita."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_EEVEE",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "LEAFEON",
+      "category": "Pok\u00e9mon Verdor",
+      "entry_text": [
+        "Al igual que una planta, hace la\n",
+        "fotos\u00edntesis. Como consecuencia,\n",
+        "siempre est\u00e1 rodeado de aire puro."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 39,
-        "weight_pounds": 56.2,
-        "body_shape": "SHAPE_QUADRUPED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 256,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 256,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 14,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 14,
-        "en": {
-            "name": "LEAFEON",
-            "category": "Verdant Pokémon",
-            "entry_text": [
-                "It basically does not fight. With\n",
-                "cells similar to those of plants, it\n",
-                "can perform photosynthesis."
-            ]
-        },
-        "fr": {
-            "name": "PHYLLALI",
-            "category": "Pokémon Verdoyant",
-            "entry_text": [
-                "Il utilise la photosynthèse comme\n",
-                "une plante. C’est pourquoi il est \n",
-                "toujours entouré d’air pur."
-            ]
-        },
-        "de": {
-            "name": "FOLIPURBA",
-            "category": "Unreif",
-            "entry_text": [
-                "Genau wie ein Pflanze führt es die\n",
-                "Photosynthese aus. Deshalb ist es\n",
-                "ständig von reiner Luft umgeben."
-            ]
-        },
-        "it": {
-            "name": "LEAFEON",
-            "category": "Pokémon Rigoglioso",
-            "entry_text": [
-                "Usa la fotosintesi, proprio come\n",
-                "una pianta. Pertanto è sempre\n",
-                "circondato da aria pulita."
-            ]
-        },
-        "es": {
-            "name": "LEAFEON",
-            "category": "Pokémon Verdor",
-            "entry_text": [
-                "Al igual que una planta, hace la\n",
-                "fotosíntesis. Como consecuencia,\n",
-                "siempre está rodeado de aire puro."
-            ]
-        },
-        "jp": {
-            "name": "リ－フィア",
-            "category": "しんりょくポケモン",
-            "entry_text": [
-                "しょくぶつのように　こうごうせいを\n",
-                "するため　リ－フィアの　まわりは\n",
-                "すんだ　くうきに　つつまれている。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 90,
-        "rarity": 3,
-        "unused": 257
+    "jp": {
+      "name": "\u30ea\uff0d\u30d5\u30a3\u30a2",
+      "category": "\u3057\u3093\u308a\u3087\u304f\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3057\u3087\u304f\u3076\u3064\u306e\u3088\u3046\u306b\u3000\u3053\u3046\u3054\u3046\u305b\u3044\u3092\n",
+        "\u3059\u308b\u305f\u3081\u3000\u30ea\uff0d\u30d5\u30a3\u30a2\u306e\u3000\u307e\u308f\u308a\u306f\n",
+        "\u3059\u3093\u3060\u3000\u304f\u3046\u304d\u306b\u3000\u3064\u3064\u307e\u308c\u3066\u3044\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 90,
+    "rarity": 3,
+    "unused": 257
+  }
 }

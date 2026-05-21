@@ -1,168 +1,204 @@
 {
-    "base_stats": {
-        "hp": 80,
-        "attack": 105,
-        "defense": 65,
-        "speed": 70,
-        "special_attack": 100,
-        "special_defense": 60
+  "base_stats": {
+    "hp": 80,
+    "attack": 105,
+    "defense": 65,
+    "speed": 70,
+    "special_attack": 100,
+    "special_defense": 60
+  },
+  "types": [
+    "TYPE_GRASS",
+    "TYPE_POISON"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 191,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 3,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_GRASS",
+    "EGG_GROUP_GRASS"
+  ],
+  "abilities": [
+    "ABILITY_CHLOROPHYLL",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_GREEN",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_STOCKPILE"
+      ],
+      [
+        1,
+        "MOVE_SWALLOW"
+      ],
+      [
+        1,
+        "MOVE_SPIT_UP"
+      ],
+      [
+        1,
+        "MOVE_VINE_WHIP"
+      ],
+      [
+        1,
+        "MOVE_SLEEP_POWDER"
+      ],
+      [
+        1,
+        "MOVE_SWEET_SCENT"
+      ],
+      [
+        1,
+        "MOVE_RAZOR_LEAF"
+      ],
+      [
+        47,
+        "MOVE_LEAF_STORM"
+      ],
+      [
+        47,
+        "MOVE_LEAF_BLADE"
+      ]
+    ],
+    "by_tm": [
+      "TM06",
+      "TM09",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM19",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM32",
+      "TM36",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM46",
+      "TM53",
+      "TM58",
+      "TM68",
+      "TM70",
+      "TM75",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90",
+      "HM01"
+    ],
+    "by_tutor": [
+      "MOVE_GASTRO_ACID",
+      "MOVE_SNORE",
+      "MOVE_SYNTHESIS",
+      "MOVE_SEED_BOMB",
+      "MOVE_KNOCK_OFF",
+      "MOVE_SUCKER_PUNCH"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_BELLSPROUT",
+  "footprint": {
+    "has": false,
+    "size": "FOOTPRINT_LARGE",
+    "type": "FOOTPRINT_TYPE_SLOW"
+  },
+  "pokedex_data": {
+    "height_inches": 67,
+    "weight_pounds": 34.2,
+    "body_shape": "SHAPE_HEAD_BASE",
+    "trainer_scale_f": 340,
+    "pokemon_scale_f": 256,
+    "trainer_scale_m": 312,
+    "pokemon_scale_m": 256,
+    "trainer_pos_f": 4,
+    "pokemon_pos_f": 4,
+    "trainer_pos_m": 2,
+    "pokemon_pos_m": 4,
+    "en": {
+      "name": "Victreebel",
+      "category": "Flycatcher Pok\u00e9mon",
+      "entry_text": [
+        "It pools in its mouth a fluid with\n",
+        "a honeylike scent, which is really\n",
+        "an acid that dissolves anything."
+      ]
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
-    "catch_rate": 45,
-    "base_exp_reward": 191,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 3,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "EMPIFLOR",
+      "category": "Pok\u00e9mon Carnivore",
+      "entry_text": [
+        "Sa bouche s\u00e9cr\u00e8te un fluide \u00e0\n",
+        "l\u2019odeur de miel, qui s\u2019av\u00e8re \u00eatre\n",
+        "un acide extr\u00eamement corrosif."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "SARZENIA",
+      "category": "Fliegentot",
+      "entry_text": [
+        "In seinem Maul sammelt sich eine\n",
+        "Fl\u00fcssigkeit, die nach Honig riecht,\n",
+        "in Wahrheit aber \u00e4tzend ist."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_GREEN",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_STOCKPILE" ],
-            [ 1, "MOVE_SWALLOW" ],
-            [ 1, "MOVE_SPIT_UP" ],
-            [ 1, "MOVE_VINE_WHIP" ],
-            [ 1, "MOVE_SLEEP_POWDER" ],
-            [ 1, "MOVE_SWEET_SCENT" ],
-            [ 1, "MOVE_RAZOR_LEAF" ],
-            [ 47, "MOVE_LEAF_STORM" ],
-            [ 47, "MOVE_LEAF_BLADE" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM53",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_GASTRO_ACID",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SUCKER_PUNCH"
-        ]
+    "it": {
+      "name": "VICTREEBEL",
+      "category": "Pok\u00e9mon Moschivoro",
+      "entry_text": [
+        "Tiene in bocca un liquido dall\u2019aroma\n",
+        "simile al miele, che in realt\u00e0 \u00e8 un\n",
+        "acido altamente corrosivo."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_BELLSPROUT",
-    "footprint": {
-        "has": false,
-        "size": "FOOTPRINT_LARGE",
-        "type": "FOOTPRINT_TYPE_SLOW"
+    "es": {
+      "name": "VICTREEBEL",
+      "category": "Pok\u00e9mon Matamoscas",
+      "entry_text": [
+        "Su boca segrega un fluido de olor\n",
+        "parecido a la miel: un potente\n",
+        "\u00e1cido que disuelve cualquier cosa."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 67,
-        "weight_pounds": 34.2,
-        "body_shape": "SHAPE_HEAD_BASE",
-        "trainer_scale_f": 340,
-        "pokemon_scale_f": 256,
-        "trainer_scale_m": 312,
-        "pokemon_scale_m": 256,
-        "trainer_pos_f": 4,
-        "pokemon_pos_f": 4,
-        "trainer_pos_m": 2,
-        "pokemon_pos_m": 4,
-        "en": {
-            "name": "VICTREEBEL",
-            "category": "Flycatcher Pokémon",
-            "entry_text": [
-                "It pools in its mouth a fluid with\n",
-                "a honeylike scent, which is really\n",
-                "an acid that dissolves anything."
-            ]
-        },
-        "fr": {
-            "name": "EMPIFLOR",
-            "category": "Pokémon Carnivore",
-            "entry_text": [
-                "Sa bouche sécrète un fluide à\n",
-                "l’odeur de miel, qui s’avère être\n",
-                "un acide extrêmement corrosif."
-            ]
-        },
-        "de": {
-            "name": "SARZENIA",
-            "category": "Fliegentot",
-            "entry_text": [
-                "In seinem Maul sammelt sich eine\n",
-                "Flüssigkeit, die nach Honig riecht,\n",
-                "in Wahrheit aber ätzend ist."
-            ]
-        },
-        "it": {
-            "name": "VICTREEBEL",
-            "category": "Pokémon Moschivoro",
-            "entry_text": [
-                "Tiene in bocca un liquido dall’aroma\n",
-                "simile al miele, che in realtà è un\n",
-                "acido altamente corrosivo."
-            ]
-        },
-        "es": {
-            "name": "VICTREEBEL",
-            "category": "Pokémon Matamoscas",
-            "entry_text": [
-                "Su boca segrega un fluido de olor\n",
-                "parecido a la miel: un potente\n",
-                "ácido que disuelve cualquier cosa."
-            ]
-        },
-        "jp": {
-            "name": "ウツボット",
-            "category": "ハエとりポケモン",
-            "entry_text": [
-                "ミツのような　かおりの　えきたいを\n",
-                "くちに　ためているが　それは\n",
-                "なんでも　とかす　ようかいえきだ。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 70,
-        "rarity": 20,
-        "unused": 1537
+    "jp": {
+      "name": "\u30a6\u30c4\u30dc\u30c3\u30c8",
+      "category": "\u30cf\u30a8\u3068\u308a\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u30df\u30c4\u306e\u3088\u3046\u306a\u3000\u304b\u304a\u308a\u306e\u3000\u3048\u304d\u305f\u3044\u3092\n",
+        "\u304f\u3061\u306b\u3000\u305f\u3081\u3066\u3044\u308b\u304c\u3000\u305d\u308c\u306f\n",
+        "\u306a\u3093\u3067\u3082\u3000\u3068\u304b\u3059\u3000\u3088\u3046\u304b\u3044\u3048\u304d\u3060\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 70,
+    "rarity": 20,
+    "unused": 1537
+  }
 }

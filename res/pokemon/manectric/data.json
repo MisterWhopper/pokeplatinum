@@ -1,178 +1,238 @@
 {
-    "base_stats": {
-        "hp": 70,
-        "attack": 75,
-        "defense": 60,
-        "speed": 105,
-        "special_attack": 105,
-        "special_defense": 60
+  "base_stats": {
+    "hp": 70,
+    "attack": 75,
+    "defense": 60,
+    "speed": 105,
+    "special_attack": 105,
+    "special_defense": 60
+  },
+  "types": [
+    "TYPE_ELECTRIC",
+    "TYPE_ELECTRIC"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 168,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 2,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_FIELD",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_STATIC",
+    "ABILITY_LIGHTNING_ROD"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_YELLOW",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_FIRE_FANG"
+      ],
+      [
+        1,
+        "MOVE_TACKLE"
+      ],
+      [
+        1,
+        "MOVE_THUNDER_WAVE"
+      ],
+      [
+        1,
+        "MOVE_LEER"
+      ],
+      [
+        1,
+        "MOVE_HOWL"
+      ],
+      [
+        4,
+        "MOVE_THUNDER_WAVE"
+      ],
+      [
+        9,
+        "MOVE_LEER"
+      ],
+      [
+        12,
+        "MOVE_HOWL"
+      ],
+      [
+        17,
+        "MOVE_QUICK_ATTACK"
+      ],
+      [
+        20,
+        "MOVE_SPARK"
+      ],
+      [
+        25,
+        "MOVE_ODOR_SLEUTH"
+      ],
+      [
+        30,
+        "MOVE_BITE"
+      ],
+      [
+        37,
+        "MOVE_THUNDER_FANG"
+      ],
+      [
+        42,
+        "MOVE_ROAR"
+      ],
+      [
+        49,
+        "MOVE_DISCHARGE"
+      ],
+      [
+        54,
+        "MOVE_CHARGE"
+      ],
+      [
+        61,
+        "MOVE_THUNDER"
+      ]
+    ],
+    "by_tm": [
+      "TM05",
+      "TM06",
+      "TM10",
+      "TM15",
+      "TM16",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM23",
+      "TM24",
+      "TM25",
+      "TM27",
+      "TM32",
+      "TM34",
+      "TM35",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM46",
+      "TM50",
+      "TM57",
+      "TM58",
+      "TM68",
+      "TM70",
+      "TM73",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "HM04"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_SNORE",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_MAGNET_RISE",
+      "MOVE_SWIFT"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_ELECTRIKE",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 59,
+    "weight_pounds": 88.6,
+    "body_shape": "SHAPE_QUADRUPED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 238,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 238,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 5,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 5,
+    "en": {
+      "name": "Manectric",
+      "category": "Discharge Pok\u00e9mon",
+      "entry_text": [
+        "It discharges electricity from its\n",
+        "mane. It creates a thundercloud\n",
+        "overhead to drop lightning bolts."
+      ]
     },
-    "types": [ "TYPE_ELECTRIC", "TYPE_ELECTRIC" ],
-    "catch_rate": 45,
-    "base_exp_reward": 168,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 2,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "ELECSPRINT",
+      "category": "Pok\u00e9mon D\u00e9charge",
+      "entry_text": [
+        "Il lib\u00e8re l\u2019\u00e9lectricit\u00e9 par sa\n",
+        "crini\u00e8re. Il cr\u00e9e un nuage d\u2019orage\n",
+        "pour appeler la foudre."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "VOLTENSO",
+      "category": "Entladung",
+      "entry_text": [
+        "Aus seiner M\u00e4hne entl\u00e4dt es Elekt-\n",
+        "rizit\u00e4t. Es generiert eine Gewitter-\n",
+        "wolke, aus der es Blitze entl\u00e4dt."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_STATIC", "ABILITY_LIGHTNING_ROD" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_YELLOW",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_FIRE_FANG" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_THUNDER_WAVE" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_HOWL" ],
-            [ 4, "MOVE_THUNDER_WAVE" ],
-            [ 9, "MOVE_LEER" ],
-            [ 12, "MOVE_HOWL" ],
-            [ 17, "MOVE_QUICK_ATTACK" ],
-            [ 20, "MOVE_SPARK" ],
-            [ 25, "MOVE_ODOR_SLEUTH" ],
-            [ 30, "MOVE_BITE" ],
-            [ 37, "MOVE_THUNDER_FANG" ],
-            [ 42, "MOVE_ROAR" ],
-            [ 49, "MOVE_DISCHARGE" ],
-            [ 54, "MOVE_CHARGE" ],
-            [ 61, "MOVE_THUNDER" ]
-        ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM50",
-            "TM57",
-            "TM58",
-            "TM68",
-            "TM70",
-            "TM73",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_MAGNET_RISE",
-            "MOVE_SWIFT"
-        ]
+    "it": {
+      "name": "MANECTRIC",
+      "category": "Pok\u00e9mon Scossa",
+      "entry_text": [
+        "Scarica elettricit\u00e0 dalla criniera.\n",
+        "Crea nubi temporalesche in\n",
+        "cielo che fanno cadere saette."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_ELECTRIKE",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "MANECTRIC",
+      "category": "Pok\u00e9mon Descarga",
+      "entry_text": [
+        "Descarga electricidad desde su\n",
+        "melena. Crea nubarrones desde\n",
+        "los que lanza rayos."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 59,
-        "weight_pounds": 88.6,
-        "body_shape": "SHAPE_QUADRUPED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 238,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 238,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 5,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 5,
-        "en": {
-            "name": "MANECTRIC",
-            "category": "Discharge Pokémon",
-            "entry_text": [
-                "It discharges electricity from its\n",
-                "mane. It creates a thundercloud\n",
-                "overhead to drop lightning bolts."
-            ]
-        },
-        "fr": {
-            "name": "ELECSPRINT",
-            "category": "Pokémon Décharge",
-            "entry_text": [
-                "Il libère l’électricité par sa\n",
-                "crinière. Il crée un nuage d’orage\n",
-                "pour appeler la foudre."
-            ]
-        },
-        "de": {
-            "name": "VOLTENSO",
-            "category": "Entladung",
-            "entry_text": [
-                "Aus seiner Mähne entlädt es Elekt-\n",
-                "rizität. Es generiert eine Gewitter-\n",
-                "wolke, aus der es Blitze entlädt."
-            ]
-        },
-        "it": {
-            "name": "MANECTRIC",
-            "category": "Pokémon Scossa",
-            "entry_text": [
-                "Scarica elettricità dalla criniera.\n",
-                "Crea nubi temporalesche in\n",
-                "cielo che fanno cadere saette."
-            ]
-        },
-        "es": {
-            "name": "MANECTRIC",
-            "category": "Pokémon Descarga",
-            "entry_text": [
-                "Descarga electricidad desde su\n",
-                "melena. Crea nubarrones desde\n",
-                "los que lanza rayos."
-            ]
-        },
-        "jp": {
-            "name": "ライボルト",
-            "category": "ほうでんポケモン",
-            "entry_text": [
-                "たてがみから　ほうでんしている。\n",
-                "ずじょうに　かみなりぐもを　つくり\n",
-                "いなずまを　おとして　こうげきする。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 70,
-        "rarity": 20,
-        "unused": 1799
+    "jp": {
+      "name": "\u30e9\u30a4\u30dc\u30eb\u30c8",
+      "category": "\u307b\u3046\u3067\u3093\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u305f\u3066\u304c\u307f\u304b\u3089\u3000\u307b\u3046\u3067\u3093\u3057\u3066\u3044\u308b\u3002\n",
+        "\u305a\u3058\u3087\u3046\u306b\u3000\u304b\u307f\u306a\u308a\u3050\u3082\u3092\u3000\u3064\u304f\u308a\n",
+        "\u3044\u306a\u305a\u307e\u3092\u3000\u304a\u3068\u3057\u3066\u3000\u3053\u3046\u3052\u304d\u3059\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 70,
+    "rarity": 20,
+    "unused": 1799
+  }
 }

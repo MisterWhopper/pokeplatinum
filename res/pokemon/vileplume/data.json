@@ -1,164 +1,191 @@
 {
-    "base_stats": {
-        "hp": 75,
-        "attack": 80,
-        "defense": 85,
-        "speed": 50,
-        "special_attack": 100,
-        "special_defense": 90
+  "base_stats": {
+    "hp": 75,
+    "attack": 80,
+    "defense": 85,
+    "speed": 50,
+    "special_attack": 100,
+    "special_defense": 90
+  },
+  "types": [
+    "TYPE_GRASS",
+    "TYPE_POISON"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 184,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 3,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_GRASS",
+    "EGG_GROUP_GRASS"
+  ],
+  "abilities": [
+    "ABILITY_CHLOROPHYLL",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_RED",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_MEGA_DRAIN"
+      ],
+      [
+        1,
+        "MOVE_AROMATHERAPY"
+      ],
+      [
+        1,
+        "MOVE_STUN_SPORE"
+      ],
+      [
+        1,
+        "MOVE_POISON_POWDER"
+      ],
+      [
+        53,
+        "MOVE_PETAL_DANCE"
+      ],
+      [
+        65,
+        "MOVE_SOLAR_BEAM"
+      ]
+    ],
+    "by_tm": [
+      "TM06",
+      "TM09",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM19",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM32",
+      "TM36",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM53",
+      "TM56",
+      "TM58",
+      "TM60",
+      "TM68",
+      "TM70",
+      "TM75",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90",
+      "HM01"
+    ],
+    "by_tutor": [
+      "MOVE_GASTRO_ACID",
+      "MOVE_SNORE",
+      "MOVE_SYNTHESIS",
+      "MOVE_SEED_BOMB"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_ODDISH",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_CUTE"
+  },
+  "pokedex_data": {
+    "height_inches": 47,
+    "weight_pounds": 41.0,
+    "body_shape": "SHAPE_BIPEDAL_TAILLESS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 281,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 281,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 14,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 14,
+    "en": {
+      "name": "Vileplume",
+      "category": "Flower Pok\u00e9mon",
+      "entry_text": [
+        "Its petals are the largest in the\n",
+        "world. As it walks, it scatters\n",
+        "extremely allergenic pollen."
+      ]
     },
-    "types": [ "TYPE_GRASS", "TYPE_POISON" ],
-    "catch_rate": 45,
-    "base_exp_reward": 184,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 3,
-        "special_defense": 0
+    "fr": {
+      "name": "RAFFLESIA",
+      "category": "Pok\u00e9mon Fleur",
+      "entry_text": [
+        "Ses p\u00e9tales sont les plus grands\n",
+        "du monde. Il marche en r\u00e9pandant\n",
+        "un pollen extr\u00eamement allerg\u00e8ne."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "GIFLOR",
+      "category": "Blume",
+      "entry_text": [
+        "Es besitzt die gr\u00f6\u00dften Bl\u00e4tter der\n",
+        "Welt. Es verteilt beim Gehen Pollen,\n",
+        "die schreckliche Allergien ausl\u00f6sen."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_GRASS", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_CHLOROPHYLL", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_RED",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_MEGA_DRAIN" ],
-            [ 1, "MOVE_AROMATHERAPY" ],
-            [ 1, "MOVE_STUN_SPORE" ],
-            [ 1, "MOVE_POISON_POWDER" ],
-            [ 53, "MOVE_PETAL_DANCE" ],
-            [ 65, "MOVE_SOLAR_BEAM" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM53",
-            "TM56",
-            "TM58",
-            "TM60",
-            "TM68",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_GASTRO_ACID",
-            "MOVE_SNORE",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB"
-        ]
+    "it": {
+      "name": "VILEPLUME",
+      "category": "Pok\u00e9mon Fiore",
+      "entry_text": [
+        "I suoi petali sono i pi\u00f9 grandi al\n",
+        "mondo. Mentre cammina diffonde\n",
+        "un polline che causa allergie."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_ODDISH",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_CUTE"
+    "es": {
+      "name": "VILEPLUME",
+      "category": "Pok\u00e9mon Flor",
+      "entry_text": [
+        "Sus p\u00e9talos son los m\u00e1s grandes\n",
+        "del mundo. Cuando anda desprende\n",
+        "un terrible polen alerg\u00e9nico."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 47,
-        "weight_pounds": 41.0,
-        "body_shape": "SHAPE_BIPEDAL_TAILLESS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 281,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 281,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 14,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 14,
-        "en": {
-            "name": "VILEPLUME",
-            "category": "Flower Pokémon",
-            "entry_text": [
-                "Its petals are the largest in the\n",
-                "world. As it walks, it scatters\n",
-                "extremely allergenic pollen."
-            ]
-        },
-        "fr": {
-            "name": "RAFFLESIA",
-            "category": "Pokémon Fleur",
-            "entry_text": [
-                "Ses pétales sont les plus grands\n",
-                "du monde. Il marche en répandant\n",
-                "un pollen extrêmement allergène."
-            ]
-        },
-        "de": {
-            "name": "GIFLOR",
-            "category": "Blume",
-            "entry_text": [
-                "Es besitzt die größten Blätter der\n",
-                "Welt. Es verteilt beim Gehen Pollen,\n",
-                "die schreckliche Allergien auslösen."
-            ]
-        },
-        "it": {
-            "name": "VILEPLUME",
-            "category": "Pokémon Fiore",
-            "entry_text": [
-                "I suoi petali sono i più grandi al\n",
-                "mondo. Mentre cammina diffonde\n",
-                "un polline che causa allergie."
-            ]
-        },
-        "es": {
-            "name": "VILEPLUME",
-            "category": "Pokémon Flor",
-            "entry_text": [
-                "Sus pétalos son los más grandes\n",
-                "del mundo. Cuando anda desprende\n",
-                "un terrible polen alergénico."
-            ]
-        },
-        "jp": {
-            "name": "ラフレシア",
-            "category": "フラワ－ポケモン",
-            "entry_text": [
-                "はなびらの　おおきさは　せかいいち。\n",
-                "ひどい　アレルギ－を　ひきおこす\n",
-                "どくかふんを　ばらまいて　あるく。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 70,
-        "rarity": 20,
-        "unused": 1537
+    "jp": {
+      "name": "\u30e9\u30d5\u30ec\u30b7\u30a2",
+      "category": "\u30d5\u30e9\u30ef\uff0d\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u306f\u306a\u3073\u3089\u306e\u3000\u304a\u304a\u304d\u3055\u306f\u3000\u305b\u304b\u3044\u3044\u3061\u3002\n",
+        "\u3072\u3069\u3044\u3000\u30a2\u30ec\u30eb\u30ae\uff0d\u3092\u3000\u3072\u304d\u304a\u3053\u3059\n",
+        "\u3069\u304f\u304b\u3075\u3093\u3092\u3000\u3070\u3089\u307e\u3044\u3066\u3000\u3042\u308b\u304f\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 70,
+    "rarity": 20,
+    "unused": 1537
+  }
 }

@@ -1,194 +1,248 @@
 {
-    "base_stats": {
-        "hp": 150,
-        "attack": 160,
-        "defense": 100,
-        "speed": 100,
-        "special_attack": 95,
-        "special_defense": 65
+  "base_stats": {
+    "hp": 150,
+    "attack": 160,
+    "defense": 100,
+    "speed": 100,
+    "special_attack": 95,
+    "special_defense": 65
+  },
+  "types": [
+    "TYPE_NORMAL",
+    "TYPE_NORMAL"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 210,
+  "ev_yields": {
+    "hp": 3,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 15,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_FIELD",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_TRUANT",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_BROWN",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_SCRATCH"
+      ],
+      [
+        1,
+        "MOVE_YAWN"
+      ],
+      [
+        1,
+        "MOVE_ENCORE"
+      ],
+      [
+        1,
+        "MOVE_SLACK_OFF"
+      ],
+      [
+        7,
+        "MOVE_ENCORE"
+      ],
+      [
+        13,
+        "MOVE_SLACK_OFF"
+      ],
+      [
+        19,
+        "MOVE_FAINT_ATTACK"
+      ],
+      [
+        25,
+        "MOVE_AMNESIA"
+      ],
+      [
+        31,
+        "MOVE_COVET"
+      ],
+      [
+        36,
+        "MOVE_SWAGGER"
+      ],
+      [
+        37,
+        "MOVE_COUNTER"
+      ],
+      [
+        43,
+        "MOVE_FLAIL"
+      ],
+      [
+        49,
+        "MOVE_FLING"
+      ],
+      [
+        55,
+        "MOVE_PUNISHMENT"
+      ],
+      [
+        61,
+        "MOVE_HAMMER_ARM"
+      ]
+    ],
+    "by_tm": [
+      "TM01",
+      "TM03",
+      "TM05",
+      "TM06",
+      "TM08",
+      "TM10",
+      "TM11",
+      "TM12",
+      "TM13",
+      "TM14",
+      "TM15",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM22",
+      "TM24",
+      "TM25",
+      "TM26",
+      "TM27",
+      "TM30",
+      "TM31",
+      "TM32",
+      "TM34",
+      "TM35",
+      "TM38",
+      "TM39",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM52",
+      "TM56",
+      "TM58",
+      "TM65",
+      "TM68",
+      "TM78",
+      "TM80",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "HM01",
+      "HM04",
+      "HM06",
+      "HM08"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_ICY_WIND",
+      "MOVE_THUNDER_PUNCH",
+      "MOVE_FIRE_PUNCH",
+      "MOVE_ICE_PUNCH",
+      "MOVE_SNORE",
+      "MOVE_GUNK_SHOT",
+      "MOVE_SUCKER_PUNCH"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_SLAKOTH",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_LARGE",
+    "type": "FOOTPRINT_TYPE_SLOW"
+  },
+  "pokedex_data": {
+    "height_inches": 79,
+    "weight_pounds": 287.7,
+    "body_shape": "SHAPE_BIPEDAL_TAILLESS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 246,
+    "trainer_scale_m": 267,
+    "pokemon_scale_m": 256,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 5,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 7,
+    "en": {
+      "name": "Slaking",
+      "category": "Lazy Pok\u00e9mon",
+      "entry_text": [
+        "The world\u2019s laziest Pok\u00e9mon. When\n",
+        "it is lounging, it is actually saving\n",
+        "energy for striking back."
+      ]
     },
-    "types": [ "TYPE_NORMAL", "TYPE_NORMAL" ],
-    "catch_rate": 45,
-    "base_exp_reward": 210,
-    "ev_yields": {
-        "hp": 3,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "MONAFLEMIT",
+      "category": "Pok\u00e9mon Fain\u00e9ant",
+      "entry_text": [
+        "Le Pok\u00e9mon le plus fain\u00e9ant du\n",
+        "monde. Il s\u2019allonge pour \u00e9conomiser\n",
+        "ses forces et contre-attaquer."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "LETARKING",
+      "category": "M\u00fc\u00dfig",
+      "entry_text": [
+        "Das faulste PKMN der Welt. Wenn es\n",
+        "faulenzt, sammelt es in Wahrheit\n",
+        "Energie, um zuzuschlagen."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 15,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_TRUANT", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_BROWN",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_YAWN" ],
-            [ 1, "MOVE_ENCORE" ],
-            [ 1, "MOVE_SLACK_OFF" ],
-            [ 7, "MOVE_ENCORE" ],
-            [ 13, "MOVE_SLACK_OFF" ],
-            [ 19, "MOVE_FAINT_ATTACK" ],
-            [ 25, "MOVE_AMNESIA" ],
-            [ 31, "MOVE_COVET" ],
-            [ 36, "MOVE_SWAGGER" ],
-            [ 37, "MOVE_COUNTER" ],
-            [ 43, "MOVE_FLAIL" ],
-            [ 49, "MOVE_FLING" ],
-            [ 55, "MOVE_PUNISHMENT" ],
-            [ 61, "MOVE_HAMMER_ARM" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM05",
-            "TM06",
-            "TM08",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM22",
-            "TM24",
-            "TM25",
-            "TM26",
-            "TM27",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM34",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM52",
-            "TM56",
-            "TM58",
-            "TM65",
-            "TM68",
-            "TM78",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_THUNDER_PUNCH",
-            "MOVE_FIRE_PUNCH",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_GUNK_SHOT",
-            "MOVE_SUCKER_PUNCH"
-        ]
+    "it": {
+      "name": "SLAKING",
+      "category": "Pok\u00e9mon Pigrizia",
+      "entry_text": [
+        "Il Pok\u00e9mon pi\u00f9 pigro in assoluto.\n",
+        "Stando disteso, in realt\u00e0 cerca di\n",
+        "risparmiare forze per attaccare."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_SLAKOTH",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_LARGE",
-        "type": "FOOTPRINT_TYPE_SLOW"
+    "es": {
+      "name": "SLAKING",
+      "category": "Pok\u00e9mon Holgaz\u00e1n",
+      "entry_text": [
+        "El Pok\u00e9mon m\u00e1s perezoso del\n",
+        "mundo. Si est\u00e1 tumbado, es que\n",
+        "re\u00fane fuerzas para contraatacar."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 79,
-        "weight_pounds": 287.7,
-        "body_shape": "SHAPE_BIPEDAL_TAILLESS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 246,
-        "trainer_scale_m": 267,
-        "pokemon_scale_m": 256,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 5,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 7,
-        "en": {
-            "name": "SLAKING",
-            "category": "Lazy Pokémon",
-            "entry_text": [
-                "The world’s laziest Pokémon. When\n",
-                "it is lounging, it is actually saving\n",
-                "energy for striking back."
-            ]
-        },
-        "fr": {
-            "name": "MONAFLEMIT",
-            "category": "Pokémon Fainéant",
-            "entry_text": [
-                "Le Pokémon le plus fainéant du\n",
-                "monde. Il s’allonge pour économiser\n",
-                "ses forces et contre-attaquer."
-            ]
-        },
-        "de": {
-            "name": "LETARKING",
-            "category": "Müßig",
-            "entry_text": [
-                "Das faulste PKMN der Welt. Wenn es\n",
-                "faulenzt, sammelt es in Wahrheit\n",
-                "Energie, um zuzuschlagen."
-            ]
-        },
-        "it": {
-            "name": "SLAKING",
-            "category": "Pokémon Pigrizia",
-            "entry_text": [
-                "Il Pokémon più pigro in assoluto.\n",
-                "Stando disteso, in realtà cerca di\n",
-                "risparmiare forze per attaccare."
-            ]
-        },
-        "es": {
-            "name": "SLAKING",
-            "category": "Pokémon Holgazán",
-            "entry_text": [
-                "El Pokémon más perezoso del\n",
-                "mundo. Si está tumbado, es que\n",
-                "reúne fuerzas para contraatacar."
-            ]
-        },
-        "jp": {
-            "name": "ケッキング",
-            "category": "ものぐさポケモン",
-            "entry_text": [
-                "せかいいち　ぐうたらな　ポケモン。\n",
-                "ねころがっているだけに　みえるが\n",
-                "はんげきの　パワ－を　ためている。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 1285
+    "jp": {
+      "name": "\u30b1\u30c3\u30ad\u30f3\u30b0",
+      "category": "\u3082\u306e\u3050\u3055\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u305b\u304b\u3044\u3044\u3061\u3000\u3050\u3046\u305f\u3089\u306a\u3000\u30dd\u30b1\u30e2\u30f3\u3002\n",
+        "\u306d\u3053\u308d\u304c\u3063\u3066\u3044\u308b\u3060\u3051\u306b\u3000\u307f\u3048\u308b\u304c\n",
+        "\u306f\u3093\u3052\u304d\u306e\u3000\u30d1\u30ef\uff0d\u3092\u3000\u305f\u3081\u3066\u3044\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 1285
+  }
 }

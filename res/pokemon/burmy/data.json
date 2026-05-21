@@ -1,141 +1,173 @@
 {
-    "base_stats": {
-        "hp": 40,
-        "attack": 29,
-        "defense": 45,
-        "speed": 36,
-        "special_attack": 29,
-        "special_defense": 45
-    },
-    "types": [ "TYPE_BUG", "TYPE_BUG" ],
-    "catch_rate": 120,
-    "base_exp_reward": 61,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 1
-    },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
-    },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 15,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_SHED_SKIN", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_GRAY",
-    "flip_sprite": false,
-    "icon_palette": [
-        [ "base", 1 ],
-        [ "sandy", 1 ],
-        [ "trash", 0 ]
+  "base_stats": {
+    "hp": 40,
+    "attack": 29,
+    "defense": 45,
+    "speed": 36,
+    "special_attack": 29,
+    "special_defense": 45
+  },
+  "types": [
+    "TYPE_BUG",
+    "TYPE_BUG"
+  ],
+  "catch_rate": 120,
+  "base_exp_reward": 61,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 1
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 15,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_BUG",
+    "EGG_GROUP_BUG"
+  ],
+  "abilities": [
+    "ABILITY_SHED_SKIN",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_GRAY",
+  "flip_sprite": false,
+  "icon_palette": [
+    [
+      "base",
+      1
     ],
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_PROTECT" ],
-            [ 10, "MOVE_TACKLE" ],
-            [ 15, "MOVE_BUG_BITE" ],
-            [ 20, "MOVE_HIDDEN_POWER" ]
-        ],
-        "by_tm": [  ],
-        "by_tutor": [ "MOVE_SNORE" ]
-    },
-    "evolutions": [
-        [
-            "EVO_LEVEL_FEMALE",
-            20,
-            "SPECIES_WORMADAM"
-        ],
-        [
-            "EVO_LEVEL_MALE",
-            20,
-            "SPECIES_MOTHIM"
-        ]
+    [
+      "sandy",
+      1
     ],
-    "offspring": "SPECIES_BURMY",
-    "footprint": {
-        "has": false,
-        "size": "FOOTPRINT_LARGE",
-        "type": "FOOTPRINT_TYPE_CUTE"
+    [
+      "trash",
+      0
+    ]
+  ],
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_PROTECT"
+      ],
+      [
+        10,
+        "MOVE_TACKLE"
+      ],
+      [
+        15,
+        "MOVE_BUG_BITE"
+      ],
+      [
+        20,
+        "MOVE_HIDDEN_POWER"
+      ]
+    ],
+    "by_tm": [],
+    "by_tutor": [
+      "MOVE_SNORE"
+    ]
+  },
+  "evolutions": [
+    [
+      "EVO_LEVEL_FEMALE",
+      20,
+      "SPECIES_WORMADAM"
+    ],
+    [
+      "EVO_LEVEL_MALE",
+      20,
+      "SPECIES_MOTHIM"
+    ]
+  ],
+  "offspring": "SPECIES_BURMY",
+  "footprint": {
+    "has": false,
+    "size": "FOOTPRINT_LARGE",
+    "type": "FOOTPRINT_TYPE_CUTE"
+  },
+  "pokedex_data": {
+    "height_inches": 8,
+    "weight_pounds": 7.5,
+    "body_shape": "SHAPE_SERPENTINE",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 545,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 545,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 65530,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 65530,
+    "en": {
+      "name": "Burmy",
+      "category": "Bagworm Pok\u00e9mon",
+      "entry_text": [
+        "Even if it is born where there are\n",
+        "no cocooning materials, it somehow\n",
+        "always ends up with a cloak."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 8,
-        "weight_pounds": 7.5,
-        "body_shape": "SHAPE_SERPENTINE",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 545,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 545,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 65530,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 65530,
-        "en": {
-            "name": "BURMY",
-            "category": "Bagworm Pokémon",
-            "entry_text": [
-                "Even if it is born where there are\n",
-                "no cocooning materials, it somehow\n",
-                "always ends up with a cloak."
-            ]
-        },
-        "fr": {
-            "name": "CHENITI",
-            "category": "Pokémon Ver Caché",
-            "entry_text": [
-                "Pour se protéger des vents glacés\n",
-                "de l’hiver, il s’est tissé une cape\n",
-                "de feuilles et de brindilles."
-            ]
-        },
-        "de": {
-            "name": "BURMY",
-            "category": "Beutelwurm",
-            "entry_text": [
-                "Um sich vor dem eisigen Winterwind\n",
-                "zu schützen, legt es sich unter\n",
-                "einen Umhang aus Ästen und Laub."
-            ]
-        },
-        "it": {
-            "name": "BURMY",
-            "category": "Pokémon Larva",
-            "entry_text": [
-                "Per ripararsi dal freddo e dai venti\n",
-                "invernali si copre con un manto\n",
-                "fatto di rami e foglie."
-            ]
-        },
-        "es": {
-            "name": "BURMY",
-            "category": "Pokémon Larva",
-            "entry_text": [
-                "Para protegerse de los vientos\n",
-                "fríos invernales, se cubre con un\n",
-                "caparazón de ramas y hojas."
-            ]
-        },
-        "jp": {
-            "name": "ミノムッチ",
-            "category": "みのむしポケモン",
-            "entry_text": [
-                "つめたい　こがらしを　ふせぐため\n",
-                "こえだや　おちばを　ざいりょうに\n",
-                "ミノを　つくり　からだを　おおう。"
-            ]
-        }
+    "fr": {
+      "name": "CHENITI",
+      "category": "Pok\u00e9mon Ver Cach\u00e9",
+      "entry_text": [
+        "Pour se prot\u00e9ger des vents glac\u00e9s\n",
+        "de l\u2019hiver, il s\u2019est tiss\u00e9 une cape\n",
+        "de feuilles et de brindilles."
+      ]
     },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 50,
-        "rarity": 30,
-        "unused": 1028
+    "de": {
+      "name": "BURMY",
+      "category": "Beutelwurm",
+      "entry_text": [
+        "Um sich vor dem eisigen Winterwind\n",
+        "zu sch\u00fctzen, legt es sich unter\n",
+        "einen Umhang aus \u00c4sten und Laub."
+      ]
+    },
+    "it": {
+      "name": "BURMY",
+      "category": "Pok\u00e9mon Larva",
+      "entry_text": [
+        "Per ripararsi dal freddo e dai venti\n",
+        "invernali si copre con un manto\n",
+        "fatto di rami e foglie."
+      ]
+    },
+    "es": {
+      "name": "BURMY",
+      "category": "Pok\u00e9mon Larva",
+      "entry_text": [
+        "Para protegerse de los vientos\n",
+        "fr\u00edos invernales, se cubre con un\n",
+        "caparaz\u00f3n de ramas y hojas."
+      ]
+    },
+    "jp": {
+      "name": "\u30df\u30ce\u30e0\u30c3\u30c1",
+      "category": "\u307f\u306e\u3080\u3057\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3064\u3081\u305f\u3044\u3000\u3053\u304c\u3089\u3057\u3092\u3000\u3075\u305b\u3050\u305f\u3081\n",
+        "\u3053\u3048\u3060\u3084\u3000\u304a\u3061\u3070\u3092\u3000\u3056\u3044\u308a\u3087\u3046\u306b\n",
+        "\u30df\u30ce\u3092\u3000\u3064\u304f\u308a\u3000\u304b\u3089\u3060\u3092\u3000\u304a\u304a\u3046\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 50,
+    "rarity": 30,
+    "unused": 1028
+  }
 }

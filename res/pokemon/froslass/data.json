@@ -1,190 +1,244 @@
 {
-    "base_stats": {
-        "hp": 70,
-        "attack": 80,
-        "defense": 70,
-        "speed": 110,
-        "special_attack": 80,
-        "special_defense": 70
+  "base_stats": {
+    "hp": 70,
+    "attack": 80,
+    "defense": 70,
+    "speed": 110,
+    "special_attack": 80,
+    "special_defense": 70
+  },
+  "types": [
+    "TYPE_ICE",
+    "TYPE_GHOST"
+  ],
+  "catch_rate": 75,
+  "base_exp_reward": 187,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 2,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_BABIRI_BERRY"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_ONLY",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_FAIRY",
+    "EGG_GROUP_MINERAL"
+  ],
+  "abilities": [
+    "ABILITY_SNOW_CLOAK",
+    "ABILITY_SNOW_CLOAK"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_WHITE",
+  "flip_sprite": false,
+  "icon_palette": 2,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_POWDER_SNOW"
+      ],
+      [
+        1,
+        "MOVE_LEER"
+      ],
+      [
+        1,
+        "MOVE_DOUBLE_TEAM"
+      ],
+      [
+        1,
+        "MOVE_ASTONISH"
+      ],
+      [
+        4,
+        "MOVE_DOUBLE_TEAM"
+      ],
+      [
+        10,
+        "MOVE_ASTONISH"
+      ],
+      [
+        13,
+        "MOVE_ICY_WIND"
+      ],
+      [
+        19,
+        "MOVE_CONFUSE_RAY"
+      ],
+      [
+        22,
+        "MOVE_OMINOUS_WIND"
+      ],
+      [
+        28,
+        "MOVE_WAKE_UP_SLAP"
+      ],
+      [
+        31,
+        "MOVE_CAPTIVATE"
+      ],
+      [
+        37,
+        "MOVE_ICE_SHARD"
+      ],
+      [
+        40,
+        "MOVE_HAIL"
+      ],
+      [
+        51,
+        "MOVE_BLIZZARD"
+      ],
+      [
+        59,
+        "MOVE_DESTINY_BOND"
+      ]
+    ],
+    "by_tm": [
+      "TM03",
+      "TM06",
+      "TM07",
+      "TM10",
+      "TM12",
+      "TM13",
+      "TM14",
+      "TM15",
+      "TM16",
+      "TM17",
+      "TM18",
+      "TM20",
+      "TM21",
+      "TM24",
+      "TM25",
+      "TM27",
+      "TM29",
+      "TM30",
+      "TM32",
+      "TM34",
+      "TM41",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM49",
+      "TM56",
+      "TM58",
+      "TM63",
+      "TM66",
+      "TM68",
+      "TM70",
+      "TM72",
+      "TM73",
+      "TM77",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM85",
+      "TM87",
+      "TM90"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_ICY_WIND",
+      "MOVE_ROLLOUT",
+      "MOVE_ICE_PUNCH",
+      "MOVE_OMINOUS_WIND",
+      "MOVE_SNORE",
+      "MOVE_SPITE",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_TRICK",
+      "MOVE_SUCKER_PUNCH"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_SNORUNT",
+  "footprint": {
+    "has": false,
+    "size": "FOOTPRINT_LARGE",
+    "type": "FOOTPRINT_TYPE_CUTE"
+  },
+  "pokedex_data": {
+    "height_inches": 51,
+    "weight_pounds": 58.6,
+    "body_shape": "SHAPE_HEAD_ARMS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 243,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 243,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 7,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 7,
+    "en": {
+      "name": "Froslass",
+      "category": "Snow Land Pok\u00e9mon",
+      "entry_text": [
+        "It freezes prey by blowing its -58\n",
+        "degrees F breath. It is said to\n",
+        "then secretly display its prey."
+      ]
     },
-    "types": [ "TYPE_ICE", "TYPE_GHOST" ],
-    "catch_rate": 75,
-    "base_exp_reward": 187,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 2,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "MOMARTIK",
+      "category": "Pok\u00e9mon Enneigement",
+      "entry_text": [
+        "MOMARTIK g\u00e8le ses ennemis gr\u00e2ce \u00e0\n",
+        "son souffle \u00e0 -50 \u00b0C. \u00c7a ne se\n",
+        "voit pas, mais son corps est creux."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_BABIRI_BERRY"
+    "de": {
+      "name": "FROSDEDJE",
+      "category": "Schneegebiet",
+      "entry_text": [
+        "Sein eisiger Atem mit minus 50 Grad\n",
+        "friert Gegner ein. Was aussieht wie\n",
+        "sein K\u00f6rper, ist tats\u00e4chlich hohl."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_ONLY",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_MINERAL" ],
-    "abilities": [ "ABILITY_SNOW_CLOAK", "ABILITY_SNOW_CLOAK" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_WHITE",
-    "flip_sprite": false,
-    "icon_palette": 2,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_POWDER_SNOW" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_DOUBLE_TEAM" ],
-            [ 1, "MOVE_ASTONISH" ],
-            [ 4, "MOVE_DOUBLE_TEAM" ],
-            [ 10, "MOVE_ASTONISH" ],
-            [ 13, "MOVE_ICY_WIND" ],
-            [ 19, "MOVE_CONFUSE_RAY" ],
-            [ 22, "MOVE_OMINOUS_WIND" ],
-            [ 28, "MOVE_WAKE_UP_SLAP" ],
-            [ 31, "MOVE_CAPTIVATE" ],
-            [ 37, "MOVE_ICE_SHARD" ],
-            [ 40, "MOVE_HAIL" ],
-            [ 51, "MOVE_BLIZZARD" ],
-            [ 59, "MOVE_DESTINY_BOND" ]
-        ],
-        "by_tm": [
-            "TM03",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM15",
-            "TM16",
-            "TM17",
-            "TM18",
-            "TM20",
-            "TM21",
-            "TM24",
-            "TM25",
-            "TM27",
-            "TM29",
-            "TM30",
-            "TM32",
-            "TM34",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM49",
-            "TM56",
-            "TM58",
-            "TM63",
-            "TM66",
-            "TM68",
-            "TM70",
-            "TM72",
-            "TM73",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM85",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ROLLOUT",
-            "MOVE_ICE_PUNCH",
-            "MOVE_OMINOUS_WIND",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_TRICK",
-            "MOVE_SUCKER_PUNCH"
-        ]
+    "it": {
+      "name": "FROSLASS",
+      "category": "Pok\u00e9mon Suolnevoso",
+      "entry_text": [
+        "Congela i nemici con un alito\n",
+        "glaciale a -50\u00b0C. Il suo corpo\n",
+        "\u00e8 vuoto."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_SNORUNT",
-    "footprint": {
-        "has": false,
-        "size": "FOOTPRINT_LARGE",
-        "type": "FOOTPRINT_TYPE_CUTE"
+    "es": {
+      "name": "FROSLASS",
+      "category": "Pok\u00e9mon Tierra Fr\u00eda",
+      "entry_text": [
+        "Congela a sus enemigos con un\n",
+        "aliento g\u00e9lido de 50 grados bajo\n",
+        "cero. Est\u00e1 hueco por dentro."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 51,
-        "weight_pounds": 58.6,
-        "body_shape": "SHAPE_HEAD_ARMS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 243,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 243,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 7,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 7,
-        "en": {
-            "name": "FROSLASS",
-            "category": "Snow Land Pokémon",
-            "entry_text": [
-                "It freezes prey by blowing its -58\n",
-                "degrees F breath. It is said to\n",
-                "then secretly display its prey."
-            ]
-        },
-        "fr": {
-            "name": "MOMARTIK",
-            "category": "Pokémon Enneigement",
-            "entry_text": [
-                "MOMARTIK gèle ses ennemis grâce à\n",
-                "son souffle à -50 °C. Ça ne se\n",
-                "voit pas, mais son corps est creux."
-            ]
-        },
-        "de": {
-            "name": "FROSDEDJE",
-            "category": "Schneegebiet",
-            "entry_text": [
-                "Sein eisiger Atem mit minus 50 Grad\n",
-                "friert Gegner ein. Was aussieht wie\n",
-                "sein Körper, ist tatsächlich hohl."
-            ]
-        },
-        "it": {
-            "name": "FROSLASS",
-            "category": "Pokémon Suolnevoso",
-            "entry_text": [
-                "Congela i nemici con un alito\n",
-                "glaciale a -50°C. Il suo corpo\n",
-                "è vuoto."
-            ]
-        },
-        "es": {
-            "name": "FROSLASS",
-            "category": "Pokémon Tierra Fría",
-            "entry_text": [
-                "Congela a sus enemigos con un\n",
-                "aliento gélido de 50 grados bajo\n",
-                "cero. Está hueco por dentro."
-            ]
-        },
-        "jp": {
-            "name": "ユキメノコ",
-            "category": "ゆきぐにポケモン",
-            "entry_text": [
-                "マイナス５０どの　れいきを　はいて\n",
-                "あいてを　こおらせる。どうたいに\n",
-                "みえる　ぶぶんは　じつは　くうどう。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 80,
-        "rarity": 10,
-        "unused": 3085
+    "jp": {
+      "name": "\u30e6\u30ad\u30e1\u30ce\u30b3",
+      "category": "\u3086\u304d\u3050\u306b\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u30de\u30a4\u30ca\u30b9\uff15\uff10\u3069\u306e\u3000\u308c\u3044\u304d\u3092\u3000\u306f\u3044\u3066\n",
+        "\u3042\u3044\u3066\u3092\u3000\u3053\u304a\u3089\u305b\u308b\u3002\u3069\u3046\u305f\u3044\u306b\n",
+        "\u307f\u3048\u308b\u3000\u3076\u3076\u3093\u306f\u3000\u3058\u3064\u306f\u3000\u304f\u3046\u3069\u3046\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 80,
+    "rarity": 10,
+    "unused": 3085
+  }
 }

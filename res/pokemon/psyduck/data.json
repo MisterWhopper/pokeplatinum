@@ -1,202 +1,250 @@
 {
-    "base_stats": {
-        "hp": 50,
-        "attack": 52,
-        "defense": 48,
-        "speed": 55,
-        "special_attack": 65,
-        "special_defense": 50
-    },
-    "types": [ "TYPE_WATER", "TYPE_WATER" ],
-    "catch_rate": 190,
-    "base_exp_reward": 80,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 1,
-        "special_defense": 0
-    },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
-    },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_WATER_1", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_DAMP", "ABILITY_CLOUD_NINE" ],
-    "safari_flee_rate": 90,
-    "body_color": "MON_COLOR_YELLOW",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_WATER_SPORT" ],
-            [ 1, "MOVE_SCRATCH" ],
-            [ 5, "MOVE_TAIL_WHIP" ],
-            [ 9, "MOVE_WATER_GUN" ],
-            [ 14, "MOVE_DISABLE" ],
-            [ 18, "MOVE_CONFUSION" ],
-            [ 22, "MOVE_WATER_PULSE" ],
-            [ 27, "MOVE_FURY_SWIPES" ],
-            [ 31, "MOVE_SCREECH" ],
-            [ 35, "MOVE_PSYCH_UP" ],
-            [ 40, "MOVE_ZEN_HEADBUTT" ],
-            [ 44, "MOVE_AMNESIA" ],
-            [ 48, "MOVE_HYDRO_PUMP" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM03",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM29",
-            "TM31",
-            "TM32",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM55",
-            "TM56",
-            "TM58",
-            "TM65",
-            "TM70",
-            "TM77",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM03",
-            "HM04",
-            "HM06",
-            "HM07"
-        ],
-        "by_tutor": [
-            "MOVE_DIVE",
-            "MOVE_MUD_SLAP",
-            "MOVE_ICY_WIND",
-            "MOVE_ICE_PUNCH",
-            "MOVE_AQUA_TAIL",
-            "MOVE_SNORE",
-            "MOVE_SIGNAL_BEAM",
-            "MOVE_ZEN_HEADBUTT",
-            "MOVE_SWIFT"
-        ],
-        "egg_moves": [
-            "MOVE_HYPNOSIS",
-            "MOVE_PSYBEAM",
-            "MOVE_FORESIGHT",
-            "MOVE_LIGHT_SCREEN",
-            "MOVE_FUTURE_SIGHT",
-            "MOVE_PSYCHIC",
-            "MOVE_CROSS_CHOP",
-            "MOVE_REFRESH",
-            "MOVE_CONFUSE_RAY",
-            "MOVE_YAWN",
-            "MOVE_MUD_BOMB"
-        ]
-    },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            33,
-            "SPECIES_GOLDUCK"
-        ]
+  "base_stats": {
+    "hp": 50,
+    "attack": 52,
+    "defense": 48,
+    "speed": 55,
+    "special_attack": 65,
+    "special_defense": 50
+  },
+  "types": [
+    "TYPE_WATER",
+    "TYPE_WATER"
+  ],
+  "catch_rate": 190,
+  "base_exp_reward": 80,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 1,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_WATER_1",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_DAMP",
+    "ABILITY_CLOUD_NINE"
+  ],
+  "safari_flee_rate": 90,
+  "body_color": "MON_COLOR_YELLOW",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_WATER_SPORT"
+      ],
+      [
+        1,
+        "MOVE_SCRATCH"
+      ],
+      [
+        5,
+        "MOVE_TAIL_WHIP"
+      ],
+      [
+        9,
+        "MOVE_WATER_GUN"
+      ],
+      [
+        14,
+        "MOVE_DISABLE"
+      ],
+      [
+        18,
+        "MOVE_CONFUSION"
+      ],
+      [
+        22,
+        "MOVE_WATER_PULSE"
+      ],
+      [
+        27,
+        "MOVE_FURY_SWIPES"
+      ],
+      [
+        31,
+        "MOVE_SCREECH"
+      ],
+      [
+        35,
+        "MOVE_PSYCH_UP"
+      ],
+      [
+        40,
+        "MOVE_ZEN_HEADBUTT"
+      ],
+      [
+        44,
+        "MOVE_AMNESIA"
+      ],
+      [
+        48,
+        "MOVE_HYDRO_PUMP"
+      ]
     ],
-    "offspring": "SPECIES_PSYDUCK",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_SLOW"
+    "by_tm": [
+      "TM01",
+      "TM03",
+      "TM04",
+      "TM06",
+      "TM07",
+      "TM10",
+      "TM13",
+      "TM14",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM23",
+      "TM27",
+      "TM28",
+      "TM29",
+      "TM31",
+      "TM32",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM55",
+      "TM56",
+      "TM58",
+      "TM65",
+      "TM70",
+      "TM77",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "HM03",
+      "HM04",
+      "HM06",
+      "HM07"
+    ],
+    "by_tutor": [
+      "MOVE_DIVE",
+      "MOVE_MUD_SLAP",
+      "MOVE_ICY_WIND",
+      "MOVE_ICE_PUNCH",
+      "MOVE_AQUA_TAIL",
+      "MOVE_SNORE",
+      "MOVE_SIGNAL_BEAM",
+      "MOVE_ZEN_HEADBUTT",
+      "MOVE_SWIFT"
+    ],
+    "egg_moves": [
+      "MOVE_HYPNOSIS",
+      "MOVE_PSYBEAM",
+      "MOVE_FORESIGHT",
+      "MOVE_LIGHT_SCREEN",
+      "MOVE_FUTURE_SIGHT",
+      "MOVE_PSYCHIC",
+      "MOVE_CROSS_CHOP",
+      "MOVE_REFRESH",
+      "MOVE_CONFUSE_RAY",
+      "MOVE_YAWN",
+      "MOVE_MUD_BOMB"
+    ]
+  },
+  "evolutions": [
+    [
+      "EVO_LEVEL",
+      33,
+      "SPECIES_GOLDUCK"
+    ]
+  ],
+  "offspring": "SPECIES_PSYDUCK",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_SLOW"
+  },
+  "pokedex_data": {
+    "height_inches": 31,
+    "weight_pounds": 43.2,
+    "body_shape": "SHAPE_BIPEDAL_TAILED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 326,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 326,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 21,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 21,
+    "en": {
+      "name": "Psyduck",
+      "category": "Duck Pok\u00e9mon",
+      "entry_text": [
+        "Overwhelmed by enigmatic abilities,\n",
+        "it suffers a constant headache. It\n",
+        "sometimes uses mysterious powers."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 31,
-        "weight_pounds": 43.2,
-        "body_shape": "SHAPE_BIPEDAL_TAILED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 326,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 326,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 21,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 21,
-        "en": {
-            "name": "PSYDUCK",
-            "category": "Duck Pokémon",
-            "entry_text": [
-                "Overwhelmed by enigmatic abilities,\n",
-                "it suffers a constant headache. It\n",
-                "sometimes uses mysterious powers."
-            ]
-        },
-        "fr": {
-            "name": "PSYKOKWAK",
-            "category": "Pokémon Canard",
-            "entry_text": [
-                "Quand son mal de crâne empire,\n",
-                "il développe d’étranges pouvoirs\n",
-                "dont il ne se souvient jamais."
-            ]
-        },
-        "de": {
-            "name": "ENTON",
-            "category": "Ente",
-            "entry_text": [
-                "Werden seine konstant vorhandenen\n",
-                "Kopfschmerzen stärker, entwickelt\n",
-                "es seltsame Kräfte."
-            ]
-        },
-        "it": {
-            "name": "PSYDUCK",
-            "category": "Pokémon Papero",
-            "entry_text": [
-                "Se la sua costante emicrania\n",
-                "peggiora, inizia ad usare poteri\n",
-                "misteriosi. Ma poi non se lo ricorda."
-            ]
-        },
-        "es": {
-            "name": "PSYDUCK",
-            "category": "Pokémon Pato",
-            "entry_text": [
-                "Cuando su jaqueca empeora, usa\n",
-                "poderes misteriosos. Sin embargo,\n",
-                "nunca recuerda haberlos usado."
-            ]
-        },
-        "jp": {
-            "name": "コダック",
-            "category": "あひるポケモン",
-            "entry_text": [
-                "ずつうが　はげしくなると　ふしぎな\n",
-                "ちからを　つかうようになる。\n",
-                "そのときの　ことは　おぼえていない。"
-            ]
-        }
+    "fr": {
+      "name": "PSYKOKWAK",
+      "category": "Pok\u00e9mon Canard",
+      "entry_text": [
+        "Quand son mal de cr\u00e2ne empire,\n",
+        "il d\u00e9veloppe d\u2019\u00e9tranges pouvoirs\n",
+        "dont il ne se souvient jamais."
+      ]
     },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NONE",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NORTH_EAST",
-        "catching_points": 50,
-        "rarity": 30,
-        "unused": 771
+    "de": {
+      "name": "ENTON",
+      "category": "Ente",
+      "entry_text": [
+        "Werden seine konstant vorhandenen\n",
+        "Kopfschmerzen st\u00e4rker, entwickelt\n",
+        "es seltsame Kr\u00e4fte."
+      ]
+    },
+    "it": {
+      "name": "PSYDUCK",
+      "category": "Pok\u00e9mon Papero",
+      "entry_text": [
+        "Se la sua costante emicrania\n",
+        "peggiora, inizia ad usare poteri\n",
+        "misteriosi. Ma poi non se lo ricorda."
+      ]
+    },
+    "es": {
+      "name": "PSYDUCK",
+      "category": "Pok\u00e9mon Pato",
+      "entry_text": [
+        "Cuando su jaqueca empeora, usa\n",
+        "poderes misteriosos. Sin embargo,\n",
+        "nunca recuerda haberlos usado."
+      ]
+    },
+    "jp": {
+      "name": "\u30b3\u30c0\u30c3\u30af",
+      "category": "\u3042\u3072\u308b\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u305a\u3064\u3046\u304c\u3000\u306f\u3052\u3057\u304f\u306a\u308b\u3068\u3000\u3075\u3057\u304e\u306a\n",
+        "\u3061\u304b\u3089\u3092\u3000\u3064\u304b\u3046\u3088\u3046\u306b\u306a\u308b\u3002\n",
+        "\u305d\u306e\u3068\u304d\u306e\u3000\u3053\u3068\u306f\u3000\u304a\u307c\u3048\u3066\u3044\u306a\u3044\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NONE",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NORTH_EAST",
+    "catching_points": 50,
+    "rarity": 30,
+    "unused": 771
+  }
 }

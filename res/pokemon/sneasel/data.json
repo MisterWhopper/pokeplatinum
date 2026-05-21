@@ -1,213 +1,261 @@
 {
-    "base_stats": {
-        "hp": 55,
-        "attack": 95,
-        "defense": 55,
-        "speed": 115,
-        "special_attack": 35,
-        "special_defense": 75
-    },
-    "types": [ "TYPE_DARK", "TYPE_ICE" ],
-    "catch_rate": 60,
-    "base_exp_reward": 132,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 1,
-        "special_attack": 0,
-        "special_defense": 0
-    },
-    "held_items": {
-        "common": "ITEM_GRIP_CLAW",
-        "rare": "ITEM_QUICK_CLAW"
-    },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 20,
-    "base_friendship": 35,
-    "exp_rate": "EXP_RATE_MEDIUM_SLOW",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_INNER_FOCUS", "ABILITY_KEEN_EYE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_BLACK",
-    "flip_sprite": true,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_LEER" ],
-            [ 1, "MOVE_TAUNT" ],
-            [ 8, "MOVE_QUICK_ATTACK" ],
-            [ 10, "MOVE_SCREECH" ],
-            [ 14, "MOVE_FAINT_ATTACK" ],
-            [ 21, "MOVE_FURY_SWIPES" ],
-            [ 24, "MOVE_AGILITY" ],
-            [ 28, "MOVE_ICY_WIND" ],
-            [ 35, "MOVE_SLASH" ],
-            [ 38, "MOVE_BEAT_UP" ],
-            [ 42, "MOVE_METAL_CLAW" ],
-            [ 49, "MOVE_ICE_SHARD" ]
-        ],
-        "by_tm": [
-            "TM01",
-            "TM04",
-            "TM06",
-            "TM07",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM13",
-            "TM14",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM31",
-            "TM32",
-            "TM40",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM46",
-            "TM49",
-            "TM54",
-            "TM56",
-            "TM58",
-            "TM63",
-            "TM65",
-            "TM66",
-            "TM72",
-            "TM75",
-            "TM77",
-            "TM78",
-            "TM79",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM84",
-            "TM85",
-            "TM87",
-            "TM90",
-            "HM01",
-            "HM03",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_ICY_WIND",
-            "MOVE_ICE_PUNCH",
-            "MOVE_SNORE",
-            "MOVE_SPITE",
-            "MOVE_KNOCK_OFF",
-            "MOVE_SWIFT"
-        ],
-        "egg_moves": [
-            "MOVE_COUNTER",
-            "MOVE_SPITE",
-            "MOVE_FORESIGHT",
-            "MOVE_REFLECT",
-            "MOVE_BITE",
-            "MOVE_CRUSH_CLAW",
-            "MOVE_FAKE_OUT",
-            "MOVE_DOUBLE_HIT",
-            "MOVE_PUNISHMENT",
-            "MOVE_PURSUIT",
-            "MOVE_ICE_SHARD",
-            "MOVE_ICE_PUNCH"
-        ]
-    },
-    "evolutions": [
-        [
-            "EVO_LEVEL_WITH_HELD_ITEM_NIGHT",
-            "ITEM_RAZOR_CLAW",
-            "SPECIES_WEAVILE"
-        ]
+  "base_stats": {
+    "hp": 55,
+    "attack": 95,
+    "defense": 55,
+    "speed": 115,
+    "special_attack": 35,
+    "special_defense": 75
+  },
+  "types": [
+    "TYPE_DARK",
+    "TYPE_ICE"
+  ],
+  "catch_rate": 60,
+  "base_exp_reward": 132,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 1,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_GRIP_CLAW",
+    "rare": "ITEM_QUICK_CLAW"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 20,
+  "base_friendship": 35,
+  "exp_rate": "EXP_RATE_MEDIUM_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_FIELD",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_INNER_FOCUS",
+    "ABILITY_KEEN_EYE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_BLACK",
+  "flip_sprite": true,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_SCRATCH"
+      ],
+      [
+        1,
+        "MOVE_LEER"
+      ],
+      [
+        1,
+        "MOVE_TAUNT"
+      ],
+      [
+        8,
+        "MOVE_QUICK_ATTACK"
+      ],
+      [
+        10,
+        "MOVE_SCREECH"
+      ],
+      [
+        14,
+        "MOVE_FAINT_ATTACK"
+      ],
+      [
+        21,
+        "MOVE_FURY_SWIPES"
+      ],
+      [
+        24,
+        "MOVE_AGILITY"
+      ],
+      [
+        28,
+        "MOVE_ICY_WIND"
+      ],
+      [
+        35,
+        "MOVE_SLASH"
+      ],
+      [
+        38,
+        "MOVE_BEAT_UP"
+      ],
+      [
+        42,
+        "MOVE_METAL_CLAW"
+      ],
+      [
+        49,
+        "MOVE_ICE_SHARD"
+      ]
     ],
-    "offspring": "SPECIES_SNEASEL",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "by_tm": [
+      "TM01",
+      "TM04",
+      "TM06",
+      "TM07",
+      "TM10",
+      "TM11",
+      "TM12",
+      "TM13",
+      "TM14",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM23",
+      "TM27",
+      "TM28",
+      "TM30",
+      "TM31",
+      "TM32",
+      "TM40",
+      "TM41",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM46",
+      "TM49",
+      "TM54",
+      "TM56",
+      "TM58",
+      "TM63",
+      "TM65",
+      "TM66",
+      "TM72",
+      "TM75",
+      "TM77",
+      "TM78",
+      "TM79",
+      "TM81",
+      "TM82",
+      "TM83",
+      "TM84",
+      "TM85",
+      "TM87",
+      "TM90",
+      "HM01",
+      "HM03",
+      "HM04",
+      "HM06"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_ICY_WIND",
+      "MOVE_ICE_PUNCH",
+      "MOVE_SNORE",
+      "MOVE_SPITE",
+      "MOVE_KNOCK_OFF",
+      "MOVE_SWIFT"
+    ],
+    "egg_moves": [
+      "MOVE_COUNTER",
+      "MOVE_SPITE",
+      "MOVE_FORESIGHT",
+      "MOVE_REFLECT",
+      "MOVE_BITE",
+      "MOVE_CRUSH_CLAW",
+      "MOVE_FAKE_OUT",
+      "MOVE_DOUBLE_HIT",
+      "MOVE_PUNISHMENT",
+      "MOVE_PURSUIT",
+      "MOVE_ICE_SHARD",
+      "MOVE_ICE_PUNCH"
+    ]
+  },
+  "evolutions": [
+    [
+      "EVO_LEVEL_WITH_HELD_ITEM_NIGHT",
+      "ITEM_RAZOR_CLAW",
+      "SPECIES_WEAVILE"
+    ]
+  ],
+  "offspring": "SPECIES_SNEASEL",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 35,
+    "weight_pounds": 61.7,
+    "body_shape": "SHAPE_BIPEDAL_TAILED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 315,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 315,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 12,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 12,
+    "en": {
+      "name": "Sneasel",
+      "category": "Sharp Claw Pok\u00e9mon",
+      "entry_text": [
+        "A smart and sneaky Pok\u00e9mon. A pair\n",
+        "may work together to steal eggs by\n",
+        "having one lure the parents away."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 35,
-        "weight_pounds": 61.7,
-        "body_shape": "SHAPE_BIPEDAL_TAILED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 315,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 315,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 12,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 12,
-        "en": {
-            "name": "SNEASEL",
-            "category": "Sharp Claw Pokémon",
-            "entry_text": [
-                "A smart and sneaky Pokémon. A pair\n",
-                "may work together to steal eggs by\n",
-                "having one lure the parents away."
-            ]
-        },
-        "fr": {
-            "name": "FARFURET",
-            "category": "Pokémon Grifacérée",
-            "entry_text": [
-                "Il se nourrit d’œufs volés dans \n",
-                "des nids. Ses griffes crochues\n",
-                "percent les défenses de l’ennemi."
-            ]
-        },
-        "de": {
-            "name": "SNIEBEL",
-            "category": "Stichklaue",
-            "entry_text": [
-                "Es ernährt sich von Eiern, die es\n",
-                "aus Nestern stiehlt. Beute greift\n",
-                "es mit seinen scharfen Krallen an."
-            ]
-        },
-        "it": {
-            "name": "SNEASEL",
-            "category": "Pokémon Lamartigli",
-            "entry_text": [
-                "Mangia uova rubate dai nidi.\n",
-                "Attacca i nemici nei punti deboli\n",
-                "con i suoi artigli uncinati."
-            ]
-        },
-        "es": {
-            "name": "SNEASEL",
-            "category": "Pokémon Garra Filo",
-            "entry_text": [
-                "Se alimenta de huevos robados en\n",
-                "nidos. Clava sus afiladas garras en\n",
-                "los puntos débiles de sus rivales."
-            ]
-        },
-        "jp": {
-            "name": "ニュ－ラ",
-            "category": "かぎづめポケモン",
-            "entry_text": [
-                "すみかから　タマゴを　かすめとり\n",
-                "たべてしまう。するどい　カギヅメが\n",
-                "あいての　きゅうしょを　きりさく。"
-            ]
-        }
+    "fr": {
+      "name": "FARFURET",
+      "category": "Pok\u00e9mon Grifac\u00e9r\u00e9e",
+      "entry_text": [
+        "Il se nourrit d\u2019\u0153ufs vol\u00e9s dans \n",
+        "des nids. Ses griffes crochues\n",
+        "percent les d\u00e9fenses de l\u2019ennemi."
+      ]
     },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 50,
-        "rarity": 30,
-        "unused": 3344
+    "de": {
+      "name": "SNIEBEL",
+      "category": "Stichklaue",
+      "entry_text": [
+        "Es ern\u00e4hrt sich von Eiern, die es\n",
+        "aus Nestern stiehlt. Beute greift\n",
+        "es mit seinen scharfen Krallen an."
+      ]
+    },
+    "it": {
+      "name": "SNEASEL",
+      "category": "Pok\u00e9mon Lamartigli",
+      "entry_text": [
+        "Mangia uova rubate dai nidi.\n",
+        "Attacca i nemici nei punti deboli\n",
+        "con i suoi artigli uncinati."
+      ]
+    },
+    "es": {
+      "name": "SNEASEL",
+      "category": "Pok\u00e9mon Garra Filo",
+      "entry_text": [
+        "Se alimenta de huevos robados en\n",
+        "nidos. Clava sus afiladas garras en\n",
+        "los puntos d\u00e9biles de sus rivales."
+      ]
+    },
+    "jp": {
+      "name": "\u30cb\u30e5\uff0d\u30e9",
+      "category": "\u304b\u304e\u3065\u3081\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3059\u307f\u304b\u304b\u3089\u3000\u30bf\u30de\u30b4\u3092\u3000\u304b\u3059\u3081\u3068\u308a\n",
+        "\u305f\u3079\u3066\u3057\u307e\u3046\u3002\u3059\u308b\u3069\u3044\u3000\u30ab\u30ae\u30c5\u30e1\u304c\n",
+        "\u3042\u3044\u3066\u306e\u3000\u304d\u3085\u3046\u3057\u3087\u3092\u3000\u304d\u308a\u3055\u304f\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 50,
+    "rarity": 30,
+    "unused": 3344
+  }
 }

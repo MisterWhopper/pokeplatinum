@@ -1,183 +1,222 @@
 {
-    "base_stats": {
-        "hp": 31,
-        "attack": 45,
-        "defense": 90,
-        "speed": 40,
-        "special_attack": 30,
-        "special_defense": 30
-    },
-    "types": [ "TYPE_BUG", "TYPE_GROUND" ],
-    "catch_rate": 255,
-    "base_exp_reward": 65,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 1,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
-    },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
-    },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 15,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_ERRATIC",
-    "egg_groups": [ "EGG_GROUP_BUG", "EGG_GROUP_BUG" ],
-    "abilities": [ "ABILITY_COMPOUND_EYES", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_GRAY",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_SCRATCH" ],
-            [ 1, "MOVE_HARDEN" ],
-            [ 5, "MOVE_LEECH_LIFE" ],
-            [ 9, "MOVE_SAND_ATTACK" ],
-            [ 14, "MOVE_FURY_SWIPES" ],
-            [ 19, "MOVE_MIND_READER" ],
-            [ 25, "MOVE_FALSE_SWIPE" ],
-            [ 31, "MOVE_MUD_SLAP" ],
-            [ 38, "MOVE_METAL_CLAW" ],
-            [ 45, "MOVE_DIG" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM37",
-            "TM40",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM54",
-            "TM58",
-            "TM70",
-            "TM81",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM01"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_FURY_CUTTER",
-            "MOVE_SNORE",
-            "MOVE_SPITE"
-        ],
-        "egg_moves": [
-            "MOVE_ENDURE",
-            "MOVE_FAINT_ATTACK",
-            "MOVE_GUST",
-            "MOVE_SILVER_WIND",
-            "MOVE_BUG_BUZZ",
-            "MOVE_NIGHT_SLASH",
-            "MOVE_BUG_BITE"
-        ]
-    },
-    "evolutions": [
-        [
-            "EVO_LEVEL_NINJASK",
-            20,
-            "SPECIES_NINJASK"
-        ],
-        [
-            "EVO_LEVEL_SHEDINJA",
-            20,
-            "SPECIES_SHEDINJA"
-        ]
+  "base_stats": {
+    "hp": 31,
+    "attack": 45,
+    "defense": 90,
+    "speed": 40,
+    "special_attack": 30,
+    "special_defense": 30
+  },
+  "types": [
+    "TYPE_BUG",
+    "TYPE_GROUND"
+  ],
+  "catch_rate": 255,
+  "base_exp_reward": 65,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 1,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 15,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_ERRATIC",
+  "egg_groups": [
+    "EGG_GROUP_BUG",
+    "EGG_GROUP_BUG"
+  ],
+  "abilities": [
+    "ABILITY_COMPOUND_EYES",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_GRAY",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_SCRATCH"
+      ],
+      [
+        1,
+        "MOVE_HARDEN"
+      ],
+      [
+        5,
+        "MOVE_LEECH_LIFE"
+      ],
+      [
+        9,
+        "MOVE_SAND_ATTACK"
+      ],
+      [
+        14,
+        "MOVE_FURY_SWIPES"
+      ],
+      [
+        19,
+        "MOVE_MIND_READER"
+      ],
+      [
+        25,
+        "MOVE_FALSE_SWIPE"
+      ],
+      [
+        31,
+        "MOVE_MUD_SLAP"
+      ],
+      [
+        38,
+        "MOVE_METAL_CLAW"
+      ],
+      [
+        45,
+        "MOVE_DIG"
+      ]
     ],
-    "offspring": "SPECIES_NINCADA",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_SILENT"
+    "by_tm": [
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM17",
+      "TM19",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM28",
+      "TM30",
+      "TM32",
+      "TM37",
+      "TM40",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM54",
+      "TM58",
+      "TM70",
+      "TM81",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "HM01"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_FURY_CUTTER",
+      "MOVE_SNORE",
+      "MOVE_SPITE"
+    ],
+    "egg_moves": [
+      "MOVE_ENDURE",
+      "MOVE_FAINT_ATTACK",
+      "MOVE_GUST",
+      "MOVE_SILVER_WIND",
+      "MOVE_BUG_BUZZ",
+      "MOVE_NIGHT_SLASH",
+      "MOVE_BUG_BITE"
+    ]
+  },
+  "evolutions": [
+    [
+      "EVO_LEVEL_NINJASK",
+      20,
+      "SPECIES_NINJASK"
+    ],
+    [
+      "EVO_LEVEL_SHEDINJA",
+      20,
+      "SPECIES_SHEDINJA"
+    ]
+  ],
+  "offspring": "SPECIES_NINCADA",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_SILENT"
+  },
+  "pokedex_data": {
+    "height_inches": 20,
+    "weight_pounds": 12.1,
+    "body_shape": "SHAPE_INSECTOID",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 291,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 291,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 25,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 25,
+    "en": {
+      "name": "Nincada",
+      "category": "Trainee Pok\u00e9mon",
+      "entry_text": [
+        "It grows underground, sensing\n",
+        "its surroundings using antennae\n",
+        "instead of its virtually blind eyes."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 20,
-        "weight_pounds": 12.1,
-        "body_shape": "SHAPE_INSECTOID",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 291,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 291,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 25,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 25,
-        "en": {
-            "name": "NINCADA",
-            "category": "Trainee Pokémon",
-            "entry_text": [
-                "It grows underground, sensing\n",
-                "its surroundings using antennae\n",
-                "instead of its virtually blind eyes."
-            ]
-        },
-        "fr": {
-            "name": "NINGALE",
-            "category": "Pokémon Apprenti",
-            "entry_text": [
-                "Il grandit sous terre et se repère\n",
-                "grâce à ses antennes car ses\n",
-                "yeux sont quasiment aveugles."
-            ]
-        },
-        "de": {
-            "name": "NINCADA",
-            "category": "Vorbereiter",
-            "entry_text": [
-                "Es wächst unterirdisch heran und\n",
-                "nimmt seine Umgebung mit Antennen\n",
-                "wahr, da es nahezu blind ist."
-            ]
-        },
-        "it": {
-            "name": "NINCADA",
-            "category": "Pokémon Novizio",
-            "entry_text": [
-                "Cresce sottoterra e, poiché è\n",
-                "quasi cieco, usa le antenne per\n",
-                "sondare ciò che lo circonda."
-            ]
-        },
-        "es": {
-            "name": "NINCADA",
-            "category": "Pokémon Aprendiz",
-            "entry_text": [
-                "Crece bajo tierra y explora el\n",
-                "entorno con sus antenas,\n",
-                "que sustituyen a ojos atrofiados."
-            ]
-        },
-        "jp": {
-            "name": "ツチニン",
-            "category": "したづみポケモン",
-            "entry_text": [
-                "じめんの　したで　せいちょうする。\n",
-                "ほとんど　みえない　めの　かわりに\n",
-                "しょっかくで　ようすを　さぐる。"
-            ]
-        }
+    "fr": {
+      "name": "NINGALE",
+      "category": "Pok\u00e9mon Apprenti",
+      "entry_text": [
+        "Il grandit sous terre et se rep\u00e8re\n",
+        "gr\u00e2ce \u00e0 ses antennes car ses\n",
+        "yeux sont quasiment aveugles."
+      ]
     },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 50,
-        "rarity": 30,
-        "unused": 2052
+    "de": {
+      "name": "NINCADA",
+      "category": "Vorbereiter",
+      "entry_text": [
+        "Es w\u00e4chst unterirdisch heran und\n",
+        "nimmt seine Umgebung mit Antennen\n",
+        "wahr, da es nahezu blind ist."
+      ]
+    },
+    "it": {
+      "name": "NINCADA",
+      "category": "Pok\u00e9mon Novizio",
+      "entry_text": [
+        "Cresce sottoterra e, poich\u00e9 \u00e8\n",
+        "quasi cieco, usa le antenne per\n",
+        "sondare ci\u00f2 che lo circonda."
+      ]
+    },
+    "es": {
+      "name": "NINCADA",
+      "category": "Pok\u00e9mon Aprendiz",
+      "entry_text": [
+        "Crece bajo tierra y explora el\n",
+        "entorno con sus antenas,\n",
+        "que sustituyen a ojos atrofiados."
+      ]
+    },
+    "jp": {
+      "name": "\u30c4\u30c1\u30cb\u30f3",
+      "category": "\u3057\u305f\u3065\u307f\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3058\u3081\u3093\u306e\u3000\u3057\u305f\u3067\u3000\u305b\u3044\u3061\u3087\u3046\u3059\u308b\u3002\n",
+        "\u307b\u3068\u3093\u3069\u3000\u307f\u3048\u306a\u3044\u3000\u3081\u306e\u3000\u304b\u308f\u308a\u306b\n",
+        "\u3057\u3087\u3063\u304b\u304f\u3067\u3000\u3088\u3046\u3059\u3092\u3000\u3055\u3050\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 50,
+    "rarity": 30,
+    "unused": 2052
+  }
 }

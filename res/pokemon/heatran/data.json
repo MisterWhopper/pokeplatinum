@@ -1,186 +1,234 @@
 {
-    "base_stats": {
-        "hp": 91,
-        "attack": 90,
-        "defense": 106,
-        "speed": 77,
-        "special_attack": 130,
-        "special_defense": 106
+  "base_stats": {
+    "hp": 91,
+    "attack": 90,
+    "defense": 106,
+    "speed": 77,
+    "special_attack": 130,
+    "special_defense": 106
+  },
+  "types": [
+    "TYPE_FIRE",
+    "TYPE_STEEL"
+  ],
+  "catch_rate": 3,
+  "base_exp_reward": 215,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 3,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 10,
+  "base_friendship": 100,
+  "exp_rate": "EXP_RATE_SLOW",
+  "egg_groups": [
+    "EGG_GROUP_UNDISCOVERED",
+    "EGG_GROUP_UNDISCOVERED"
+  ],
+  "abilities": [
+    "ABILITY_FLASH_FIRE",
+    "ABILITY_NONE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_BROWN",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_ANCIENT_POWER"
+      ],
+      [
+        9,
+        "MOVE_LEER"
+      ],
+      [
+        17,
+        "MOVE_FIRE_FANG"
+      ],
+      [
+        25,
+        "MOVE_METAL_SOUND"
+      ],
+      [
+        33,
+        "MOVE_CRUNCH"
+      ],
+      [
+        41,
+        "MOVE_SCARY_FACE"
+      ],
+      [
+        49,
+        "MOVE_LAVA_PLUME"
+      ],
+      [
+        57,
+        "MOVE_FIRE_SPIN"
+      ],
+      [
+        65,
+        "MOVE_IRON_HEAD"
+      ],
+      [
+        73,
+        "MOVE_EARTH_POWER"
+      ],
+      [
+        81,
+        "MOVE_HEAT_WAVE"
+      ],
+      [
+        88,
+        "MOVE_STONE_EDGE"
+      ],
+      [
+        96,
+        "MOVE_MAGMA_STORM"
+      ]
+    ],
+    "by_tm": [
+      "TM05",
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM12",
+      "TM15",
+      "TM17",
+      "TM21",
+      "TM22",
+      "TM26",
+      "TM27",
+      "TM28",
+      "TM32",
+      "TM35",
+      "TM38",
+      "TM39",
+      "TM41",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM50",
+      "TM58",
+      "TM59",
+      "TM61",
+      "TM64",
+      "TM66",
+      "TM68",
+      "TM71",
+      "TM76",
+      "TM78",
+      "TM79",
+      "TM80",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "TM91",
+      "HM04",
+      "HM06",
+      "HM08"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_IRON_HEAD",
+      "MOVE_SNORE",
+      "MOVE_ANCIENT_POWER",
+      "MOVE_EARTH_POWER",
+      "MOVE_IRON_DEFENSE",
+      "MOVE_HEAT_WAVE",
+      "MOVE_UPROAR"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_HEATRAN",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 67,
+    "weight_pounds": 948.0,
+    "body_shape": "SHAPE_QUADRUPED",
+    "trainer_scale_f": 356,
+    "pokemon_scale_f": 218,
+    "trainer_scale_m": 348,
+    "pokemon_scale_m": 218,
+    "trainer_pos_f": 7,
+    "pokemon_pos_f": 1,
+    "trainer_pos_m": 7,
+    "pokemon_pos_m": 1,
+    "en": {
+      "name": "Heatran",
+      "category": "Lava Dome Pok\u00e9mon",
+      "entry_text": [
+        "Its body is made of rugged steel.\n",
+        "However, it is partially melted in\n",
+        "spots because of its own heat."
+      ]
     },
-    "types": [ "TYPE_FIRE", "TYPE_STEEL" ],
-    "catch_rate": 3,
-    "base_exp_reward": 215,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 3,
-        "special_defense": 0
+    "fr": {
+      "name": "HEATRAN",
+      "category": "Pok\u00e9mon Caldeira",
+      "entry_text": [
+        "Il hante les grottes volcaniques.\n",
+        "Il rampe au mur et au plafond gr\u00e2ce\n",
+        "\u00e0 ses pieds en forme de croix."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "HEATRAN",
+      "category": "Lavadom",
+      "entry_text": [
+        "Es lebt in vulkanischen H\u00f6hlen.\n",
+        "Mit seinen kreuzf\u00f6rmigen Klauen\n",
+        "kann es sogar an der Decke laufen."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 10,
-    "base_friendship": 100,
-    "exp_rate": "EXP_RATE_SLOW",
-    "egg_groups": [ "EGG_GROUP_UNDISCOVERED", "EGG_GROUP_UNDISCOVERED" ],
-    "abilities": [ "ABILITY_FLASH_FIRE", "ABILITY_NONE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_BROWN",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_ANCIENT_POWER" ],
-            [ 9, "MOVE_LEER" ],
-            [ 17, "MOVE_FIRE_FANG" ],
-            [ 25, "MOVE_METAL_SOUND" ],
-            [ 33, "MOVE_CRUNCH" ],
-            [ 41, "MOVE_SCARY_FACE" ],
-            [ 49, "MOVE_LAVA_PLUME" ],
-            [ 57, "MOVE_FIRE_SPIN" ],
-            [ 65, "MOVE_IRON_HEAD" ],
-            [ 73, "MOVE_EARTH_POWER" ],
-            [ 81, "MOVE_HEAT_WAVE" ],
-            [ 88, "MOVE_STONE_EDGE" ],
-            [ 96, "MOVE_MAGMA_STORM" ]
-        ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM12",
-            "TM15",
-            "TM17",
-            "TM21",
-            "TM22",
-            "TM26",
-            "TM27",
-            "TM28",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM39",
-            "TM41",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM59",
-            "TM61",
-            "TM64",
-            "TM66",
-            "TM68",
-            "TM71",
-            "TM76",
-            "TM78",
-            "TM79",
-            "TM80",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "TM91",
-            "HM04",
-            "HM06",
-            "HM08"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_IRON_HEAD",
-            "MOVE_SNORE",
-            "MOVE_ANCIENT_POWER",
-            "MOVE_EARTH_POWER",
-            "MOVE_IRON_DEFENSE",
-            "MOVE_HEAT_WAVE",
-            "MOVE_UPROAR"
-        ]
+    "it": {
+      "name": "HEATRAN",
+      "category": "Pok\u00e9mon Cratere",
+      "entry_text": [
+        "Vive nelle cavit\u00e0 dei vulcani. Scava\n",
+        "con i suoi piedi a croce per scalare\n",
+        "pareti e arrampicarsi sui soffitti."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_HEATRAN",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "HEATRAN",
+      "category": "Pok\u00e9mon Domo Lava",
+      "entry_text": [
+        "Habita cuevas volc\u00e1nicas. Cava\n",
+        "con sus pies en forma de cruz\n",
+        "para trepar por techos y paredes."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 67,
-        "weight_pounds": 948.0,
-        "body_shape": "SHAPE_QUADRUPED",
-        "trainer_scale_f": 356,
-        "pokemon_scale_f": 218,
-        "trainer_scale_m": 348,
-        "pokemon_scale_m": 218,
-        "trainer_pos_f": 7,
-        "pokemon_pos_f": 1,
-        "trainer_pos_m": 7,
-        "pokemon_pos_m": 1,
-        "en": {
-            "name": "HEATRAN",
-            "category": "Lava Dome Pokémon",
-            "entry_text": [
-                "Its body is made of rugged steel.\n",
-                "However, it is partially melted in\n",
-                "spots because of its own heat."
-            ]
-        },
-        "fr": {
-            "name": "HEATRAN",
-            "category": "Pokémon Caldeira",
-            "entry_text": [
-                "Il hante les grottes volcaniques.\n",
-                "Il rampe au mur et au plafond grâce\n",
-                "à ses pieds en forme de croix."
-            ]
-        },
-        "de": {
-            "name": "HEATRAN",
-            "category": "Lavadom",
-            "entry_text": [
-                "Es lebt in vulkanischen Höhlen.\n",
-                "Mit seinen kreuzförmigen Klauen\n",
-                "kann es sogar an der Decke laufen."
-            ]
-        },
-        "it": {
-            "name": "HEATRAN",
-            "category": "Pokémon Cratere",
-            "entry_text": [
-                "Vive nelle cavità dei vulcani. Scava\n",
-                "con i suoi piedi a croce per scalare\n",
-                "pareti e arrampicarsi sui soffitti."
-            ]
-        },
-        "es": {
-            "name": "HEATRAN",
-            "category": "Pokémon Domo Lava",
-            "entry_text": [
-                "Habita cuevas volcánicas. Cava\n",
-                "con sus pies en forma de cruz\n",
-                "para trepar por techos y paredes."
-            ]
-        },
-        "jp": {
-            "name": "ヒ－ドラン",
-            "category": "かこうポケモン",
-            "entry_text": [
-                "かざんの　ほらあなに　せいそく。\n",
-                "じゅうじの　ツメを　くいこませて\n",
-                "カベや　てんじょうを　はいまわる。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 90,
-        "rarity": 3,
-        "unused": 514
+    "jp": {
+      "name": "\u30d2\uff0d\u30c9\u30e9\u30f3",
+      "category": "\u304b\u3053\u3046\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u304b\u3056\u3093\u306e\u3000\u307b\u3089\u3042\u306a\u306b\u3000\u305b\u3044\u305d\u304f\u3002\n",
+        "\u3058\u3085\u3046\u3058\u306e\u3000\u30c4\u30e1\u3092\u3000\u304f\u3044\u3053\u307e\u305b\u3066\n",
+        "\u30ab\u30d9\u3084\u3000\u3066\u3093\u3058\u3087\u3046\u3092\u3000\u306f\u3044\u307e\u308f\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_EAST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 90,
+    "rarity": 3,
+    "unused": 514
+  }
 }

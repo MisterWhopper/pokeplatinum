@@ -1,175 +1,226 @@
 {
-    "base_stats": {
-        "hp": 65,
-        "attack": 130,
-        "defense": 60,
-        "speed": 65,
-        "special_attack": 95,
-        "special_defense": 110
+  "base_stats": {
+    "hp": 65,
+    "attack": 130,
+    "defense": 60,
+    "speed": 65,
+    "special_attack": 95,
+    "special_defense": 110
+  },
+  "types": [
+    "TYPE_FIRE",
+    "TYPE_FIRE"
+  ],
+  "catch_rate": 45,
+  "base_exp_reward": 198,
+  "ev_yields": {
+    "hp": 0,
+    "attack": 2,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_NONE"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
+  "hatch_cycles": 35,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_MEDIUM_FAST",
+  "egg_groups": [
+    "EGG_GROUP_FIELD",
+    "EGG_GROUP_FIELD"
+  ],
+  "abilities": [
+    "ABILITY_FLASH_FIRE",
+    "ABILITY_FLASH_FIRE"
+  ],
+  "safari_flee_rate": 0,
+  "body_color": "MON_COLOR_RED",
+  "flip_sprite": false,
+  "icon_palette": 0,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_TAIL_WHIP"
+      ],
+      [
+        1,
+        "MOVE_TACKLE"
+      ],
+      [
+        1,
+        "MOVE_HELPING_HAND"
+      ],
+      [
+        8,
+        "MOVE_SAND_ATTACK"
+      ],
+      [
+        15,
+        "MOVE_EMBER"
+      ],
+      [
+        22,
+        "MOVE_QUICK_ATTACK"
+      ],
+      [
+        29,
+        "MOVE_BITE"
+      ],
+      [
+        36,
+        "MOVE_FIRE_SPIN"
+      ],
+      [
+        43,
+        "MOVE_FIRE_FANG"
+      ],
+      [
+        50,
+        "MOVE_LAST_RESORT"
+      ],
+      [
+        57,
+        "MOVE_SMOG"
+      ],
+      [
+        64,
+        "MOVE_SCARY_FACE"
+      ],
+      [
+        71,
+        "MOVE_FIRE_BLAST"
+      ],
+      [
+        78,
+        "MOVE_LAVA_PLUME"
+      ]
+    ],
+    "by_tm": [
+      "TM05",
+      "TM06",
+      "TM10",
+      "TM11",
+      "TM15",
+      "TM17",
+      "TM18",
+      "TM21",
+      "TM23",
+      "TM27",
+      "TM28",
+      "TM30",
+      "TM32",
+      "TM35",
+      "TM38",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM50",
+      "TM58",
+      "TM61",
+      "TM68",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM87",
+      "TM90",
+      "HM04",
+      "HM06"
+    ],
+    "by_tutor": [
+      "MOVE_MUD_SLAP",
+      "MOVE_SUPERPOWER",
+      "MOVE_SNORE",
+      "MOVE_HELPING_HAND",
+      "MOVE_LAST_RESORT",
+      "MOVE_HEAT_WAVE",
+      "MOVE_SWIFT"
+    ]
+  },
+  "evolutions": [],
+  "offspring": "SPECIES_EEVEE",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_TOUGH"
+  },
+  "pokedex_data": {
+    "height_inches": 35,
+    "weight_pounds": 55.1,
+    "body_shape": "SHAPE_QUADRUPED",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 235,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 235,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 16,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 16,
+    "en": {
+      "name": "Flareon",
+      "category": "Flame Pok\u00e9mon",
+      "entry_text": [
+        "Inhaled air is heated in the flame\n",
+        "sac in its body to an intense fire\n",
+        "over 3,000 degrees Fahrenheit."
+      ]
     },
-    "types": [ "TYPE_FIRE", "TYPE_FIRE" ],
-    "catch_rate": 45,
-    "base_exp_reward": 198,
-    "ev_yields": {
-        "hp": 0,
-        "attack": 2,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
+    "fr": {
+      "name": "PYROLI",
+      "category": "Pok\u00e9mon Flamme",
+      "entry_text": [
+        "Son corps contient une glande\n",
+        "enflamm\u00e9e. Sa temp\u00e9rature monte\n",
+        "\u00e0 900 \u00b0C avant le combat."
+      ]
     },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_NONE"
+    "de": {
+      "name": "FLAMARA",
+      "category": "Feuer",
+      "entry_text": [
+        "In seinem K\u00f6rper befindet sich eine\n",
+        "Flamme. Seine K\u00f6rpertemperatur\n",
+        "liegt vor dem Kampf bei 900 Grad."
+      ]
     },
-    "gender_ratio": "GENDER_RATIO_FEMALE_12_5",
-    "hatch_cycles": 35,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_MEDIUM_FAST",
-    "egg_groups": [ "EGG_GROUP_FIELD", "EGG_GROUP_FIELD" ],
-    "abilities": [ "ABILITY_FLASH_FIRE", "ABILITY_FLASH_FIRE" ],
-    "safari_flee_rate": 0,
-    "body_color": "MON_COLOR_RED",
-    "flip_sprite": false,
-    "icon_palette": 0,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_TAIL_WHIP" ],
-            [ 1, "MOVE_TACKLE" ],
-            [ 1, "MOVE_HELPING_HAND" ],
-            [ 8, "MOVE_SAND_ATTACK" ],
-            [ 15, "MOVE_EMBER" ],
-            [ 22, "MOVE_QUICK_ATTACK" ],
-            [ 29, "MOVE_BITE" ],
-            [ 36, "MOVE_FIRE_SPIN" ],
-            [ 43, "MOVE_FIRE_FANG" ],
-            [ 50, "MOVE_LAST_RESORT" ],
-            [ 57, "MOVE_SMOG" ],
-            [ 64, "MOVE_SCARY_FACE" ],
-            [ 71, "MOVE_FIRE_BLAST" ],
-            [ 78, "MOVE_LAVA_PLUME" ]
-        ],
-        "by_tm": [
-            "TM05",
-            "TM06",
-            "TM10",
-            "TM11",
-            "TM15",
-            "TM17",
-            "TM18",
-            "TM21",
-            "TM23",
-            "TM27",
-            "TM28",
-            "TM30",
-            "TM32",
-            "TM35",
-            "TM38",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM50",
-            "TM58",
-            "TM61",
-            "TM68",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM87",
-            "TM90",
-            "HM04",
-            "HM06"
-        ],
-        "by_tutor": [
-            "MOVE_MUD_SLAP",
-            "MOVE_SUPERPOWER",
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_LAST_RESORT",
-            "MOVE_HEAT_WAVE",
-            "MOVE_SWIFT"
-        ]
+    "it": {
+      "name": "FLAREON",
+      "category": "Pok\u00e9mon Fiamma",
+      "entry_text": [
+        "Nel corpo conserva una tasca\n",
+        "ardente. Prima di lottare, la sua\n",
+        "temperatura si innalza a 900\u00b0C."
+      ]
     },
-    "evolutions": [  ],
-    "offspring": "SPECIES_EEVEE",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_TOUGH"
+    "es": {
+      "name": "FLAREON",
+      "category": "Pok\u00e9mon Llama",
+      "entry_text": [
+        "Almacena llamas en su cuerpo, que\n",
+        "alcanza una temperatura de 900\n",
+        "grados antes de un combate."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 35,
-        "weight_pounds": 55.1,
-        "body_shape": "SHAPE_QUADRUPED",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 235,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 235,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 16,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 16,
-        "en": {
-            "name": "FLAREON",
-            "category": "Flame Pokémon",
-            "entry_text": [
-                "Inhaled air is heated in the flame\n",
-                "sac in its body to an intense fire\n",
-                "over 3,000 degrees Fahrenheit."
-            ]
-        },
-        "fr": {
-            "name": "PYROLI",
-            "category": "Pokémon Flamme",
-            "entry_text": [
-                "Son corps contient une glande\n",
-                "enflammée. Sa température monte\n",
-                "à 900 °C avant le combat."
-            ]
-        },
-        "de": {
-            "name": "FLAMARA",
-            "category": "Feuer",
-            "entry_text": [
-                "In seinem Körper befindet sich eine\n",
-                "Flamme. Seine Körpertemperatur\n",
-                "liegt vor dem Kampf bei 900 Grad."
-            ]
-        },
-        "it": {
-            "name": "FLAREON",
-            "category": "Pokémon Fiamma",
-            "entry_text": [
-                "Nel corpo conserva una tasca\n",
-                "ardente. Prima di lottare, la sua\n",
-                "temperatura si innalza a 900°C."
-            ]
-        },
-        "es": {
-            "name": "FLAREON",
-            "category": "Pokémon Llama",
-            "entry_text": [
-                "Almacena llamas en su cuerpo, que\n",
-                "alcanza una temperatura de 900\n",
-                "grados antes de un combate."
-            ]
-        },
-        "jp": {
-            "name": "ブ－スタ－",
-            "category": "ほのおポケモン",
-            "entry_text": [
-                "たいないに　ほのおぶくろを　もつ。\n",
-                "たたかいが　はじまる　ちょくぜんには\n",
-                "たいおんが　９００どまで　あがる。"
-            ]
-        }
-    },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 90,
-        "rarity": 3,
-        "unused": 514
+    "jp": {
+      "name": "\u30d6\uff0d\u30b9\u30bf\uff0d",
+      "category": "\u307b\u306e\u304a\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u305f\u3044\u306a\u3044\u306b\u3000\u307b\u306e\u304a\u3076\u304f\u308d\u3092\u3000\u3082\u3064\u3002\n",
+        "\u305f\u305f\u304b\u3044\u304c\u3000\u306f\u3058\u307e\u308b\u3000\u3061\u3087\u304f\u305c\u3093\u306b\u306f\n",
+        "\u305f\u3044\u304a\u3093\u304c\u3000\uff19\uff10\uff10\u3069\u307e\u3067\u3000\u3042\u304c\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_SOUTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 90,
+    "rarity": 3,
+    "unused": 514
+  }
 }

@@ -1,183 +1,228 @@
 {
-    "base_stats": {
-        "hp": 60,
-        "attack": 40,
-        "defense": 60,
-        "speed": 35,
-        "special_attack": 40,
-        "special_defense": 60
-    },
-    "types": [ "TYPE_GRASS", "TYPE_GRASS" ],
-    "catch_rate": 255,
-    "base_exp_reward": 65,
-    "ev_yields": {
-        "hp": 1,
-        "attack": 0,
-        "defense": 0,
-        "speed": 0,
-        "special_attack": 0,
-        "special_defense": 0
-    },
-    "held_items": {
-        "common": "ITEM_NONE",
-        "rare": "ITEM_KEBIA_BERRY"
-    },
-    "gender_ratio": "GENDER_RATIO_FEMALE_50",
-    "hatch_cycles": 15,
-    "base_friendship": 70,
-    "exp_rate": "EXP_RATE_FLUCTUATING",
-    "egg_groups": [ "EGG_GROUP_FAIRY", "EGG_GROUP_GRASS" ],
-    "abilities": [ "ABILITY_EFFECT_SPORE", "ABILITY_POISON_HEAL" ],
-    "safari_flee_rate": 120,
-    "body_color": "MON_COLOR_BROWN",
-    "flip_sprite": false,
-    "icon_palette": 1,
-    "learnset": {
-        "by_level": [
-            [ 1, "MOVE_ABSORB" ],
-            [ 5, "MOVE_TACKLE" ],
-            [ 9, "MOVE_STUN_SPORE" ],
-            [ 13, "MOVE_LEECH_SEED" ],
-            [ 17, "MOVE_MEGA_DRAIN" ],
-            [ 21, "MOVE_HEADBUTT" ],
-            [ 25, "MOVE_POISON_POWDER" ],
-            [ 29, "MOVE_WORRY_SEED" ],
-            [ 33, "MOVE_GROWTH" ],
-            [ 37, "MOVE_GIGA_DRAIN" ],
-            [ 41, "MOVE_SEED_BOMB" ],
-            [ 45, "MOVE_SPORE" ]
-        ],
-        "by_tm": [
-            "TM06",
-            "TM09",
-            "TM10",
-            "TM11",
-            "TM17",
-            "TM19",
-            "TM20",
-            "TM21",
-            "TM22",
-            "TM27",
-            "TM32",
-            "TM36",
-            "TM42",
-            "TM43",
-            "TM44",
-            "TM45",
-            "TM49",
-            "TM53",
-            "TM58",
-            "TM70",
-            "TM75",
-            "TM78",
-            "TM82",
-            "TM83",
-            "TM86",
-            "TM87",
-            "TM90"
-        ],
-        "by_tutor": [
-            "MOVE_SNORE",
-            "MOVE_HELPING_HAND",
-            "MOVE_SYNTHESIS",
-            "MOVE_SEED_BOMB"
-        ],
-        "egg_moves": [
-            "MOVE_FAKE_TEARS",
-            "MOVE_SWAGGER",
-            "MOVE_CHARM",
-            "MOVE_FALSE_SWIPE",
-            "MOVE_HELPING_HAND",
-            "MOVE_WORRY_SEED",
-            "MOVE_WAKE_UP_SLAP",
-            "MOVE_SEED_BOMB"
-        ]
-    },
-    "evolutions": [
-        [
-            "EVO_LEVEL",
-            23,
-            "SPECIES_BRELOOM"
-        ]
+  "base_stats": {
+    "hp": 60,
+    "attack": 40,
+    "defense": 60,
+    "speed": 35,
+    "special_attack": 40,
+    "special_defense": 60
+  },
+  "types": [
+    "TYPE_GRASS",
+    "TYPE_GRASS"
+  ],
+  "catch_rate": 255,
+  "base_exp_reward": 65,
+  "ev_yields": {
+    "hp": 1,
+    "attack": 0,
+    "defense": 0,
+    "speed": 0,
+    "special_attack": 0,
+    "special_defense": 0
+  },
+  "held_items": {
+    "common": "ITEM_NONE",
+    "rare": "ITEM_KEBIA_BERRY"
+  },
+  "gender_ratio": "GENDER_RATIO_FEMALE_50",
+  "hatch_cycles": 15,
+  "base_friendship": 70,
+  "exp_rate": "EXP_RATE_FLUCTUATING",
+  "egg_groups": [
+    "EGG_GROUP_FAIRY",
+    "EGG_GROUP_GRASS"
+  ],
+  "abilities": [
+    "ABILITY_EFFECT_SPORE",
+    "ABILITY_POISON_HEAL"
+  ],
+  "safari_flee_rate": 120,
+  "body_color": "MON_COLOR_BROWN",
+  "flip_sprite": false,
+  "icon_palette": 1,
+  "learnset": {
+    "by_level": [
+      [
+        1,
+        "MOVE_ABSORB"
+      ],
+      [
+        5,
+        "MOVE_TACKLE"
+      ],
+      [
+        9,
+        "MOVE_STUN_SPORE"
+      ],
+      [
+        13,
+        "MOVE_LEECH_SEED"
+      ],
+      [
+        17,
+        "MOVE_MEGA_DRAIN"
+      ],
+      [
+        21,
+        "MOVE_HEADBUTT"
+      ],
+      [
+        25,
+        "MOVE_POISON_POWDER"
+      ],
+      [
+        29,
+        "MOVE_WORRY_SEED"
+      ],
+      [
+        33,
+        "MOVE_GROWTH"
+      ],
+      [
+        37,
+        "MOVE_GIGA_DRAIN"
+      ],
+      [
+        41,
+        "MOVE_SEED_BOMB"
+      ],
+      [
+        45,
+        "MOVE_SPORE"
+      ]
     ],
-    "offspring": "SPECIES_SHROOMISH",
-    "footprint": {
-        "has": true,
-        "size": "FOOTPRINT_MEDIUM",
-        "type": "FOOTPRINT_TYPE_CUTE"
+    "by_tm": [
+      "TM06",
+      "TM09",
+      "TM10",
+      "TM11",
+      "TM17",
+      "TM19",
+      "TM20",
+      "TM21",
+      "TM22",
+      "TM27",
+      "TM32",
+      "TM36",
+      "TM42",
+      "TM43",
+      "TM44",
+      "TM45",
+      "TM49",
+      "TM53",
+      "TM58",
+      "TM70",
+      "TM75",
+      "TM78",
+      "TM82",
+      "TM83",
+      "TM86",
+      "TM87",
+      "TM90"
+    ],
+    "by_tutor": [
+      "MOVE_SNORE",
+      "MOVE_HELPING_HAND",
+      "MOVE_SYNTHESIS",
+      "MOVE_SEED_BOMB"
+    ],
+    "egg_moves": [
+      "MOVE_FAKE_TEARS",
+      "MOVE_SWAGGER",
+      "MOVE_CHARM",
+      "MOVE_FALSE_SWIPE",
+      "MOVE_HELPING_HAND",
+      "MOVE_WORRY_SEED",
+      "MOVE_WAKE_UP_SLAP",
+      "MOVE_SEED_BOMB"
+    ]
+  },
+  "evolutions": [
+    [
+      "EVO_LEVEL",
+      23,
+      "SPECIES_BRELOOM"
+    ]
+  ],
+  "offspring": "SPECIES_SHROOMISH",
+  "footprint": {
+    "has": true,
+    "size": "FOOTPRINT_MEDIUM",
+    "type": "FOOTPRINT_TYPE_CUTE"
+  },
+  "pokedex_data": {
+    "height_inches": 16,
+    "weight_pounds": 9.9,
+    "body_shape": "SHAPE_HEAD_LEGS",
+    "trainer_scale_f": 272,
+    "pokemon_scale_f": 352,
+    "trainer_scale_m": 256,
+    "pokemon_scale_m": 352,
+    "trainer_pos_f": 8,
+    "pokemon_pos_f": 27,
+    "trainer_pos_m": 9,
+    "pokemon_pos_m": 27,
+    "en": {
+      "name": "Shroomish",
+      "category": "Mushroom Pok\u00e9mon",
+      "entry_text": [
+        "It spouts poison spores from the\n",
+        "top of its head. These spores\n",
+        "cause pain all over if inhaled."
+      ]
     },
-    "pokedex_data": {
-        "height_inches": 16,
-        "weight_pounds": 9.9,
-        "body_shape": "SHAPE_HEAD_LEGS",
-        "trainer_scale_f": 272,
-        "pokemon_scale_f": 352,
-        "trainer_scale_m": 256,
-        "pokemon_scale_m": 352,
-        "trainer_pos_f": 8,
-        "pokemon_pos_f": 27,
-        "trainer_pos_m": 9,
-        "pokemon_pos_m": 27,
-        "en": {
-            "name": "SHROOMISH",
-            "category": "Mushroom Pokémon",
-            "entry_text": [
-                "It spouts poison spores from the\n",
-                "top of its head. These spores\n",
-                "cause pain all over if inhaled."
-            ]
-        },
-        "fr": {
-            "name": "BALIGNON",
-            "category": "Pokémon Champignon",
-            "entry_text": [
-                "Le sommet de sa tête libère des\n",
-                "spores empoisonnées. Il est\n",
-                "dangereux de les inhaler."
-            ]
-        },
-        "de": {
-            "name": "KNILZ",
-            "category": "Pilz",
-            "entry_text": [
-                "Es setzt an seinem Kopf Giftsporen\n",
-                "frei. Werden diese eingeatmet,\n",
-                "verursachen sie Schmerzen."
-            ]
-        },
-        "it": {
-            "name": "SHROOMISH",
-            "category": "Pokémon Fungo",
-            "entry_text": [
-                "Sparge spore tossiche dalla sommità\n",
-                "del capo. Se inalate, queste spore\n",
-                "provocano dolore in tutto il corpo."
-            ]
-        },
-        "es": {
-            "name": "SHROOMISH",
-            "category": "Pokémon Hongo",
-            "entry_text": [
-                "Lanza esporas venenosas desde\n",
-                "la parte superior de la cabeza.\n",
-                "Inhalarlas es muy doloroso."
-            ]
-        },
-        "jp": {
-            "name": "キノココ",
-            "category": "きのこポケモン",
-            "entry_text": [
-                "あたまの　てっぺんから　どくほうしを\n",
-                "ふきだす。ほうしを　すいこむと\n",
-                "からだの　ふしぶしが　いたくなる。"
-            ]
-        }
+    "fr": {
+      "name": "BALIGNON",
+      "category": "Pok\u00e9mon Champignon",
+      "entry_text": [
+        "Le sommet de sa t\u00eate lib\u00e8re des\n",
+        "spores empoisonn\u00e9es. Il est\n",
+        "dangereux de les inhaler."
+      ]
     },
-    "catching_show": {
-        "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
-        "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
-        "catching_points": 50,
-        "rarity": 30,
-        "unused": 257
+    "de": {
+      "name": "KNILZ",
+      "category": "Pilz",
+      "entry_text": [
+        "Es setzt an seinem Kopf Giftsporen\n",
+        "frei. Werden diese eingeatmet,\n",
+        "verursachen sie Schmerzen."
+      ]
+    },
+    "it": {
+      "name": "SHROOMISH",
+      "category": "Pok\u00e9mon Fungo",
+      "entry_text": [
+        "Sparge spore tossiche dalla sommit\u00e0\n",
+        "del capo. Se inalate, queste spore\n",
+        "provocano dolore in tutto il corpo."
+      ]
+    },
+    "es": {
+      "name": "SHROOMISH",
+      "category": "Pok\u00e9mon Hongo",
+      "entry_text": [
+        "Lanza esporas venenosas desde\n",
+        "la parte superior de la cabeza.\n",
+        "Inhalarlas es muy doloroso."
+      ]
+    },
+    "jp": {
+      "name": "\u30ad\u30ce\u30b3\u30b3",
+      "category": "\u304d\u306e\u3053\u30dd\u30b1\u30e2\u30f3",
+      "entry_text": [
+        "\u3042\u305f\u307e\u306e\u3000\u3066\u3063\u307a\u3093\u304b\u3089\u3000\u3069\u304f\u307b\u3046\u3057\u3092\n",
+        "\u3075\u304d\u3060\u3059\u3002\u307b\u3046\u3057\u3092\u3000\u3059\u3044\u3053\u3080\u3068\n",
+        "\u304b\u3089\u3060\u306e\u3000\u3075\u3057\u3076\u3057\u304c\u3000\u3044\u305f\u304f\u306a\u308b\u3002"
+      ]
     }
+  },
+  "catching_show": {
+    "pal_park_land_area": "PAL_PARK_AREA_LAND_NORTH_WEST",
+    "pal_park_water_area": "PAL_PARK_AREA_WATER_NONE",
+    "catching_points": 50,
+    "rarity": 30,
+    "unused": 257
+  }
 }
