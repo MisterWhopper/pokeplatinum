@@ -156,6 +156,10 @@ enum RowanIntroState {
     RI_STATE_FADE_IN_AVATAR_END,
     RI_STATE_DELAY_BEFORE_END_2,
     RI_STATE_AVATAR_SHRINK_ANIMATION,
+    RI_STATE_RANDOMIZER_PROMPT,
+    RI_STATE_RANDOMIZER_ENABLE_CHOICE,
+    RI_STATE_RANDOMIZER_ENABLED,
+    RI_STATE_RANDOMIZER_DISABLED,
     RI_STATE_END,
     RI_STATE_EXIT,
 };
@@ -1556,7 +1560,7 @@ static void RowanIntro_LoadBunearySprite(RowanIntro *manager)
 
     BuildPokemonSpriteTemplate(
         &spriteTemplate,
-        SPECIES_BUNEARY,
+        SPECIES_CHARIZARD,
         GENDER_MALE,
         FACE_FRONT,
         FALSE,
@@ -2005,7 +2009,7 @@ static BOOL RowanIntro_AnimateBuneary(RowanIntro *manager, enum BunearyAnimState
         }
     } break;
     case BA_STATE_END:
-        Sound_PlayPokemonCry(SPECIES_BUNEARY, 0);
+        Sound_PlayPokemonCry(SPECIES_CHARIZARD, 0);
         isFinished = TRUE;
         break;
     }
@@ -2079,12 +2083,12 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_DIALOGUE_ROWAN_INTRO:
         if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_MyNameRowan, TRUE) == TRUE) {
-            manager->state = RI_STATE_MOVE_ROWAN_RIGHT_FOR_INFO;
+            manager->state = RI_STATE_DIALOGUE_WIDELY_INHABITED;
         }
         break;
     case RI_STATE_MOVE_ROWAN_RIGHT_FOR_INFO:
         if (RowanIntro_MoveBgLayer(manager, BG_LAYER_MAIN_1, MBL_CASE_MOVE_RIGHT) == TRUE) {
-            manager->state = RI_STATE_INFO_CHOICE_BOX;
+            manager->state = RI_STATE_LEFT_ROWAN_AFTER_INFO;
         }
         break;
     case RI_STATE_INFO_CHOICE_BOX:
@@ -2215,7 +2219,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_CONTROL_INFO_WAIT_INPUT:
         if (gSystem.pressedKeys) {
-            manager->state = RI_STATE_CONTROL_INFO_DIALOGUE_USE_TOUCHSCREEN;
+            manager->state = RI_STATE_CONTROL_INFO_FADE_OUT_START;
             break;
         }
 
@@ -2425,16 +2429,14 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         }
         break;
     case RI_STATE_PKBL_WAIT_INPUT:
-        if (RowanIntro_WasPokeballOpened() == TRUE) {
+        if (RowanIntro_WasPokeballOpened() == TRUE || gSystem.pressedKeys) {
             manager->animData.progressCounter = 0;
             manager->animDelayUpdateCounter = 0;
             {
                 Bg_ClearTilemap(manager->bgConfig, BG_LAYER_MAIN_0);
             }
             manager->state = RI_STATE_PKBL_ANIM_PUSH_IN;
-        } else if (gSystem.pressedKeys) {
-            manager->state = RI_STATE_PKBL_DIALOGUE_USE_TOUCHSCREEN;
-        }
+        } 
         break;
     case RI_STATE_PKBL_ANIM_PUSH_IN:
         if (manager->animDelayUpdateCounter) {
@@ -2936,6 +2938,36 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_DELAY_BEFORE_END_0:
         if (RowanIntro_Delay(manager, 30) == TRUE) {
+            manager->state = RI_STATE_RANDOMIZER_PROMPT;
+        }
+        break;
+    case RI_STATE_RANDOMIZER_PROMPT:
+        if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_RandomizerPrompt, TRUE) == TRUE) {
+            manager->state = RI_STATE_RANDOMIZER_ENABLE_CHOICE;
+        }
+        break;
+    case RI_STATE_RANDOMIZER_ENABLE_CHOICE:
+        if (RowanIntro_ChoiceBox(manager, CC_YESNO, FALSE) == TRUE) {
+            switch (manager->playerChoice) {
+            case 1: {
+                Bg_ClearTilemap(manager->bgConfig, BG_LAYER_MAIN_0);
+            }
+                manager->state = RI_STATE_RANDOMIZER_ENABLED;
+                break;
+            case 2:
+            case MENU_CANCEL:
+                manager->state = RI_STATE_RANDOMIZER_DISABLED;
+                break;
+            }
+        }
+        break;
+    case RI_STATE_RANDOMIZER_DISABLED:
+        if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_RandomizerDisabled, TRUE) == TRUE) {
+            manager->state = RI_STATE_DIALOGUE_END;
+        }
+        break;
+    case RI_STATE_RANDOMIZER_ENABLED:
+        if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_RandomizerEnabled, TRUE) == TRUE) {
             manager->state = RI_STATE_DIALOGUE_END;
         }
         break;
