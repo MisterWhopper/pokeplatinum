@@ -128,17 +128,12 @@ TwinleafTownPlayerHouse1F_OnFrame_CutsceneAfterRivalBattle:
     Message TwinleafTownPlayerHouse1F_Text_WowThatsWhatHappenedToYou
     CloseMessage
     WaitTime 30, VAR_RESULT
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PutTheseOn
-    GiveRunningShoes
-    BufferPlayerName 0
-    Message TwinleafTownPlayerHouse1F_Text_PlayerReceivedRunningShoes
-    PlayFanfare SEQ_FANFA4
-    WaitFanfare
+    Message TwinleafTownPlayerHouse1F_Text_OhUrPackageCameToday
+    WaitButton
     SetVar VAR_0x8004, ITEM_BOX_OF_CANDY
     SetVar VAR_0x8005, 1
     Common_GiveItemQuantity
-    Message TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions
+    Message TwinleafTownPlayerHouse1F_Text_IKnowItsNotRare
     WaitButton
     CloseMessage
     SetVar VAR_PLAYER_HOUSE_STATE, 4
@@ -752,6 +747,14 @@ TwinleafTownPlayerHouse1F_DontGoIntoTheTallGrass:
     SetVar VAR_PLAYER_HOUSE_STATE, 2
     BufferPlayerName 0
     Message TwinleafTownPlayerHouse1F_Text_DontGoIntoTheTallGrass
+    WaitButton
+    BufferPlayerName 0
+    GiveRunningShoes
+    BufferPlayerName 0
+    Message TwinleafTownPlayerHouse1F_Text_PlayerReceivedRunningShoes
+    PlayFanfare SEQ_FANFA4
+    WaitFanfare
+    Message TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions
     WaitButton
     CloseMessage
     ReleaseAll

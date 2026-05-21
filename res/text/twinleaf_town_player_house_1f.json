@@ -2,6 +2,20 @@
   "key": 9246,
   "messages": [
     {
+      "id": "TwinleafTownPlayerHouse1F_Text_IKnowItsNotRare",
+      "en_US": [
+        "I know these aren’t “rare” candies,\n",
+        "but at least you’ll never run out!"
+      ]
+    },
+    {
+      "id": "TwinleafTownPlayerHouse1F_Text_OhUrPackageCameToday",
+      "en_US": [
+        "Oh, your package arrived today! I\n",
+        "nearly forgot to give it to you"
+      ]
+    },
+    {
       "id": "TwinleafTownPlayerHouse1F_Text_RivalAlreadyLeft",
       "en_US": [
         "Mom: {STRVAR_1 3, 0, 0}!\r",
@@ -42,7 +56,8 @@
         "Wild Pokémon might attack you.\r",
         "It would be OK if you had your own\n",
         "Pokémon, but you don’t, so...\r",
-        "Well, take care, sweetie!"
+        "Just don’t forget your new\n",
+        "{COLOR 1}Running Shoes{COLOR 0}! They’re by the door"
       ]
     },
     {
@@ -88,11 +103,6 @@
     {
       "id": "TwinleafTownPlayerHouse1F_Text_LetMeReadTheInstructions",
       "en_US": [
-        "Going to Sandgem Town is like an\n",
-        "adventure in itself, right?\r",
-        "With those Running Shoes, you can\n",
-        "get to faraway places much faster.\r",
-        "OK...\n",
         "Let me read the instructions...\r",
         "“Press the B Button and dash\n",
         "about faster than ever before!\r",
