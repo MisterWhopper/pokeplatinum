@@ -3,7 +3,7 @@
 
 #include "pokemon.h"
 
-static const u16 Pokemon_BSTLUT[] = {
+static const u16 Pokemon_BST_LUT[] = {
 /* =========== MAGIC CONTENT MARKER =========== */
 };
 

@@ -8,11 +8,11 @@
 
 u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
 {
-    u16 bst = Pokemon_BSTLUT[speciesId];
+    u16 bst = Pokemon_BST_LUT[speciesId];
     u16 *buff = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * 492);
     u16 counter = 0;
     for (u16 i = SPECIES_BULBASAUR; i <= SPECIES_ARCEUS; ++i) {
-        u16 otherBST = Pokemon_BSTLUT[i];
+        u16 otherBST = Pokemon_BST_LUT[i];
         if (otherBST <= bst) {
             buff[counter++] = i;
         }
