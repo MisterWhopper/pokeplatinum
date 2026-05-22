@@ -201,8 +201,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     case TRDATATYPE_BASE: {
         TrainerMonBase *trmon = (TrainerMonBase *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-            //u16 species = trmon[i].species & 0x3FF;
-            u16 species = GetRandomMonSpecies();
+            u16 species = trmon[i].species & 0x3FF;
+            species = Randomizer_GetSimilarBSTSpecies(species);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -227,8 +227,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     case TRDATATYPE_WITH_MOVES: {
         TrainerMonWithMoves *trmon = (TrainerMonWithMoves *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
-            // u16 species = trmon[i].species & 0x3FF;
-            u16 species = GetRandomMonSpecies();
+            u16 species = trmon[i].species & 0x3FF;
+            species = Randomizer_GetSimilarBSTSpecies(species);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -244,8 +244,8 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
 
             for (j = 0; j < 4; j++) {
-                //Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
-                Pokemon_SetMoveSlot(mon, GetRandomMonMove(), j);
+                // Pokemon_SetMoveSlot(mon, trmon[i].moves[j], j);
+                Pokemon_SetMoveSlot(mon, Randomizer_GetMove(), j);
             }
 
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);

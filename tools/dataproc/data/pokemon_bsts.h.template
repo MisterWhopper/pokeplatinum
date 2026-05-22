@@ -1,0 +1,10 @@
+#ifndef POKEPLATINUM_GENERATED_POKEMON_BSTS_H
+#define POKEPLATINUM_GENERATED_POKEMON_BSTS_H
+
+#include "pokemon.h"
+
+static const u16 Pokemon_BSTLUT[] = {
+/* =========== MAGIC CONTENT MARKER =========== */
+};
+
+#endif

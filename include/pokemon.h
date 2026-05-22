@@ -148,12 +148,9 @@ void Pokemon_CalcLevelAndStats(Pokemon *mon);
 void Pokemon_CalcStats(Pokemon *mon);
 
 /**
- * @brief Gets a value from a Pokemon, storing it in dest if neccessary
+ * @brief Calculates and returns the base stat total (BST) from a mon
  *
  * @param mon
- * @param param
- * @param[out] dest Pointer for storing longer data
- * @return The requested value
  */
 u32 Pokemon_GetValue(Pokemon *mon, enum PokemonDataParam param, void *dest);
 

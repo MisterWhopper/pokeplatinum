@@ -120,3 +120,9 @@ npctradeproc_exe = executable(
     dependencies: commonproc_dep,
     native: true,
 )
+
+bst_py = files('src/bst_proc.py')
+r = run_command(bst_py)
+if r.returncode() != 0
+    error('Could not generate BST header')
+endif

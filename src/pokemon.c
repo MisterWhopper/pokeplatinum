@@ -3832,7 +3832,7 @@ static void BoxPokemon_SetDefaultMoves(BoxPokemon *boxMon)
     for (int i = 0; monLevelUpMoves[i] != LEARNSET_SENTINEL_ENTRY; i++) {
         if ((monLevelUpMoves[i] & 0xFE00) <= monLevel << 9) {
             // u16 monLevelUpMoveID = monLevelUpMoves[i] & 0x1FF;
-            u16 monLevelUpMoveID = GetRandomMonMove();
+            u16 monLevelUpMoveID = Randomizer_GetMove();
             if (BoxPokemon_AddMove(boxMon, monLevelUpMoveID) == LEARNSET_ALL_SLOTS_FILLED) {
                 BoxPokemon_ReplaceMove(boxMon, monLevelUpMoveID);
             }
@@ -3958,7 +3958,8 @@ u16 Pokemon_LevelUpMove(Pokemon *mon, int *index, u16 *moveID)
     }
 
     if ((monLevelUpMoves[*index] & 0xFE00) == monLevel << 9) {
-        *moveID = monLevelUpMoves[*index] & 0x1FF;
+        //*moveID = monLevelUpMoves[*index] & 0x1FF;
+        *moveID = Randomizer_GetMove();
         (*index)++;
         result = Pokemon_AddMove(mon, *moveID);
     }
@@ -4751,8 +4752,10 @@ static void BoxPokemon_CalcAbility(BoxPokemon *boxMon)
     int monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
     u32 monPersonality = BoxPokemon_GetValue(boxMon, MON_DATA_PERSONALITY, NULL);
     int monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
-    int monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
-    int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
+    // int monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
+    // int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
+    int monAbility1 = Randomizer_GetAbility();
+    int monAbility2 = Randomizer_GetAbility();
 
     if (monAbility2 != ABILITY_NONE) {
         if (monPersonality & 1) {
