@@ -324,16 +324,13 @@ static void StartCursorMovement(ChooseStarterCursor *cursor);
 static void AdvanceCursorMovement(SysTask *task, void *cursorParam);
 static void StopCursorMovement(ChooseStarterCursor *cursor);
 
-static u16 *sRandomizedStarterOptions = NULL;
+static u16 sRandomizedStarterOptions[NUM_STARTER_OPTIONS];
 
 BOOL ChooseStarter_Init(ApplicationManager *appMan, int *param1)
 {
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_CHOOSE_STARTER_APP, HEAP_SIZE_CHOOSE_STARTER_APP);
-    sRandomizedStarterOptions = (u16 *)Heap_Alloc(HEAP_ID_APPLICATION, sizeof(u16) * NUM_STARTER_OPTIONS);
-    if (sRandomizedStarterOptions != NULL) {
-        for (u8 i = 0; i < NUM_STARTER_OPTIONS; ++i) {
-            sRandomizedStarterOptions[i] = Randomizer_GetSpecies();
-        }
+    for (u8 i = 0; i < NUM_STARTER_OPTIONS; ++i) {
+        sRandomizedStarterOptions[i] = Randomizer_GetSpecies();
     }
 
     ChooseStarterApp *app = ApplicationManager_NewData(appMan, sizeof(ChooseStarterApp), HEAP_ID_CHOOSE_STARTER_APP);
@@ -480,7 +477,6 @@ BOOL ChooseStarter_Exit(ApplicationManager *appMan, int *param1)
     DeleteDrawing();
 
     VramTransfer_Free();
-    Heap_FreeExplicit(HEAP_ID_APPLICATION, sRandomizedStarterOptions);
     ApplicationManager_FreeData(appMan);
     Heap_Destroy(HEAP_ID_CHOOSE_STARTER_APP);
 
