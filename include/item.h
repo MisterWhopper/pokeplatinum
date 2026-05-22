@@ -238,6 +238,15 @@ s32 Item_LoadParam(u16 item, enum ItemDataParam param, enum HeapID heapID);
 s32 Item_Get(ItemData *itemData, enum ItemDataParam param);
 
 /**
+ * @brief Check if an item is required for player progression
+ *
+ * This ensures the randomizer won't softlock players.
+ *
+ * @param item
+ */
+BOOL Item_ProgressesPlayer(u16 item);
+
+/**
  * @brief Get the move corresponding to a TM or HM.
  *
  * Returns MOVE_NONE if the input item is not a TM or HM.

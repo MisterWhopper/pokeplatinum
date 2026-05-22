@@ -24,6 +24,7 @@
 #include "overlay_manager.h"
 #include "palette.h"
 #include "pokemon.h"
+#include "randomizer.h"
 #include "render_text.h"
 #include "render_window.h"
 #include "save_player.h"
@@ -32,6 +33,7 @@
 #include "screen_fade.h"
 #include "sound.h"
 #include "sound_playback.h"
+#include "species.h"
 #include "string_gf.h"
 #include "string_list.h"
 #include "string_template.h"
@@ -310,6 +312,8 @@ static const ApplicationManagerTemplate sTvApplicationTemplate = {
     .overlayID = FS_OVERLAY_ID_NONE,
 };
 
+static u16 sRandomizedMon = SPECIES_BUNEARY;
+
 BOOL RowanIntro_Init(ApplicationManager *appMan, int *unusedState)
 {
     RowanIntro *manager;
@@ -318,6 +322,7 @@ BOOL RowanIntro_Init(ApplicationManager *appMan, int *unusedState)
 
     manager = ApplicationManager_NewData(appMan, sizeof(RowanIntro), HEAP_ID_ROWAN_INTRO);
     memset(manager, 0, sizeof(RowanIntro));
+    sRandomizedMon = Randomizer_GetSpecies();
 
     manager->heapID = HEAP_ID_ROWAN_INTRO;
     manager->saveData = ((ApplicationArgs *)ApplicationManager_Args(appMan))->saveData;
@@ -1560,7 +1565,7 @@ static void RowanIntro_LoadBunearySprite(RowanIntro *manager)
 
     BuildPokemonSpriteTemplate(
         &spriteTemplate,
-        SPECIES_CHARIZARD,
+        sRandomizedMon,
         GENDER_MALE,
         FACE_FRONT,
         FALSE,
@@ -2009,7 +2014,7 @@ static BOOL RowanIntro_AnimateBuneary(RowanIntro *manager, enum BunearyAnimState
         }
     } break;
     case BA_STATE_END:
-        Sound_PlayPokemonCry(SPECIES_CHARIZARD, 0);
+        Sound_PlayPokemonCry(sRandomizedMon, 0);
         isFinished = TRUE;
         break;
     }
@@ -2436,7 +2441,7 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
                 Bg_ClearTilemap(manager->bgConfig, BG_LAYER_MAIN_0);
             }
             manager->state = RI_STATE_PKBL_ANIM_PUSH_IN;
-        } 
+        }
         break;
     case RI_STATE_PKBL_ANIM_PUSH_IN:
         if (manager->animDelayUpdateCounter) {

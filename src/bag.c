@@ -11,6 +11,7 @@
 #include "bag_context.h"
 #include "heap.h"
 #include "item.h"
+#include "randomizer.h"
 #include "savedata.h"
 
 #define BAG_SLOT_INVALID ((u32)(-1))
@@ -135,6 +136,14 @@ static BagItem *Bag_FindSlotToAddItem(Bag *bag, u16 item, u16 count, enum HeapID
 BOOL Bag_CanFitItem(Bag *bag, u16 item, u16 count, enum HeapID heapID)
 {
     return Bag_FindSlotToAddItem(bag, item, count, heapID) != NULL;
+}
+
+u16 Bag_TryAddItemForScrCmd(Bag *bag, u16 item, u16 count, enum HeapID heapID)
+{
+    u16 randItem = Randomizer_GetItem();
+    u16 selectedItem = Item_ProgressesPlayer(item) ? item : randItem;
+    Bag_TryAddItem(bag, selectedItem, count, heapID);
+    return selectedItem;
 }
 
 BOOL Bag_TryAddItem(Bag *bag, u16 item, u16 count, enum HeapID heapID)

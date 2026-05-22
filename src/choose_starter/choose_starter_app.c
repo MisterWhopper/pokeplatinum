@@ -324,9 +324,17 @@ static void StartCursorMovement(ChooseStarterCursor *cursor);
 static void AdvanceCursorMovement(SysTask *task, void *cursorParam);
 static void StopCursorMovement(ChooseStarterCursor *cursor);
 
+static u16 *sRandomizedStarterOptions = NULL;
+
 BOOL ChooseStarter_Init(ApplicationManager *appMan, int *param1)
 {
     Heap_Create(HEAP_ID_APPLICATION, HEAP_ID_CHOOSE_STARTER_APP, HEAP_SIZE_CHOOSE_STARTER_APP);
+    sRandomizedStarterOptions = (u16 *)Heap_Alloc(HEAP_ID_APPLICATION, sizeof(u16) * NUM_STARTER_OPTIONS);
+    if (sRandomizedStarterOptions != NULL) {
+        for (u8 i = 0; i < NUM_STARTER_OPTIONS; ++i) {
+            sRandomizedStarterOptions[i] = Randomizer_GetSpecies();
+        }
+    }
 
     ChooseStarterApp *app = ApplicationManager_NewData(appMan, sizeof(ChooseStarterApp), HEAP_ID_CHOOSE_STARTER_APP);
     GF_ASSERT(app);
@@ -472,6 +480,7 @@ BOOL ChooseStarter_Exit(ApplicationManager *appMan, int *param1)
     DeleteDrawing();
 
     VramTransfer_Free();
+    Heap_FreeExplicit(HEAP_ID_APPLICATION, sRandomizedStarterOptions);
     ApplicationManager_FreeData(appMan);
     Heap_Destroy(HEAP_ID_CHOOSE_STARTER_APP);
 
@@ -691,9 +700,9 @@ static void MakePokemonSprites(ChooseStarterApp *app, enum HeapID heapID)
     PokemonSpriteManager_SetCharBaseAddrAndSize(app->spriteManager, NNS_GfdGetTexKeyAddr(texture), NNS_GfdGetTexKeySize(texture));
     PokemonSpriteManager_SetPlttBaseAddrAndSize(app->spriteManager, NNS_GfdGetPlttKeyAddr(palette), NNS_GfdGetPlttKeySize(palette));
 
-    MakePokemonSprite(&app->sprites[0], app, STARTER_OPTION_0);
-    MakePokemonSprite(&app->sprites[1], app, STARTER_OPTION_1);
-    MakePokemonSprite(&app->sprites[2], app, STARTER_OPTION_2);
+    MakePokemonSprite(&app->sprites[0], app, sRandomizedStarterOptions[0]);
+    MakePokemonSprite(&app->sprites[1], app, sRandomizedStarterOptions[1]);
+    MakePokemonSprite(&app->sprites[2], app, sRandomizedStarterOptions[2]);
 
     for (int i = 0; i < NUM_STARTER_OPTIONS; i++) {
         PokemonSprite_SetAttribute(app->sprites[i], MON_SPRITE_HIDE, TRUE);
@@ -1754,13 +1763,11 @@ static u16 GetSelectedSpecies(u16 cursorPosition)
 {
     switch (cursorPosition) {
     case CURSOR_POSITION_LEFT:
-        return STARTER_OPTION_0;
-
+        return sRandomizedStarterOptions[0];
     case CURSOR_POSITION_CENTER:
-        return STARTER_OPTION_1;
-
+        return sRandomizedStarterOptions[1];
     case CURSOR_POSITION_RIGHT:
-        return STARTER_OPTION_2;
+        return sRandomizedStarterOptions[2];
 
     default:
         GF_ASSERT(FALSE);

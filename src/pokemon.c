@@ -2231,11 +2231,15 @@ u32 SpeciesData_GetValue(SpeciesData *speciesData, enum SpeciesDataParam param)
     case SPECIES_DATA_EGG_GROUP_2:
         result = speciesData->eggGroups[1];
         break;
+    // case SPECIES_DATA_ABILITY_1:
+    //     result = speciesData->abilities[0];
+    //     break;
+    // case SPECIES_DATA_ABILITY_2:
+    //     result = speciesData->abilities[1];
+    //     break;
     case SPECIES_DATA_ABILITY_1:
-        result = speciesData->abilities[0];
-        break;
     case SPECIES_DATA_ABILITY_2:
-        result = speciesData->abilities[1];
+        result = Randomizer_GetAbility();
         break;
     case SPECIES_DATA_SAFARI_FLEE_RATE:
         result = speciesData->safariFleeRate;
@@ -4752,10 +4756,8 @@ static void BoxPokemon_CalcAbility(BoxPokemon *boxMon)
     int monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
     u32 monPersonality = BoxPokemon_GetValue(boxMon, MON_DATA_PERSONALITY, NULL);
     int monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
-    // int monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
-    // int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
-    int monAbility1 = Randomizer_GetAbility();
-    int monAbility2 = Randomizer_GetAbility();
+    int monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
+    int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
 
     if (monAbility2 != ABILITY_NONE) {
         if (monPersonality & 1) {

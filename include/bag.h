@@ -71,6 +71,7 @@ void Bag_Copy(const Bag *src, Bag *dst);
 u32 Bag_GetRegisteredItem(const Bag *bag);
 void Bag_RegisterItem(Bag *bag, u32 item);
 BOOL Bag_CanFitItem(Bag *bag, u16 item, u16 count, enum HeapID heapID);
+u16 Bag_TryAddItemForScrCmd(Bag *bag, u16 item, u16 count, enum HeapID heapID);
 BOOL Bag_TryAddItem(Bag *bag, u16 item, u16 count, enum HeapID heapID);
 BOOL Bag_TryRemoveItem(Bag *bag, u16 item, u16 count, enum HeapID heapID);
 BOOL Pocket_TryRemoveItem(BagItem *pocket, u32 pocketSize, u16 item, u16 count, enum HeapID heapID);

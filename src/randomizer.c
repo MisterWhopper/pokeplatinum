@@ -1,5 +1,7 @@
 #include "randomizer.h"
 
+#include "constants/items.h"
+#include "generated/items.h"
 #include "generated/pokemon_bsts.h"
 
 #include "heap.h"
@@ -25,7 +27,7 @@ u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
 u16 Randomizer_GetSpecies()
 {
     // Make sure to only generate valid mons
-    return LCRNG_RandMod(493) + 1;
+    return LCRNG_RandMod(SPECIES_ARCEUS) + 1;
 }
 
 u16 Randomizer_GetAbility()
@@ -38,4 +40,14 @@ u16 Randomizer_GetMove()
 {
     // return LCRNG_RandMod(lengthof__Moves);
     return LCRNG_RandMod(469) + 1;
+}
+
+u16 Randomizer_GetTMHM()
+{
+    return LCRNG_RandMod(LAST_TMHM_IDX - FIRST_TMHM_IDX) + FIRST_TMHM_IDX;
+}
+
+u16 Randomizer_GetItem()
+{
+    return LCRNG_RandMod(MAX_ITEMS);
 }

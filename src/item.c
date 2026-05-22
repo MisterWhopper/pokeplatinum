@@ -3,6 +3,7 @@
 #include <nitro.h>
 
 #include "constants/items.h"
+#include "generated/progression_items.h"
 
 #include "bag.h"
 #include "heap.h"
@@ -301,6 +302,16 @@ u16 Item_MoveForTMHM(u16 item)
 
     item -= ITEM_TM01;
     return sTMHMMoves[item];
+}
+
+BOOL Item_ProgressesPlayer(u16 item)
+{
+    for (u8 i = 0; i < NELEMS(Item_Progression_LUT); ++i) {
+        if (item == Item_Progression_LUT[i]) {
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
 
 u8 Item_IsHMMove(u16 move)

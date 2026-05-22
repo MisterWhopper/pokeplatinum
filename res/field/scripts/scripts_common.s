@@ -276,7 +276,7 @@ CommonScript_CheckBagPocketForItem:
     End
 
 CommonScript_GetBagPocketForItem:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT
     GoToIfEq VAR_0x8008, POCKET_KEY_ITEMS, CommonScript_PlayFanfare_SEQ_FANFA3
     GoToIfEq VAR_0x8008, POCKET_ITEMS, CommonScript_PlayFanfare_SEQ_FANFA4
@@ -788,6 +788,7 @@ CommonScript_AddItemQuantityNoLineFeed:
 CommonScript_InternalAddItemQuantityNoLineFeed:
     Call CommonScript_GetBagPocketForItem
     AddItem VAR_0x8004, VAR_0x8005, VAR_RESULT
+    SetVar VAR_ITEM_ADDED, VAR_RESULT
     GetItemPocket VAR_0x8004, VAR_RESULT
     CallIfEq VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_ObtainedKeyItem
     CallIfNe VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_PrepareMessageObtainedItem
@@ -803,6 +804,7 @@ CommonScript_AddItemQuantity:
 CommonScript_InternalAddItemQuantity:
     Call CommonScript_GetBagPocketForItem
     AddItem VAR_0x8004, VAR_0x8005, VAR_RESULT
+    SetVar VAR_ITEM_ADDED, VAR_RESULT
     GetItemPocket VAR_0x8004, VAR_RESULT
     CallIfEq VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_ObtainedKeyItem
     CallIfNe VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_PrepareMessageObtainedItem
@@ -811,17 +813,17 @@ CommonScript_InternalAddItemQuantity:
 
 CommonScript_ObtainedKeyItem:
     BufferPlayerName 0
-    BufferItemName 1, VAR_0x8004
+    BufferItemName 1, VAR_ITEM_ADDED
     Message CommonStrings_Text_ObtainedKeyItem
     GoTo CommonScript_AfterObtainedItem
 
 CommonScript_PrepareMessageObtainedItem:
     GoToIfGt VAR_0x8005, 1, CommonScript_ObtainedItemsPlural
-    BufferItemName 0, VAR_0x8004
+    BufferItemName 0, VAR_ITEM_ADDED
     GoTo CommonScript_ObtainedItem
 
 CommonScript_ObtainedItemsPlural:
-    BufferItemNamePlural 0, VAR_0x8004
+    BufferItemNamePlural 0, VAR_ITEM_ADDED
 CommonScript_ObtainedItem:
     Message CommonStrings_Text_ObtainedItem
     GoTo CommonScript_AfterObtainedItem
@@ -832,11 +834,11 @@ CommonScript_AfterObtainedItem:
     CallIfEq VAR_RESULT, TRUE, CommonScript_DeterminePlateEngraving
     BufferPlayerName 0
     GoToIfGt VAR_0x8005, 1, CommonScript_BufferPocketNameItemsPlural
-    BufferItemName 1, VAR_0x8004
+    BufferItemName 1, VAR_ITEM_ADDED
     GoTo CommonScript_BufferPocketName
 
 CommonScript_BufferPocketNameItemsPlural:
-    BufferItemNamePlural 1, VAR_0x8004
+    BufferItemNamePlural 1, VAR_ITEM_ADDED
 CommonScript_BufferPocketName:
     GetItemPocket VAR_0x8004, VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT

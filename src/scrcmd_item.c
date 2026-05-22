@@ -20,7 +20,8 @@ BOOL ScrCmd_AddItem(ScriptContext *ctx)
     u16 count = ScriptContext_GetVar(ctx);
     u16 *destVar = ScriptContext_GetVarPointer(ctx);
 
-    *destVar = Bag_TryAddItem(SaveData_GetBag(fieldSystem->saveData), item, count, HEAP_ID_FIELD1);
+    // This updates the VAR_RESULT with the actual item that was added
+    *destVar = Bag_TryAddItemForScrCmd(SaveData_GetBag(fieldSystem->saveData), item, count, HEAP_ID_FIELD1);
     return FALSE;
 }
 

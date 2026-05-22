@@ -126,3 +126,8 @@ r = run_command(bst_py)
 if r.returncode() != 0
     error('Could not generate BST header')
 endif
+progressitem_py = files('src/progressitem_proc.py')
+r = run_command(progressitem_py)
+if r.returncode() != 0
+    error('Could not generate progression item header')
+endif
