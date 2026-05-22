@@ -789,7 +789,7 @@ CommonScript_InternalAddItemQuantityNoLineFeed:
     Call CommonScript_GetBagPocketForItem
     AddItem VAR_0x8004, VAR_0x8005, VAR_RESULT
     SetVar VAR_ITEM_ADDED, VAR_RESULT
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     CallIfEq VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_ObtainedKeyItem
     CallIfNe VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_PrepareMessageObtainedItem
     Message CommonStrings_Text_PutItemInThePocketNoLineFeed
@@ -805,7 +805,7 @@ CommonScript_InternalAddItemQuantity:
     Call CommonScript_GetBagPocketForItem
     AddItem VAR_0x8004, VAR_0x8005, VAR_RESULT
     SetVar VAR_ITEM_ADDED, VAR_RESULT
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     CallIfEq VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_ObtainedKeyItem
     CallIfNe VAR_RESULT, POCKET_KEY_ITEMS, CommonScript_PrepareMessageObtainedItem
     Message CommonStrings_Text_PutItemInThePocket
@@ -830,7 +830,7 @@ CommonScript_ObtainedItem:
 
 CommonScript_AfterObtainedItem:
     WaitFanfare
-    CheckItemIsPlate VAR_0x8004, VAR_RESULT
+    CheckItemIsPlate VAR_ITEM_ADDED, VAR_RESULT
     CallIfEq VAR_RESULT, TRUE, CommonScript_DeterminePlateEngraving
     BufferPlayerName 0
     GoToIfGt VAR_0x8005, 1, CommonScript_BufferPocketNameItemsPlural
@@ -840,7 +840,7 @@ CommonScript_AfterObtainedItem:
 CommonScript_BufferPocketNameItemsPlural:
     BufferItemNamePlural 1, VAR_ITEM_ADDED
 CommonScript_BufferPocketName:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT
     GoToIfEq VAR_0x8008, POCKET_KEY_ITEMS, CommonScript_BufferPocketNameKeyItems
     GoToIfEq VAR_0x8008, POCKET_ITEMS, CommonScript_BufferPocketNameItems
@@ -853,42 +853,42 @@ CommonScript_BufferPocketName:
     End
 
 CommonScript_BufferPocketNameItems:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameKeyItems:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameBattleItems:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameMail:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameMedicine:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameBerries:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameBalls:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
 CommonScript_BufferPocketNameTMHMs:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo CommonScript_BufferPocketNameReturn
 
