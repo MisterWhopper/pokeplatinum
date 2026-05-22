@@ -1,4 +1,4 @@
-FROM debian:trixie
+FROM debian:trixie-slim
 
 RUN apt update -y && \
     apt install -y bison flex g++ gcc-arm-none-eabi git make ninja-build pkg-config wget python3 xz-utils nasm gcc-multilib;
