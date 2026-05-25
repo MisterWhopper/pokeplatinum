@@ -5,6 +5,7 @@
 
 #include "constants/battle/condition.h"
 #include "constants/items.h"
+#include "constants/level_caps.h"
 #include "constants/moves.h"
 #include "constants/pokemon.h"
 #include "generated/item_hold_effects.h"
@@ -16,6 +17,7 @@
 #include "move_table.h"
 #include "party.h"
 #include "pokemon.h"
+#include "savedata.h"
 
 #define PP_UP_REQUIREMENT 5 // Moves with fewer max PP can't benefit from PP Ups (e.g. Sketch)
 
@@ -148,7 +150,7 @@ u8 Pokemon_CheckItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, enum HeapID 
     vCheckStatus = Pokemon_GetValue(mon, MON_DATA_STATUS, NULL);
 
     CHECK_STATUS(ITEM_PARAM_HEAL_SLEEP, MON_CONDITION_SLEEP);
-    CHECK_STATUS(ITEM_PARAM_HEAL_POISON, (MON_CONDITION_POISON | MON_CONDITION_TOXIC));
+    CHECK_STATUS(ITEM_PARAM_HEAL_POISON, MON_CONDITION_POISON | MON_CONDITION_TOXIC);
     CHECK_STATUS(ITEM_PARAM_HEAL_BURN, MON_CONDITION_BURN);
     CHECK_STATUS(ITEM_PARAM_HEAL_FREEZE, MON_CONDITION_FREEZE);
     CHECK_STATUS(ITEM_PARAM_HEAL_PARALYSIS, MON_CONDITION_PARALYSIS);
@@ -289,13 +291,20 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
     vApplyLevel = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
 
     if (Item_Get(item, ITEM_PARAM_LEVEL_UP)) {
+        TrainerInfo *trInfo = SaveData_GetTrainerInfo(SaveData_Ptr());
+        int currentBadge = TrainerInfo_BadgeCount(trInfo);
         if (vApplyLevel < MAX_POKEMON_LEVEL) {
-            Pokemon_IncreaseValue(mon, MON_DATA_EXPERIENCE, Pokemon_GetExpToNextLevel(mon));
-            Pokemon_CalcLevelAndStats(mon);
 
-            if (vApplyCurrentHP == 0) {
-                vApplyLevelUpMaxHP = Pokemon_GetValue(mon, MON_DATA_MAX_HP, NULL);
-                RestorePokemonHP(mon, vApplyCurrentHP, vApplyLevelUpMaxHP, vApplyLevelUpMaxHP - vApplyMaxHP);
+            u32 expToNextLevel = Pokemon_GetExpToNextLevel(mon);
+            if (vApplyLevel >= LevelCap_LUT[currentBadge] && itemId != ITEM_RARE_CANDY) {
+                // This *should* edge the mon, but never allow it to level up
+                expToNextLevel -= 1;
+            }
+
+            // Since this is a Nuzlocke, reviving should not work
+            if (vApplyCurrentHP != 0) {
+                Pokemon_IncreaseValue(mon, MON_DATA_EXPERIENCE, expToNextLevel);
+                Pokemon_CalcLevelAndStats(mon);
             }
 
             effectApplied = TRUE;

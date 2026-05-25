@@ -7,6 +7,7 @@
 #include "constants/battle/battle_anim.h"
 #include "constants/heap.h"
 #include "constants/items.h"
+#include "constants/level_caps.h"
 #include "constants/narc.h"
 #include "constants/pokemon.h"
 #include "constants/rtc.h"
@@ -9697,6 +9698,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
     u32 battleType = BattleSystem_GetBattleType(data->battleSys);
     int item;
     int itemEffect;
+    TrainerInfo *trInfo = BattleSystem_GetTrainerInfo(data->battleSys, BATTLER_US);
 
     battler = data->battleCtx->faintedMon >> 1 & 1; // init to the side with the fainted mon
     expBattler = 0;
@@ -9766,9 +9768,14 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             }
 
             u32 newExp = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
+            u16 currentLevel = Pokemon_GetLevel(mon);
+            int currentBadge = TrainerInfo_BadgeCount(trInfo);
             data->tmpData[GET_EXP_NEW_EXP] = newExp - Pokemon_GetCurrentLevelBaseExp(mon);
-            newExp += totalExp;
 
+            if (currentLevel >= LevelCap_LUT[currentBadge]) {
+                totalExp = 0;
+            }
+            newExp += totalExp;
             if (slot == data->battleCtx->selectedPartySlot[expBattler]) {
                 data->battleCtx->battleMons[expBattler].exp = newExp;
             }
@@ -9780,16 +9787,12 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
                 data->battleCtx->battleMons[data->battleCtx->faintedMon].formNum);
         }
 
-        if (totalExp) {
-            msg.tags = TAG_NICKNAME_NUM;
-            msg.params[0] = expBattler | (slot << 8);
-            msg.params[1] = totalExp;
-            data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
-            data->tmpData[GET_EXP_MSG_DELAY] = 30 / 4;
-            data->seqNum++;
-        } else {
-            data->seqNum = SEQ_GET_EXP_CHECK_DONE;
-        }
+        msg.tags = TAG_NICKNAME_NUM;
+        msg.params[0] = expBattler | (slot << 8);
+        msg.params[1] = totalExp;
+        data->tmpData[GET_EXP_MSG_INDEX] = BattleMessage_Print(data->battleSys, msgLoader, &msg, BattleSystem_GetTextSpeed(data->battleSys));
+        data->tmpData[GET_EXP_MSG_DELAY] = 30 / 4;
+        data->seqNum++;
 
         break;
 

@@ -1,0 +1,26 @@
+#ifndef POKEPLATINUM_LEVEL_CAPS_H
+#define POKEPLATINUM_LEVEL_CAPS_H
+
+#define LEVEL_CAP_GYM_1 14
+#define LEVEL_CAP_GYM_2 22
+#define LEVEL_CAP_GYM_3 26
+#define LEVEL_CAP_GYM_4 32
+#define LEVEL_CAP_GYM_5 37
+#define LEVEL_CAP_GYM_6 41
+#define LEVEL_CAP_GYM_7 44
+#define LEVEL_CAP_GYM_8 50
+#define LEVEL_CAP_E4    62
+
+static const u16 LevelCap_LUT[] = {
+    LEVEL_CAP_GYM_1,
+    LEVEL_CAP_GYM_2,
+    LEVEL_CAP_GYM_3,
+    LEVEL_CAP_GYM_4,
+    LEVEL_CAP_GYM_5,
+    LEVEL_CAP_GYM_6,
+    LEVEL_CAP_GYM_7,
+    LEVEL_CAP_GYM_8,
+    LEVEL_CAP_E4
+};
+
+#endif // POKEPLATINUM_LEVEL_CAPS_H
