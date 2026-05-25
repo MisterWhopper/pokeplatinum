@@ -1446,7 +1446,42 @@ CommonScript_RepelsEffectWoreOff:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     Message CommonStrings_Text_RepelsEffectWoreOff
+    GoTo CommonScript_CheckForMaxRepel
+    End
+
+CommonScript_CheckForMaxRepel:
+    CheckItem ITEM_MAX_REPEL, 1, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CommonScript_CheckForSuperRepel
+    SetVar VAR_ITEM_ADDED, ITEM_MAX_REPEL
+    GoTo CommonScript_PromptForRepelAgain
+
+CommonScript_CheckForSuperRepel:
+    CheckItem ITEM_SUPER_REPEL, 1, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CommonScript_CheckForRepel
+    SetVar VAR_ITEM_ADDED, ITEM_SUPER_REPEL
+    GoTo CommonScript_PromptForRepelAgain
+
+CommonScript_CheckForRepel:
+    CheckItem ITEM_REPEL, 1, VAR_RESULT
+    GoToIfEq VAR_RESULT, FALSE, CommonScript_NoPromptForRepelAgain
+    SetVar VAR_ITEM_ADDED, ITEM_REPEL
+    GoTo CommonScript_PromptForRepelAgain
+
+CommonScript_PromptForRepelAgain:
+    ShowYesNoMenu VAR_RESULT
+    GoToIfEq VAR_RESULT, MENU_YES, CommonScript_UseAnotherRepel
+    GoToIfEq VAR_RESULT, MENU_NO, CommonScript_RepelUseEnd
+
+CommonScript_NoPromptForRepelAgain:
     WaitABPress
+    GoTo CommonScript_RepelUseEnd
+
+CommonScript_UseAnotherRepel:
+    RemoveItem VAR_ITEM_ADDED, 1, VAR_RESULT
+    // This is the part where we use the `UseAnotherRepel` script command, except we don't have one
+    
+
+CommonScript_RepelUseEnd:
     CloseMessage
     ReleaseAll
     End
