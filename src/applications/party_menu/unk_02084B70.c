@@ -403,7 +403,7 @@ void sub_020852B8(PartyMenuApplication *application)
     }
 }
 
-int sub_02085348(void *param0)
+int PartyMenu_ConfirmItemAction(void *param0)
 {
     PartyMenuApplication *application = (PartyMenuApplication *)param0;
 
@@ -432,7 +432,7 @@ static int sub_02085384(void *param0)
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
     Sound_PlayEffect(SEQ_SE_DP_KAIFUKU);
 
-    application->unk_B00 = sub_02085348;
+    application->unk_B00 = PartyMenu_ConfirmItemAction;
 
     return 5;
 }
@@ -471,7 +471,7 @@ static int sub_02085424(void *applicationPtr)
     }
 
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-    application->unk_B00 = sub_02085348;
+    application->unk_B00 = PartyMenu_ConfirmItemAction;
 
     return 5;
 }
@@ -539,7 +539,7 @@ static int PokemonSummaryScreen_UpdateHPBar(PartyMenuApplication *param0)
 
     if (application->partyMembers[application->currPartySlot].curHP == curHP) {
         PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-        application->unk_B00 = sub_02085348;
+        application->unk_B00 = PartyMenu_ConfirmItemAction;
     }
 
     return 5;
@@ -585,7 +585,7 @@ int sub_02085804(PartyMenuApplication *application)
         if (application->currPartySlot == 0xff) {
             MessageLoader_GetString(application->messageLoader, PartyMenu_Text_ItWontHaveAnyEffect, application->tmpString);
             PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-            application->unk_B00 = sub_02085348;
+            application->unk_B00 = PartyMenu_ConfirmItemAction;
             PartyMenu_UpdateCursor(application, 0, 1);
             application->currPartySlot = 7;
 
@@ -1221,7 +1221,7 @@ int sub_02086774(PartyMenuApplication *application)
         PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
 
         application->partyMenu->menuSelectionResult = PARTY_MENU_EXIT_CODE_DONE;
-        application->stateAfterMessage = PARTY_MENU_STATE_25;
+        application->stateAfterMessage = PARTY_MENU_STATE_USE_ITEM;
 
         return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
     }

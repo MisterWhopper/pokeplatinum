@@ -91,9 +91,9 @@ enum PartyMenuCursorPosition {
 static BOOL PartyMenu_Init(ApplicationManager *appMan, int *state);
 static BOOL PartyMenu_Main(ApplicationManager *appMan, int *state);
 static BOOL PartyMenu_Exit(ApplicationManager *appMan, int *state);
-static int sub_0207E490(PartyMenuApplication *application);
+static int PartyMenu_DetermineUseContext(PartyMenuApplication *application);
 static int sub_0207E518(PartyMenuApplication *application);
-static int sub_0207E5B4(PartyMenuApplication *application);
+static int PartyMenu_TryUseItem(PartyMenuApplication *application);
 static int sub_0207E5F4(PartyMenuApplication *application);
 static int PartyMenu_NextStateAfterMessageCloses(PartyMenuApplication *application);
 static int sub_0207E6E4(PartyMenuApplication *application);
@@ -347,7 +347,7 @@ static BOOL PartyMenu_Main(ApplicationManager *appMan, int *state)
 
     switch (*state) {
     case PARTY_MENU_STATE_START:
-        *state = sub_0207E490(partyMenu);
+        *state = PartyMenu_DetermineUseContext(partyMenu);
         break;
     case PARTY_MENU_STATE_DEFAULT:
         *state = sub_0207E518(partyMenu);
@@ -361,7 +361,7 @@ static BOOL PartyMenu_Main(ApplicationManager *appMan, int *state)
         *state = sub_02084B34(partyMenu);
         break;
     case PARTY_MENU_STATE_USE_ITEM:
-        *state = sub_0207E5B4(partyMenu);
+        *state = PartyMenu_TryUseItem(partyMenu);
         break;
     case PARTY_MENU_STATE_5:
         *state = partyMenu->unk_B00(partyMenu);
@@ -477,7 +477,7 @@ static BOOL PartyMenu_Main(ApplicationManager *appMan, int *state)
     return FALSE;
 }
 
-static int sub_0207E490(PartyMenuApplication *application)
+static int PartyMenu_DetermineUseContext(PartyMenuApplication *application)
 {
     if (IsScreenFadeDone() == TRUE) {
         if ((application->partyMenu->mode == PARTY_MENU_MODE_USE_ITEM) || (application->partyMenu->mode == PARTY_MENU_MODE_USE_EVO_ITEM)) {
@@ -541,7 +541,7 @@ static int sub_0207E518(PartyMenuApplication *application)
     return PARTY_MENU_STATE_DEFAULT;
 }
 
-static int sub_0207E5B4(PartyMenuApplication *application)
+static int PartyMenu_TryUseItem(PartyMenuApplication *application)
 {
     u8 v0 = HandleSpecialInput(application);
 
@@ -2721,11 +2721,11 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
     } else {
         PartyMenu_PrintLongMessage(app, PartyMenu_Text_ItWontHaveAnyEffect, TRUE);
         app->currPartySlot = 7;
-        app->unk_B00 = sub_02085348;
+        app->unk_B00 = PartyMenu_ConfirmItemAction;
     }
 
     Heap_Free(itemData);
-    return 5;
+    return PARTY_MENU_STATE_5;
 }
 
 static u8 CheckItemUsageValidity(PartyMenuApplication *application)
