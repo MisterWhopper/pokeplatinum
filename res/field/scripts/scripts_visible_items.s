@@ -2315,20 +2315,21 @@ VisibleItems_GiveItem:
     Common_CheckBagPocketForItem
     RemoveObject VAR_LAST_TALKED
     AddItem VAR_0x8004, VAR_0x8005, VAR_RESULT
-    TrySetUnusedCollectedOrbFlag VAR_0x8004
+    SetVar VAR_ITEM_ADDED, VAR_RESULT
+    TrySetUnusedCollectedOrbFlag VAR_ITEM_ADDED
     CallIfEq VAR_0x8004, ITEM_STORAGE_KEY, VisibleItems_SetAltMusicGalacticHQ1F
-    IsItemTMHM VAR_0x8004, VAR_RESULT
+    IsItemTMHM VAR_ITEM_ADDED, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, VisibleItems_MessagePlayerFoundTM
     GoToIfEq VAR_RESULT, FALSE, VisibleItems_MessagePlayerFoundItem
     End
 
 VisibleItems_CheckPlateOrItemPocket:
     WaitFanfare
-    CheckItemIsPlate VAR_0x8004, VAR_RESULT
+    CheckItemIsPlate VAR_ITEM_ADDED, VAR_RESULT
     CallIfEq VAR_RESULT, TRUE, VisibleItems_MessageObtainedPlate
     BufferPlayerName 0
-    BufferItemName 1, VAR_0x8004
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    BufferItemName 1, VAR_ITEM_ADDED
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT
     GoToIfEq VAR_0x8008, POCKET_KEY_ITEMS, VisibleItems_BufferPocketNameKeyItems
     GoToIfEq VAR_0x8008, POCKET_ITEMS, VisibleItems_BufferPocketNameItems
@@ -2341,49 +2342,49 @@ VisibleItems_CheckPlateOrItemPocket:
     End
 
 VisibleItems_BufferPocketNameItems:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameKeyItems:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameTMHMs:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameMail:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameMedicine:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameBerries:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameBalls:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
 
 VisibleItems_BufferPocketNameBattleItems:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo VisibleItems_MessagePlayerPutTheItemInTheItemPocket
     End
@@ -2398,21 +2399,21 @@ VisibleItems_MessagePlayerPutTheItemInTheItemPocket:
 
 VisibleItems_MessagePlayerFoundTM:
     BufferPlayerName 0
-    BufferItemNameWithArticle 1, VAR_0x8004
-    BufferTMHMMoveName 2, VAR_0x8004
+    BufferItemNameWithArticle 1, VAR_ITEM_ADDED
+    BufferTMHMMoveName 2, VAR_ITEM_ADDED
     Message VisibleItems_Text_PlayerFoundTMMove
     GoTo VisibleItems_CheckPlateOrItemPocket
     End
 
 VisibleItems_MessagePlayerFoundItem:
     BufferPlayerName 0
-    BufferItemNameWithArticle 1, VAR_0x8004
+    BufferItemNameWithArticle 1, VAR_ITEM_ADDED
     Message VisibleItems_Text_PlayerFoundItem
     GoTo VisibleItems_CheckPlateOrItemPocket
     End
 
 VisibleItems_BagIsFull:
-    BufferItemName 0, VAR_0x8004
+    BufferItemName 0, VAR_ITEM_ADDED
     Message VisibleItems_Text_ObtainedTheItemTooBadTheBagIsFull
     WaitButton
     SetVar VAR_RESULT, FALSE

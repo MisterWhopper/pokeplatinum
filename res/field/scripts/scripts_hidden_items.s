@@ -21,18 +21,19 @@ HiddenItems_AddItem:
     Common_CheckBagPocketForItem
     SaveTVSegmentHiddenItem VAR_0x8004
     AddItem VAR_0x8004, VAR_0x8005, VAR_RESULT
-    IsItemTMHM VAR_0x8004, VAR_RESULT
+    SetVar VAR_ITEM_ADDED, VAR_RESULT
+    IsItemTMHM VAR_ITEM_ADDED, VAR_RESULT
     GoToIfEq VAR_RESULT, TRUE, HiddenItems_PlayerFoundTMHM
     GoToIfEq VAR_RESULT, FALSE, HiddenItems_PlayerFoundItem
     End
 
 HiddenItems_CheckPlateAndPocket:
     WaitFanfare
-    CheckItemIsPlate VAR_0x8004, VAR_RESULT
+    CheckItemIsPlate VAR_ITEM_ADDED, VAR_RESULT
     CallIfEq VAR_RESULT, TRUE, HiddenItems_PrintPlateObtainedMessage
     BufferPlayerName 0
-    BufferItemName 1, VAR_0x8004
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    BufferItemName 1, VAR_ITEM_ADDED
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     SetVar VAR_0x8008, VAR_RESULT
     GoToIfEq VAR_0x8008, POCKET_KEY_ITEMS, HiddenItems_PutItemInKeyItemsPocket
     GoToIfEq VAR_0x8008, POCKET_ITEMS, HiddenItems_PutItemInItemsPocket
@@ -45,49 +46,49 @@ HiddenItems_CheckPlateAndPocket:
     End
 
 HiddenItems_PutItemInItemsPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInKeyItemsPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInBattleTMHMsPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInBattleMailPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInMedicinePocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInBerriesPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInBallsPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
 
 HiddenItems_PutItemInBattleItemsPocket:
-    GetItemPocket VAR_0x8004, VAR_RESULT
+    GetItemPocket VAR_ITEM_ADDED, VAR_RESULT
     BufferPocketName 2, VAR_RESULT
     GoTo HiddenItems_PlayerPutItemInPocket
     End
@@ -102,21 +103,21 @@ HiddenItems_PlayerPutItemInPocket:
 
 HiddenItems_PlayerFoundTMHM:
     BufferPlayerName 0
-    BufferItemNameWithArticle 1, VAR_0x8004
-    BufferTMHMMoveName 2, VAR_0x8004
+    BufferItemNameWithArticle 1, VAR_ITEM_ADDED
+    BufferTMHMMoveName 2, VAR_ITEM_ADDED
     Message HiddenItems_Text_PlayerFoundTMHMMove
     GoTo HiddenItems_CheckPlateAndPocket
     End
 
 HiddenItems_PlayerFoundItem:
     BufferPlayerName 0
-    BufferItemNameWithArticle 1, VAR_0x8004
+    BufferItemNameWithArticle 1, VAR_ITEM_ADDED
     Message HiddenItems_Text_PlayerFoundItem
     GoTo HiddenItems_CheckPlateAndPocket
     End
 
 HiddenItems_BagIsFull:
-    BufferItemName 0, VAR_0x8004
+    BufferItemName 0, VAR_ITEM_ADDED
     Message HiddenItems_Text_ObtainedItemBagIsFull
     WaitButton
     SetVar VAR_RESULT, 0
