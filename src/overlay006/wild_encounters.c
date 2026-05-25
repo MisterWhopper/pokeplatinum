@@ -43,6 +43,7 @@
 #include "pokedex.h"
 #include "pokemon.h"
 #include "pokeradar.h"
+#include "randomizer.h"
 #include "roaming_pokemon.h"
 #include "rtc.h"
 #include "save_player.h"
@@ -1046,6 +1047,7 @@ static void CreateWildMonShinyWithGenderOrNature(const u16 species, const u8 lev
 
 static void CreateWildMon(u16 species, u8 level, const int partyDest, const WildEncounters_FieldParams *encounterFieldParams, Pokemon *firstPartyMon, FieldBattleDTO *battleParams)
 {
+    species = Randomizer_GetSimilarBSTSpecies(species);
     Pokemon *newEncounter = Pokemon_New(HEAP_ID_FIELD2);
     Pokemon_Init(newEncounter);
     BOOL hasRandomGender = TRUE;
@@ -1380,7 +1382,7 @@ static BOOL FirstMonAbilityPreventsEncounter(const WildEncounters_FieldParams *e
 static void CreateWildSingleBattle(FieldSystem *fieldSystem, const BOOL safariGameActive, FieldBattleDTO **battleParams)
 {
     if (!safariGameActive) {
-        *battleParams = FieldBattleDTO_New(HEAP_ID_FIELD2, (0x0 | 0x0));
+        *battleParams = FieldBattleDTO_New(HEAP_ID_FIELD2, 0x0 | 0x0);
     } else {
         u16 *safariBallsCount = FieldOverworldState_GetSafariBallCount(SaveData_GetFieldOverworldState(fieldSystem->saveData));
         *battleParams = FieldBattleDTO_NewSafari(HEAP_ID_FIELD2, *safariBallsCount);
