@@ -11,7 +11,7 @@
 u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
 {
     u16 bst = Pokemon_BST_LUT[speciesId];
-    u16 *buff = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * 492);
+    u16 *buff = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * SPECIES_ARCEUS);
     u16 counter = 0;
     for (u16 i = SPECIES_BULBASAUR; i <= SPECIES_ARCEUS; ++i) {
         u16 otherBST = Pokemon_BST_LUT[i];
@@ -19,7 +19,7 @@ u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
             buff[counter++] = i;
         }
     }
-    u16 result = buff[LCRNG_RandMod(counter)];
+    u16 result = counter > 0 ? buff[LCRNG_RandMod(counter)] : speciesId;
     Heap_Free(buff);
     return result;
 }
