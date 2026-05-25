@@ -19,6 +19,7 @@
 #include "party.h"
 #include "pc_boxes.h"
 #include "pokemon.h"
+#include "randomizer.h"
 #include "ribbon.h"
 #include "save_player.h"
 #include "tv_segment.h"
@@ -85,6 +86,9 @@ BOOL ScrCmd_GiveEgg(ScriptContext *ctx)
     TrainerInfo *trainer = SaveData_GetTrainerInfo(fieldSystem->saveData);
     u16 species = ScriptContext_GetVar(ctx);
     u16 eggGiver = ScriptContext_GetVar(ctx);
+
+    // NOTE: This is currently not based off the target species BST for more randomness
+    species = Randomizer_GetSpecies();
 
     Party *party = SaveData_GetParty(fieldSystem->saveData);
     u8 partyCount = Party_GetCurrentCount(party);

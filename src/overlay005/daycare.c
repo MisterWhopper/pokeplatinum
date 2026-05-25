@@ -24,6 +24,7 @@
 #include "message_util.h"
 #include "party.h"
 #include "pokemon.h"
+#include "randomizer.h"
 #include "save_player.h"
 #include "savedata.h"
 #include "string_gf.h"
@@ -756,6 +757,7 @@ void Daycare_GiveEggFromDaycare(Daycare *daycare, Party *party, TrainerInfo *tra
 
     species = Egg_DetermineEggSpeciesAndParentSlots(daycare, parentSlots);
     species = Daycare_AlterEggSpeciesWithIncenseItem(species, daycare);
+    species = Randomizer_GetSpecies();
 
     u32 monOTID = TrainerInfo_ID(trainerInfo);
     BoxPokemon *boxMon = Daycare_GetBoxMon(daycare, parentSlots[0]);
@@ -884,17 +886,17 @@ static u8 Daycare_GetCompatibilityScore(Daycare *daycare)
 
 static const u16 sEggCycleSpecialDates[] = {
     (100 * 1 + 12), // Jan 1st, New Years
-    (100 * 2 + 14), // Feb 14th, Valentine's Day
-    (100 * 3 + 3), // March 3rd
-    (100 * 4 + 1), // April 1st, April Fools
-    (100 * 5 + 1), // May 1st, Emerald US release date
-    (100 * 6 + 11), // June 11th
-    (100 * 7 + 7), // July 7th
-    (100 * 8 + 21), // August 21st
-    (100 * 9 + 7), // September 7th
-    (100 * 9 + 28), // September 28th, Diamond/Pearl JP release date
-    (100 * 11 + 21), // November 21st, Ruby/Sapphire JP release date
-    (100 * 12 + 14), // December 14th, Crystal JP release date
+    100 * 2 + 14, // Feb 14th, Valentine's Day
+    100 * 3 + 3, // March 3rd
+    100 * 4 + 1, // April 1st, April Fools
+    100 * 5 + 1, // May 1st, Emerald US release date
+    100 * 6 + 11, // June 11th
+    100 * 7 + 7, // July 7th
+    100 * 8 + 21, // August 21st
+    100 * 9 + 7, // September 7th
+    100 * 9 + 28, // September 28th, Diamond/Pearl JP release date
+    100 * 11 + 21, // November 21st, Ruby/Sapphire JP release date
+    100 * 12 + 14, // December 14th, Crystal JP release date
 };
 
 static int Daycare_GetEggCycleLength(FieldSystem *fieldSystem)
