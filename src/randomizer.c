@@ -3,9 +3,11 @@
 #include "constants/items.h"
 #include "generated/items.h"
 #include "generated/pokemon_bsts.h"
+#include "generated/progression_items.h"
 
 #include "heap.h"
 #include "inlines.h"
+#include "item.h"
 #include "species.h"
 
 u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
@@ -49,5 +51,14 @@ u16 Randomizer_GetTMHM()
 
 u16 Randomizer_GetItem()
 {
-    return LCRNG_RandMod(MAX_ITEMS);
+    u16 result;
+    // There are unfortunately unused item IDs, which are right in the heart of the smack of the dab
+    // of our item ID range. So we have to do this nonsense and hope this doesn't lock up the game *too* horribly
+    // and add a failsafe (a max repel) in case we loop for too long.
+    u16 counter = 0;
+    do {
+        result = LCRNG_RandMod(MAX_ITEMS) + 1;
+        counter++;
+    } while (counter <= 1500 && (result >= ITEM_UNUSED_113 && result <= ITEM_UNUSED_134) || Item_ProgressesPlayer(result));
+    return counter <= 1500 ? result : ITEM_MAX_REPEL;
 }
