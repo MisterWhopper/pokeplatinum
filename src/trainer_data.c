@@ -260,6 +260,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         TrainerMonWithItem *trmon = (TrainerMonWithItem *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
             u16 species = trmon[i].species & 0x3FF;
+            species = Randomizer_GetSimilarBSTSpecies(species);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -286,6 +287,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         TrainerMonWithMovesAndItem *trmon = (TrainerMonWithMovesAndItem *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
             u16 species = trmon[i].species & 0x3FF;
+            species = Randomizer_GetSimilarBSTSpecies(species);
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
