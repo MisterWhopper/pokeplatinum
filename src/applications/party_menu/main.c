@@ -364,7 +364,7 @@ static BOOL PartyMenu_Main(ApplicationManager *appMan, int *state)
         *state = PartyMenu_TryUseItem(partyMenu);
         break;
     case PARTY_MENU_STATE_5:
-        *state = partyMenu->unk_B00(partyMenu);
+        *state = partyMenu->nextAction(partyMenu);
         break;
     case PARTY_MENU_STATE_6:
         *state = sub_02086774(partyMenu);
@@ -2721,7 +2721,7 @@ static int ApplyItemEffectOnPokemon(PartyMenuApplication *app)
     } else {
         PartyMenu_PrintLongMessage(app, PartyMenu_Text_ItWontHaveAnyEffect, TRUE);
         app->currPartySlot = 7;
-        app->unk_B00 = PartyMenu_ConfirmItemAction;
+        app->nextAction = PartyMenu_ConfirmItemAction;
     }
 
     Heap_Free(itemData);

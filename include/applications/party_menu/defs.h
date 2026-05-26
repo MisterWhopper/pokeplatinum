@@ -320,7 +320,7 @@ typedef struct PartyMenuApplication {
     PartyMenuMember partyMembers[MAX_PARTY_SIZE];
     const GridMenuCursorPosition *cursorPosTable;
     PartyOrderSwitchData orderSwitch;
-    GenericFunctionPtr unk_B00;
+    GenericFunctionPtr nextAction;
     FunctionPtrPair unk_B04;
     u8 unk_B0C;
     u8 unk_B0D;
@@ -334,7 +334,7 @@ typedef struct PartyMenuApplication {
     u8 textPrinterID;
     u8 currPartySlot;
     u8 prevPartySlot;
-    u8 unk_B13;
+    u8 levelUpState;
     union {
         u16 monStats[STAT_MAX];
         u16 monHpTransfer[HP_TRANSFER_INDEX_MAX];

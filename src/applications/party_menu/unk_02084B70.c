@@ -42,7 +42,7 @@ static int sub_02085424(void *applicationPtr);
 static int sub_020855C4(void *applicationPtr);
 static int PokemonSummaryScreen_UpdateHPBar(PartyMenuApplication *applicationPtr);
 static int sub_02085A70(void *applicationPtr);
-static int sub_02085C50(void *applicationPtr);
+static int PartyMenu_HandleStatIncreasesOnLevelUp(void *applicationPtr);
 static void TeachMove(PartyMenuApplication *application, Pokemon *mon, u32 moveSlot);
 static int sub_02086438(void *applicationPtr);
 static int sub_0208648C(void *applicationPtr);
@@ -53,6 +53,8 @@ static int sub_02085FB4(void *applicationPtr);
 static int sub_02086008(void *applicationPtr);
 static int sub_02086060(void *applicationPtr);
 static int sub_020860AC(void *applicationPtr);
+
+static u32 monLevelBeforeItemApplied = 0;
 
 static u8 sub_02084B70(u16 itemID)
 {
@@ -368,7 +370,7 @@ void sub_020852B8(PartyMenuApplication *application)
     case 1:
         break;
     case 2:
-        application->unk_B00 = sub_02085A70;
+        application->nextAction = sub_02085A70;
         break;
     case 3:
     case 4:
@@ -387,7 +389,7 @@ void sub_020852B8(PartyMenuApplication *application)
     case 25:
     case 26:
     case 27:
-        application->unk_B00 = sub_02085384;
+        application->nextAction = sub_02085384;
         break;
     case 18:
     case 19:
@@ -395,10 +397,10 @@ void sub_020852B8(PartyMenuApplication *application)
     case 21:
     case 22:
     case 23:
-        application->unk_B00 = sub_02085424;
+        application->nextAction = sub_02085424;
         break;
     case 11:
-        application->unk_B00 = sub_020855C4;
+        application->nextAction = sub_020855C4;
         break;
     }
 }
@@ -432,7 +434,7 @@ static int sub_02085384(void *param0)
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
     Sound_PlayEffect(SEQ_SE_DP_KAIFUKU);
 
-    application->unk_B00 = PartyMenu_ConfirmItemAction;
+    application->nextAction = PartyMenu_ConfirmItemAction;
 
     return 5;
 }
@@ -471,7 +473,7 @@ static int sub_02085424(void *applicationPtr)
     }
 
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-    application->unk_B00 = PartyMenu_ConfirmItemAction;
+    application->nextAction = PartyMenu_ConfirmItemAction;
 
     return 5;
 }
@@ -513,7 +515,7 @@ static int sub_020855C4(void *applicationPtr)
     }
 
     PartyMenu_UpdateSlotPalette(application, application->currPartySlot);
-    application->unk_B00 = (void *)PokemonSummaryScreen_UpdateHPBar;
+    application->nextAction = (void *)PokemonSummaryScreen_UpdateHPBar;
     Sound_PlayEffect(SEQ_SE_DP_KAIFUKU);
 
     return 5;
@@ -539,7 +541,7 @@ static int PokemonSummaryScreen_UpdateHPBar(PartyMenuApplication *param0)
 
     if (application->partyMembers[application->currPartySlot].curHP == curHP) {
         PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-        application->unk_B00 = PartyMenu_ConfirmItemAction;
+        application->nextAction = PartyMenu_ConfirmItemAction;
     }
 
     return 5;
@@ -585,7 +587,7 @@ int sub_02085804(PartyMenuApplication *application)
         if (application->currPartySlot == 0xff) {
             MessageLoader_GetString(application->messageLoader, PartyMenu_Text_ItWontHaveAnyEffect, application->tmpString);
             PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
-            application->unk_B00 = PartyMenu_ConfirmItemAction;
+            application->nextAction = PartyMenu_ConfirmItemAction;
             PartyMenu_UpdateCursor(application, 0, 1);
             application->currPartySlot = 7;
 
@@ -678,6 +680,7 @@ static int sub_02085A70(void *applicationPtr)
     application->monStats[4] = (u16)Pokemon_GetValue(mon, MON_DATA_SP_DEF, NULL);
     application->monStats[5] = (u16)Pokemon_GetValue(mon, MON_DATA_SPEED, NULL);
 
+    monLevelBeforeItemApplied = Pokemon_GetLevel(Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot));
     Party_ApplyItemEffectsToMember(application->partyMenu->party, application->partyMenu->usedItemID, application->currPartySlot, 0, GetCurrentMapLabel(application), HEAP_ID_PARTY_MENU);
 
     application->partyMembers[application->currPartySlot].level = Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL);
@@ -701,19 +704,19 @@ static int sub_02085A70(void *applicationPtr)
 
     PartyMenu_UpdateSlotPalette(application, application->currPartySlot);
 
-    application->unk_B00 = (void *)PokemonSummaryScreen_UpdateHPBar;
+    application->nextAction = (void *)PokemonSummaryScreen_UpdateHPBar;
 
     PartyMenu_DrawMemberPanelData(application, application->currPartySlot);
     PartyMenu_LoadMemberWindowTiles(application, application->currPartySlot);
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
 
-    application->unk_B00 = sub_02085C50;
-    application->unk_B13 = 0;
+    application->nextAction = PartyMenu_HandleStatIncreasesOnLevelUp;
+    application->levelUpState = 0;
 
     return 5;
 }
 
-static int sub_02085C50(void *applicationPtr)
+static int PartyMenu_HandleStatIncreasesOnLevelUp(void *applicationPtr)
 {
     PartyMenuApplication *application;
     Pokemon *mon;
@@ -721,13 +724,13 @@ static int sub_02085C50(void *applicationPtr)
 
     application = applicationPtr;
 
-    switch (application->unk_B13) {
+    switch (application->levelUpState) {
     case 0:
         if (Text_IsPrinterActive(application->textPrinterID) == 0) {
             if (gSystem.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
                 Sound_PlayEffect(SEQ_SE_CONFIRM);
                 PartyMenu_DrawLevelUpStatIncreases(application);
-                application->unk_B13 = 1;
+                application->levelUpState = 1;
             }
         }
         break;
@@ -735,23 +738,28 @@ static int sub_02085C50(void *applicationPtr)
         if (gSystem.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
             Sound_PlayEffect(SEQ_SE_CONFIRM);
             PartyMenu_DrawLevelUpNewStatValues(application);
-            application->unk_B13 = 2;
+            application->levelUpState = 2;
         }
         break;
     case 2:
         if (gSystem.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
             Sound_PlayEffect(SEQ_SE_CONFIRM);
             PartyMenu_RemoveContextWindow(application);
-            application->unk_B13 = 3;
+            application->levelUpState = 3;
             application->partyMenu->levelUpMoveIndex = 0;
         }
         break;
     case 3:
         mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
 
+        if (Pokemon_GetLevel(mon) == monLevelBeforeItemApplied) {
+            application->levelUpState = 6;
+            break;
+        }
+
         switch (Pokemon_LevelUpMove(mon, &application->partyMenu->levelUpMoveIndex, &application->partyMenu->learnedMove)) {
         case 0x0:
-            application->unk_B13 = 6;
+            application->levelUpState = 6;
             break;
         case 0xffff:
             StringTemplate_SetNickname(application->template, 0, Pokemon_GetBoxPokemon(mon));
@@ -779,7 +787,7 @@ static int sub_02085C50(void *applicationPtr)
             StringTemplate_Format(application->template, application->tmpString, string);
             String_Free(string);
             PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, FALSE);
-            application->unk_B13 = 4;
+            application->levelUpState = 4;
             break;
         }
         break;
@@ -787,7 +795,7 @@ static int sub_02085C50(void *applicationPtr)
         if (Text_IsPrinterActive(application->textPrinterID) == 0) {
             if (gSystem.pressedKeys & (PAD_BUTTON_A | PAD_BUTTON_B)) {
                 Sound_PlayEffect(SEQ_SE_CONFIRM);
-                application->unk_B13 = 3;
+                application->levelUpState = 3;
             }
         }
         break;
@@ -802,7 +810,7 @@ static int sub_02085C50(void *applicationPtr)
             String_Free(string);
             PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, FALSE);
 
-            application->unk_B13 = 4;
+            application->levelUpState = 4;
         }
         break;
     case 6: {
@@ -832,8 +840,8 @@ int sub_02085EF4(PartyMenuApplication *application)
     Pokemon *mon;
     String *string;
 
-    application->unk_B00 = sub_02085C50;
-    application->unk_B13 = 3;
+    application->nextAction = PartyMenu_HandleStatIncreasesOnLevelUp;
+    application->levelUpState = 3;
 
     mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
     StringTemplate_SetNickname(application->template, 0, Pokemon_GetBoxPokemon(mon));
@@ -850,7 +858,7 @@ int sub_02085EF4(PartyMenuApplication *application)
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, TRUE);
 
     application->stateAfterMessage = PARTY_MENU_STATE_5;
-    application->unk_B13 = 5;
+    application->levelUpState = 5;
 
     return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
 }
@@ -896,7 +904,7 @@ static int sub_02086060(void *applicationPtr)
     PartyMenu_PrintLongMessage(application, PRINT_MESSAGE_PRELOADED, FALSE);
 
     application->stateAfterMessage = PARTY_MENU_STATE_5;
-    application->unk_B13 = 4;
+    application->levelUpState = 4;
 
     return PARTY_MENU_STATE_SHOW_MESSAGE_THEN_NEXT_STATE;
 }
