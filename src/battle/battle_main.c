@@ -8,6 +8,7 @@
 #include "constants/battle.h"
 #include "constants/battle/battle_controller.h"
 #include "constants/heap.h"
+#include "constants/level_caps.h"
 #include "generated/game_records.h"
 #include "generated/trainer_classes.h"
 
@@ -169,6 +170,7 @@ enum BattleState {
     BATTLE_STATE_WAIT_TRAINER_INTRO,
     BATTLE_STATE_SYNC_BATTLE_START,
     BATTLE_STATE_INIT_GRAPHICS,
+    BATTLE_STATE_CHECK_SHOULD_DISABLE_LEVEL_CAP,
     BATTLE_STATE_MAIN,
     BATTLE_STATE_HANDLE_BATTLE_RESULT,
     BATTLE_STATE_LINK_BATTLE_END,
@@ -244,6 +246,15 @@ BOOL Battle_Main(ApplicationManager *appMan, int *state)
         Overlay_LoadByID(FS_OVERLAY_ID(overlay11), OVERLAY_LOAD_ASYNC);
         Overlay_LoadByID(FS_OVERLAY_ID(battle_anim), OVERLAY_LOAD_ASYNC);
         BattleMain_InitGraphics(appMan);
+        *state = BATTLE_STATE_CHECK_SHOULD_DISABLE_LEVEL_CAP;
+        break;
+    case BATTLE_STATE_CHECK_SHOULD_DISABLE_LEVEL_CAP:
+        BattleSystem *battleSys = ApplicationManager_Data(appMan);
+        if (battleSys->battleType & BATTLE_TYPE_TRAINER) {
+            if (TrainerIsGymLeaderE4OrChampion(battleSys->trainers[BATTLER_ENEMY_1].header.trainerType) == TRUE || TrainerIsGymLeaderE4OrChampion(battleSys->trainers[BATTLER_ENEMY_2].header.trainerType)) {
+                gEnforceLevelCaps = FALSE;
+            }
+        }
         *state = BATTLE_STATE_MAIN;
         break;
     case BATTLE_STATE_MAIN:
@@ -259,6 +270,7 @@ BOOL Battle_Main(ApplicationManager *appMan, int *state)
             Heap_Destroy(HEAP_ID_BATTLE);
             *state = BATTLE_STATE_CHECK_EVOLUTION;
         }
+        gEnforceLevelCaps = TRUE;
         break;
     case BATTLE_STATE_LINK_BATTLE_END:
         if (BattleMain_WaitLinkBattleEnd(appMan) == TRUE) {

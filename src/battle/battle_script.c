@@ -9772,7 +9772,7 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             int currentBadge = TrainerInfo_BadgeCount(trInfo);
             data->tmpData[GET_EXP_NEW_EXP] = newExp - Pokemon_GetCurrentLevelBaseExp(mon);
 
-            if (currentLevel >= LevelCap_LUT[currentBadge]) {
+            if (currentLevel >= LevelCap_LUT[currentBadge] && gEnforceLevelCaps == TRUE) {
                 totalExp = 0;
             }
             newExp += totalExp;

@@ -23,4 +23,6 @@ static const u16 LevelCap_LUT[] = {
     LEVEL_CAP_E4
 };
 
+extern BOOL gEnforceLevelCaps;
+
 #endif // POKEPLATINUM_LEVEL_CAPS_H

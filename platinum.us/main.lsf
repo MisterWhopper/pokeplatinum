@@ -33,6 +33,7 @@ Static main
 	Object main.nef.p/src_overlay_manager.c.o
 	Object main.nef.p/src_narc.c.o
 	Object main.nef.p/src_graphics.c.o
+	Object main.nef.p/src_level_caps.c.o
 	Object main.nef.p/src_randomizer.c.o
 	Object main.nef.p/src_pokemon_sprite.c.o
 	Object main.nef.p/src_sprite_util.c.o
