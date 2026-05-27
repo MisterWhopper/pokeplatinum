@@ -486,6 +486,9 @@ static u8 IncreaseMovePPUps(Pokemon *mon, u32 moveSlot, u32 amount)
 
 static void RestorePokemonHP(Pokemon *mon, u32 currentHP, u32 maxHP, u32 amount)
 {
+    if (currentHP == 0) {
+        return;
+    }
     if (maxHP == 1) {
         amount = 1;
     } else if (amount == HEAL_FULL_HP) {
@@ -619,6 +622,12 @@ void Party_HealAllMembers(Party *party)
         Pokemon *mon = Party_GetPokemonBySlotIndex(party, i);
 
         if (Pokemon_GetValue(mon, MON_DATA_SPECIES_EXISTS, NULL) == FALSE) {
+            continue;
+        }
+
+        u32 currentHp = Pokemon_GetValue(mon, MON_DATA_HP, NULL);
+        if (currentHp == 0) {
+            // This is a nuzlocke hack, so we don't heal dead mons.
             continue;
         }
 
