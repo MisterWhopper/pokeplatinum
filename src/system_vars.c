@@ -66,7 +66,7 @@ BOOL SystemVars_SetStarterOption(VarsFlags *varsFlags, u16 slotNum, u16 species)
 {
     u16 selectedSlot = VAR_STARTER_2;
     if (slotNum == 0) {
-       selectedSlot = VAR_STARTER_0; 
+        selectedSlot = VAR_STARTER_0;
     } else if (slotNum == 1) {
         selectedSlot = VAR_STARTER_1;
     }
@@ -568,4 +568,11 @@ void SystemVars_SetDistortionWorldCyrusApperanceState(VarsFlags *varsFlags, u16 
 u16 SystemVars_GetWiFiFrontierCleared(VarsFlags *varsFlags)
 {
     return TryGetVarValue(varsFlags, VAR_WIFI_FRONTIER_CLEARED);
+}
+
+void SystemVars_SetStarterOptions(VarsFlags *varsFlags, u16 *starterOptions)
+{
+    TrySetVarToValue(varsFlags, VAR_STARTER_0, starterOptions[0]);
+    TrySetVarToValue(varsFlags, VAR_STARTER_1, starterOptions[1]);
+    TrySetVarToValue(varsFlags, VAR_STARTER_2, starterOptions[2]);
 }

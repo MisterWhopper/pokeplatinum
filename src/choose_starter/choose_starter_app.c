@@ -31,6 +31,7 @@
 #include "render_oam.h"
 #include "render_text.h"
 #include "render_window.h"
+#include "savedata.h"
 #include "screen_fade.h"
 #include "software_sprite.h"
 #include "sound.h"
@@ -333,6 +334,7 @@ BOOL ChooseStarter_Init(ApplicationManager *appMan, int *param1)
         sRandomizedStarterOptions[i] = Randomizer_GetSpecies();
     }
 
+    SystemVars_SetStarterOptions(SaveData_GetVarsFlags(SaveData_Ptr()), sRandomizedStarterOptions);
     ChooseStarterApp *app = ApplicationManager_NewData(appMan, sizeof(ChooseStarterApp), HEAP_ID_CHOOSE_STARTER_APP);
     GF_ASSERT(app);
     memset(app, 0, sizeof(ChooseStarterApp));
