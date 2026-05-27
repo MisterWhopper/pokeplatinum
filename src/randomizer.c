@@ -44,11 +44,6 @@ u16 Randomizer_GetMove()
     return LCRNG_RandMod(469) + 1;
 }
 
-u16 Randomizer_GetTMHM()
-{
-    return LCRNG_RandMod(LAST_TMHM_IDX - FIRST_TMHM_IDX) + FIRST_TMHM_IDX;
-}
-
 u16 Randomizer_GetItem()
 {
     u16 result;
