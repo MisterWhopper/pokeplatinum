@@ -9773,7 +9773,8 @@ static void BattleScript_GetExpTask(SysTask *task, void *inData)
             data->tmpData[GET_EXP_NEW_EXP] = newExp - Pokemon_GetCurrentLevelBaseExp(mon);
 
             if (currentLevel >= LevelCap_LUT[currentBadge] && gEnforceLevelCaps == TRUE) {
-                totalExp = 0;
+                // Allow the mon to edge up to the level cap, but no more
+                totalExp = min(totalExp, Pokemon_GetExpToNextLevel(mon) - 1);
             }
             newExp += totalExp;
             if (slot == data->battleCtx->selectedPartySlot[expBattler]) {
