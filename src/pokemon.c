@@ -3530,6 +3530,35 @@ BOOL Pokemon_ShouldLevelUp(Pokemon *mon)
     return FALSE;
 }
 
+void Pokemon_GetEvolutionsOfSpecies(u16 species, u32 level, u16 *destVar)
+{
+    if (destVar == NULL) {
+        return;
+    }
+    SpeciesEvolution *speciesEvolutions = Heap_Alloc(HEAP_ID_SYSTEM, sizeof(SpeciesEvolution) * MAX_EVOLUTIONS);
+    LoadSpeciesEvolutions(species, speciesEvolutions);
+    int counter = 0;
+    for (int i = 0; i < MAX_EVOLUTIONS; i++) {
+        switch (speciesEvolutions[i].method) {
+        case EVO_LEVEL:
+            if (level >= speciesEvolutions[i].param) {
+                destVar[counter++] = speciesEvolutions[i].targetSpecies;
+            }
+            break;
+        case EVO_LEVEL_HAPPINESS:
+        case EVO_LEVEL_BEAUTY:
+        case EVO_LEVEL_SPECIES_IN_PARTY:
+        case EVO_LEVEL_KNOW_MOVE:
+        case EVO_LEVEL_MALE:
+        case EVO_LEVEL_FEMALE:
+        case EVO_LEVEL_MOSS_ROCK:
+        case EVO_LEVEL_ICE_ROCK:
+            destVar[counter++] = speciesEvolutions[i].targetSpecies;
+            break;
+        }
+    }
+}
+
 u16 Pokemon_GetEvolutionTargetSpecies(Party *party, Pokemon *mon, u8 evoClass, u16 evoParam, int *evoTypeResult)
 {
     u16 targetSpecies = SPECIES_NONE;

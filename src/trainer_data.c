@@ -11,6 +11,7 @@
 #include "charcode_util.h"
 #include "field_battle_data_transfer.h"
 #include "heap.h"
+#include "inlines.h"
 #include "math_util.h"
 #include "message.h"
 #include "narc.h"
@@ -185,6 +186,18 @@ static BOOL Trainer_IsGymLeader(u16 trainerClass)
     return FALSE;
 }
 
+static BOOL Trainer_IsTGCommander(u16 trainerClass)
+{
+    switch (trainerClass) {
+    case TRAINER_CLASS_COMMANDER_JUPITER:
+    case TRAINER_CLASS_COMMANDER_MARS:
+    case TRAINER_CLASS_COMMANDER_SATURN:
+    case TRAINER_CLASS_GALACTIC_BOSS:
+        return TRUE;
+    }
+    return FALSE;
+}
+
 static BOOL Trainer_IsE4(u16 trainerClass)
 {
     switch (trainerClass) {
@@ -211,7 +224,7 @@ static BOOL Trainer_IsRival(u8 trainerClass)
 
 static u16 Trainer_GetThresholdForSpecialTrainer(u16 trainerClass)
 {
-    if (Trainer_IsGymLeader(trainerClass) == TRUE || Trainer_IsRival(trainerClass) == TRUE) {
+    if (Trainer_IsGymLeader(trainerClass) == TRUE || Trainer_IsRival(trainerClass) == TRUE || Trainer_IsTGCommander(trainerClass)) {
         return 16;
     } else if (Trainer_IsE4(trainerClass) == TRUE) {
         return 10;
@@ -219,6 +232,33 @@ static u16 Trainer_GetThresholdForSpecialTrainer(u16 trainerClass)
         return 8;
     }
     return 0;
+}
+
+static BOOL Trainer_MonIsStarterEvo(u16 species)
+{
+    switch (species) {
+    case SPECIES_PIPLUP:
+    case SPECIES_PRINPLUP:
+    case SPECIES_EMPOLEON:
+    case SPECIES_CHIMCHAR:
+    case SPECIES_CHARMELEON:
+    case SPECIES_INFERNAPE:
+    case SPECIES_TURTWIG:
+    case SPECIES_GROTLE:
+    case SPECIES_TORTERRA:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+static u16 Trainer_GetMonEvo(u16 species, u32 level, enum HeapID heapID)
+{
+    u16 *evolutionOptions = (u16 *)Heap_Alloc(heapID, sizeof(u16) * MAX_EVOLUTIONS);
+    Pokemon_GetEvolutionsOfSpecies(species, level, evolutionOptions);
+    u16 result = NELEMS(evolutionOptions) > 0 ? evolutionOptions[LCRNG_RandMod(NELEMS(evolutionOptions))] : species;
+    Heap_Free(evolutionOptions);
+    return result;
 }
 /**
  * @brief Build the party for a trainer as loaded in the FieldBattleDTO struct.
@@ -258,7 +298,11 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
-                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
+                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                } else {
+                    species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                }
             } else {
                 species = Randomizer_GetSimilarBSTSpecies(species);
             }
@@ -289,7 +333,11 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
-                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
+                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                } else {
+                    species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                }
             } else {
                 species = Randomizer_GetSimilarBSTSpecies(species);
             }
@@ -325,7 +373,11 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
-                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
+                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                } else {
+                    species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                }
             } else {
                 species = Randomizer_GetSimilarBSTSpecies(species);
             }
@@ -357,7 +409,11 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             u16 species = trmon[i].species & 0x3FF;
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
-                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
+                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                } else {
+                    species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+                }
             } else {
                 species = Randomizer_GetSimilarBSTSpecies(species);
             }
