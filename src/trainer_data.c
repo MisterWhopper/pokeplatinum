@@ -167,6 +167,59 @@ u8 TrainerClass_Gender(int trclass)
     return sTrainerClassGender[trclass];
 }
 
+static BOOL Trainer_IsGymLeader(u16 trainerClass)
+{
+    switch (trainerClass) {
+    case TRAINER_CLASS_LEADER_ROARK:
+    case TRAINER_CLASS_LEADER_GARDENIA:
+    case TRAINER_CLASS_LEADER_WAKE:
+    case TRAINER_CLASS_LEADER_MAYLENE:
+    case TRAINER_CLASS_LEADER_FANTINA:
+    case TRAINER_CLASS_LEADER_CANDICE:
+    case TRAINER_CLASS_LEADER_BYRON:
+    case TRAINER_CLASS_LEADER_VOLKNER:
+        return TRUE;
+        break;
+    }
+
+    return FALSE;
+}
+
+static BOOL Trainer_IsE4(u16 trainerClass)
+{
+    switch (trainerClass) {
+    case TRAINER_CLASS_ELITE_FOUR_AARON:
+    case TRAINER_CLASS_ELITE_FOUR_BERTHA:
+    case TRAINER_CLASS_ELITE_FOUR_FLINT:
+    case TRAINER_CLASS_ELITE_FOUR_LUCIAN:
+        return TRUE;
+        break;
+    }
+
+    return FALSE;
+}
+
+static BOOL Trainer_IsChampion(u16 trainerClass)
+{
+    return trainerClass == TRAINER_CLASS_CHAMPION_CYNTHIA ? TRUE : FALSE;
+}
+
+static BOOL Trainer_IsRival(u8 trainerClass)
+{
+    return trainerClass == TRAINER_CLASS_RIVAL ? TRUE : FALSE;
+}
+
+static u16 Trainer_GetThresholdForSpecialTrainer(u16 trainerClass)
+{
+    if (Trainer_IsGymLeader(trainerClass) == TRUE || Trainer_IsRival(trainerClass) == TRUE) {
+        return 16;
+    } else if (Trainer_IsE4(trainerClass) == TRUE) {
+        return 10;
+    } else if (Trainer_IsChampion(trainerClass) == TRUE) {
+        return 8;
+    }
+    return 0;
+}
 /**
  * @brief Build the party for a trainer as loaded in the FieldBattleDTO struct.
  *
@@ -184,6 +237,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
     Pokemon *mon;
 
     oldSeed = LCRNG_GetSeed();
+    u16 threshold = Trainer_GetThresholdForSpecialTrainer(dto->trainer[battler].header.trainerType);
 
     // alloc enough space to support the maximum possible data size
     Party_InitWithCapacity(dto->parties[battler], MAX_PARTY_SIZE);
@@ -202,7 +256,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         TrainerMonBase *trmon = (TrainerMonBase *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
             u16 species = trmon[i].species & 0x3FF;
-            species = Randomizer_GetSimilarBSTSpecies(species);
+            if (threshold != 0) {
+                // For special fights, use a stricter upper & lower bound for the BST stuffs.
+                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+            } else {
+                species = Randomizer_GetSimilarBSTSpecies(species);
+            }
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -228,7 +287,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         TrainerMonWithMoves *trmon = (TrainerMonWithMoves *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
             u16 species = trmon[i].species & 0x3FF;
-            species = Randomizer_GetSimilarBSTSpecies(species);
+            if (threshold != 0) {
+                // For special fights, use a stricter upper & lower bound for the BST stuffs.
+                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+            } else {
+                species = Randomizer_GetSimilarBSTSpecies(species);
+            }
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -260,7 +324,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         TrainerMonWithItem *trmon = (TrainerMonWithItem *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
             u16 species = trmon[i].species & 0x3FF;
-            species = Randomizer_GetSimilarBSTSpecies(species);
+            if (threshold != 0) {
+                // For special fights, use a stricter upper & lower bound for the BST stuffs.
+                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+            } else {
+                species = Randomizer_GetSimilarBSTSpecies(species);
+            }
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];
@@ -287,7 +356,12 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
         TrainerMonWithMovesAndItem *trmon = (TrainerMonWithMovesAndItem *)buf;
         for (i = 0; i < dto->trainer[battler].header.partySize; i++) {
             u16 species = trmon[i].species & 0x3FF;
-            species = Randomizer_GetSimilarBSTSpecies(species);
+            if (threshold != 0) {
+                // For special fights, use a stricter upper & lower bound for the BST stuffs.
+                species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
+            } else {
+                species = Randomizer_GetSimilarBSTSpecies(species);
+            }
             u8 form = (trmon[i].species & 0xFC00) >> TRAINER_MON_FORM_SHIFT;
 
             rnd = trmon[i].ivScale + trmon[i].level + species + dto->trainerIDs[battler];

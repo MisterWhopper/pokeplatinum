@@ -26,6 +26,24 @@ u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
     return result;
 }
 
+u16 Randomizer_GetSimilarBSTSpeciesWithThreshold(u16 speciesId, u16 threshold)
+{
+    u16 bst = Pokemon_BST_LUT[speciesId];
+    u16 modifier = bst / threshold;
+    u16 bstLowerBound = bst - modifier;
+    u16 bstUpperBound = bst + modifier;
+    u16 *buff = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * SPECIES_ARCEUS);
+    u16 counter = 0;
+    for (u16 i = SPECIES_BULBASAUR; i <= SPECIES_ARCEUS; ++i) {
+        u16 otherBST = Pokemon_BST_LUT[i];
+        if (otherBST <= bstUpperBound && otherBST >= bstLowerBound) {
+            buff[counter++] = i;
+        }
+    }
+    u16 result = counter > 0 ? buff[LCRNG_RandMod(counter)] : speciesId;
+    Heap_Free(buff);
+}
+
 u16 Randomizer_GetSpecies()
 {
     // Make sure to only generate valid mons
