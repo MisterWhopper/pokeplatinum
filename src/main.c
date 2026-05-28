@@ -17,6 +17,7 @@
 #include "math_util.h"
 #include "overlay_manager.h"
 #include "play_time_manager.h"
+#include "randomizer.h"
 #include "rtc.h"
 #include "save_player.h"
 #include "savedata.h"
@@ -113,6 +114,7 @@ void NitroMain(void)
     gSystem.frameCounter = 0;
 
     InitRNG();
+    Randomizer_Init();
     BrightnessController_ResetAllControllers();
     PlayTime_FlagNotStarted();
 

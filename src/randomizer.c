@@ -10,19 +10,31 @@
 #include "item.h"
 #include "species.h"
 
+static u16 *sLUTBuffer;
+
+void Randomizer_Init()
+{
+    // Pre-create the buffer so we aren't constantly doing allocs & frees
+    sLUTBuffer = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * SPECIES_ARCEUS);
+}
+
+void Randomizer_Free()
+{
+    // When would we ever do this lol
+    Heap_Free(sLUTBuffer);
+}
+
 u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
 {
     u16 bst = Pokemon_BST_LUT[speciesId];
-    u16 *buff = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * SPECIES_ARCEUS);
     u16 counter = 0;
     for (u16 i = SPECIES_BULBASAUR; i <= SPECIES_ARCEUS; ++i) {
         u16 otherBST = Pokemon_BST_LUT[i];
         if (otherBST <= bst) {
-            buff[counter++] = i;
+            sLUTBuffer[counter++] = i;
         }
     }
-    u16 result = counter > 0 ? buff[LCRNG_RandMod(counter)] : speciesId;
-    Heap_Free(buff);
+    u16 result = counter > 0 ? sLUTBuffer[LCRNG_RandMod(counter)] : speciesId;
     return result;
 }
 
@@ -32,16 +44,14 @@ u16 Randomizer_GetSimilarBSTSpeciesWithThreshold(u16 speciesId, u16 threshold)
     u16 modifier = bst / threshold;
     u16 bstLowerBound = bst - modifier;
     u16 bstUpperBound = bst + modifier;
-    u16 *buff = (u16 *)Heap_Alloc(HEAP_ID_SYSTEM, sizeof(u16) * SPECIES_ARCEUS);
     u16 counter = 0;
     for (u16 i = SPECIES_BULBASAUR; i <= SPECIES_ARCEUS; ++i) {
         u16 otherBST = Pokemon_BST_LUT[i];
         if (otherBST <= bstUpperBound && otherBST >= bstLowerBound) {
-            buff[counter++] = i;
+            sLUTBuffer[counter++] = i;
         }
     }
-    u16 result = counter > 0 ? buff[LCRNG_RandMod(counter)] : speciesId;
-    Heap_Free(buff);
+    u16 result = counter > 0 ? sLUTBuffer[LCRNG_RandMod(counter)] : speciesId;
     return result;
 }
 
