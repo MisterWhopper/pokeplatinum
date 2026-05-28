@@ -42,6 +42,7 @@ u16 Randomizer_GetSimilarBSTSpeciesWithThreshold(u16 speciesId, u16 threshold)
     }
     u16 result = counter > 0 ? buff[LCRNG_RandMod(counter)] : speciesId;
     Heap_Free(buff);
+    return result;
 }
 
 u16 Randomizer_GetSpecies()
