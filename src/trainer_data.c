@@ -167,6 +167,20 @@ u8 TrainerClass_Gender(int trclass)
     return sTrainerClassGender[trclass];
 }
 
+static BOOL Trainer_IsAce(u16 trainerClass)
+{
+    switch (trainerClass) {
+    case TRAINER_CLASS_ACE_TRAINER_FEMALE:
+    case TRAINER_CLASS_ACE_TRAINER_MALE:
+    case TRAINER_CLASS_ACE_TRAINER_SNOW_FEMALE:
+    case TRAINER_CLASS_ACE_TRAINER_SNOW_MALE:
+        return TRUE;
+        break;
+    }
+
+    return FALSE;
+}
+
 static BOOL Trainer_IsGymLeader(u16 trainerClass)
 {
     switch (trainerClass) {
@@ -223,8 +237,10 @@ static BOOL Trainer_IsRival(u8 trainerClass)
 
 static u16 Trainer_GetThresholdForSpecialTrainer(u16 trainerClass)
 {
-    if (Trainer_IsGymLeader(trainerClass) == TRUE || Trainer_IsRival(trainerClass) == TRUE || Trainer_IsTGCommander(trainerClass)) {
+    if (Trainer_IsGymLeader(trainerClass) == TRUE || Trainer_IsRival(trainerClass) == TRUE) {
         return 16;
+    } else if (Trainer_IsTGCommander(trainerClass) || Trainer_IsAce(trainerClass)) {
+        return 20;
     } else if (Trainer_IsE4(trainerClass) == TRUE) {
         return 10;
     } else if (Trainer_IsChampion(trainerClass) == TRUE) {
