@@ -5,6 +5,7 @@
 
 #include "constants/daycare.h"
 #include "constants/items.h"
+#include "constants/level_caps.h"
 #include "constants/species.h"
 #include "generated/egg_groups.h"
 #include "generated/game_records.h"
@@ -179,11 +180,17 @@ static int Daycare_MoveToPartyFromDaycareMon(Party *party, DaycareMon *daycareMo
     StringTemplate_SetNickname(template, 0, boxMon);
     species = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
     Pokemon_FromBoxPokemon(boxMon, mon);
+    int currentBadge = TrainerInfo_BadgeCount(SaveData_GetTrainerInfo(SaveData_Ptr()));
 
     if (Pokemon_GetValue(mon, MON_DATA_LEVEL, NULL) != MAX_POKEMON_LEVEL) {
         experience = Pokemon_GetValue(mon, MON_DATA_EXPERIENCE, NULL);
-        experience += DaycareMon_GetSteps(daycareMon);
-        Pokemon_SetValue(mon, MON_DATA_EXPERIENCE, (u8 *)&experience);
+        u32 steps = DaycareMon_GetSteps(daycareMon);
+        u32 newExp = experience + steps;
+        int level = Pokemon_GetLevel(mon);
+        if (level >= LevelCap_LUT[currentBadge] && gEnforceLevelCaps == TRUE) {
+            newExp = min(newExp, Pokemon_GetExpToNextLevel(mon) - 1);
+        }
+        Pokemon_SetValue(mon, MON_DATA_EXPERIENCE, (u8 *)&newExp);
         ov5_021E63E0(mon);
     }
 
@@ -217,8 +224,15 @@ int BoxPokemon_GiveExperience(BoxPokemon *boxMon, u32 givenExp)
     int level;
     u32 exp;
 
-    BoxPokemon_Copy(boxMon, boxMonRef);
+    int currentBadge = TrainerInfo_BadgeCount(SaveData_GetTrainerInfo(SaveData_Ptr()));
 
+    BoxPokemon_Copy(boxMon, boxMonRef);
+    Pokemon_FromBoxPokemon(boxMonRef, mon);
+
+    level = BoxPokemon_GetLevel(boxMonRef);
+    if (level >= LevelCap_LUT[currentBadge] && gEnforceLevelCaps == TRUE) {
+        givenExp = min(givenExp, Pokemon_GetExpToNextLevel(mon) - 1);
+    }
     exp = BoxPokemon_GetValue(boxMonRef, MON_DATA_EXPERIENCE, NULL);
     exp += givenExp;
 
@@ -462,7 +476,7 @@ static u8 LoadSpeciesEggMoves(Pokemon *mon, u16 *eggMoves)
         if (sEggMoves[eggMoveOffset + i] > EGG_MOVES_SPECIES_OFFSET) {
             break;
         } else {
-            eggMoves[i] = sEggMoves[eggMoveOffset + i];
+            eggMoves[i] = Randomizer_GetMove();
             eggMoveCount++;
         }
     }
