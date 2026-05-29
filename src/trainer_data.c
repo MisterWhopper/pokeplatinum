@@ -11,7 +11,6 @@
 #include "charcode_util.h"
 #include "field_battle_data_transfer.h"
 #include "heap.h"
-#include "inlines.h"
 #include "math_util.h"
 #include "message.h"
 #include "narc.h"
@@ -252,14 +251,6 @@ static BOOL Trainer_MonIsStarterEvo(u16 species)
     }
 }
 
-static u16 Trainer_GetMonEvo(u16 species, u32 level, enum HeapID heapID)
-{
-    u16 *evolutionOptions = (u16 *)Heap_Alloc(heapID, sizeof(u16) * MAX_EVOLUTIONS);
-    Pokemon_GetEvolutionsOfSpecies(species, level, evolutionOptions);
-    u16 result = NELEMS(evolutionOptions) > 0 ? evolutionOptions[LCRNG_RandMod(NELEMS(evolutionOptions))] : species;
-    Heap_Free(evolutionOptions);
-    return result;
-}
 /**
  * @brief Build the party for a trainer as loaded in the FieldBattleDTO struct.
  *
@@ -299,7 +290,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
                 if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
-                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                    species = Pokemon_GetEvolutionsOfSpecies(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level);
                 } else {
                     species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
                 }
@@ -334,7 +325,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
                 if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
-                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                    species = Pokemon_GetEvolutionsOfSpecies(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level);
                 } else {
                     species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
                 }
@@ -374,7 +365,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
                 if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
-                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                    species = Pokemon_GetEvolutionsOfSpecies(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level);
                 } else {
                     species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
                 }
@@ -410,7 +401,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             if (threshold != 0) {
                 // For special fights, use a stricter upper & lower bound for the BST stuffs.
                 if (Trainer_IsRival(dto->trainer[battler].header.trainerType) && Trainer_MonIsStarterEvo(species)) {
-                    species = Trainer_GetMonEvo(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level, heapID);
+                    species = Pokemon_GetEvolutionsOfSpecies(SystemVars_GetRivalStarter(SaveData_GetVarsFlags(SaveData_Ptr())), trmon[i].level);
                 } else {
                     species = Randomizer_GetSimilarBSTSpeciesWithThreshold(species, threshold);
                 }

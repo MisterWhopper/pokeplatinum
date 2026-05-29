@@ -916,6 +916,6 @@ BOOL Pokemon_SetBallSeal(int param0, Pokemon *mon, enum HeapID heapID);
 void sub_02078B40(Pokemon *mon, UnkStruct_02078B40 *param1);
 void sub_02078E0C(UnkStruct_02078B40 *param0, Pokemon *mon);
 
-void Pokemon_GetEvolutionsOfSpecies(u16, u32, u16 *);
+u16 Pokemon_GetEvolutionsOfSpecies(u16, u32);
 
 #endif // POKEPLATINUM_POKEMON_H
