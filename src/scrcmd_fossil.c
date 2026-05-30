@@ -10,6 +10,7 @@
 #include "bag.h"
 #include "field_script_context.h"
 #include "inlines.h"
+#include "randomizer.h"
 
 static const struct {
     u16 item;
@@ -49,7 +50,7 @@ BOOL ScrCmd_GetSpeciesFromFossil(ScriptContext *ctx)
 
     for (i = 0; i < NELEMS(sFossilItemToSpeciesMapping); i++) {
         if (sFossilItemToSpeciesMapping[i].item == inputItemID) {
-            *destVar = sFossilItemToSpeciesMapping[i].species;
+            *destVar = Randomizer_GetSpecies();
             break;
         }
     }
