@@ -10,7 +10,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedCut",
-      "en_US": "{STRVAR_1 0, 0, 0} used Cut!\r"
+      "en_US": "A mysterious Pokémon used Cut!\r"
     },
     {
       "id": "FieldMoves_Text_TreeLooksLikeCanBeCut",
@@ -35,7 +35,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedRockSmash",
-      "en_US": "{STRVAR_1 0, 0, 0} used Rock Smash!\r"
+      "en_US": "A mysterious Pokémon used Rock Smash!\r"
     },
     {
       "id": "FieldMoves_Text_WouldYouLikeToUseStrength",
@@ -65,12 +65,12 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedStrength",
-      "en_US": "{STRVAR_1 0, 0, 0} used Strength!\r"
+      "en_US": "A mysterious Pokémon used Strength!\r"
     },
     {
       "id": "FieldMoves_Text_PokemonStrengthMadePossibleToMove",
       "en_US": [
-        "{STRVAR_1 0, 0, 0}’s Strength made it\n",
+        "A mysterious Pokémon’s Strength made it\n",
         "possible to move boulders around!"
       ]
     },
@@ -83,7 +83,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedSurf",
-      "en_US": "{STRVAR_1 0, 0, 0} used Surf!\r"
+      "en_US": "A mysterious Pokémon used Surf!\r"
     },
     {
       "id": "FieldMoves_Text_NoSurfingWithPartner",
@@ -101,7 +101,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedDefog",
-      "en_US": "{STRVAR_1 0, 0, 0} used Defog!\r"
+      "en_US": "A mysterious Pokémon used Defog!\r"
     },
     {
       "id": "FieldMoves_Text_DeepFogDrapesArea_Unused",
@@ -119,7 +119,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedRockClimb",
-      "en_US": "{STRVAR_1 0, 0, 0} used Rock Climb!\r"
+      "en_US": "A mysterious Pokémon used Rock Climb!\r"
     },
     {
       "id": "FieldMoves_Text_RockyWallWillMoveScale",
@@ -144,7 +144,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedWaterfall",
-      "en_US": "{STRVAR_1 0, 0, 0} used Waterfall.\r"
+      "en_US": "A mysterious Pokémon used Waterfall.\r"
     },
     {
       "id": "FieldMoves_Text_WallOfWater",
@@ -159,7 +159,7 @@
     },
     {
       "id": "FieldMoves_Text_PokemonUsedFlash",
-      "en_US": "{STRVAR_1 0, 0, 0} used Flash!\r"
+      "en_US": "A mysterious Pokémon used Flash!\r"
     }
   ]
 }

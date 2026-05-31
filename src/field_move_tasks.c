@@ -30,6 +30,7 @@
 #include "player_avatar.h"
 #include "save_player.h"
 #include "script_manager.h"
+#include "species.h"
 #include "start_menu.h"
 #include "system_flags.h"
 #include "terrain_collision_manager.h"
@@ -126,6 +127,14 @@ static const FieldMoveTaskOrError fieldMoveTaskOrError[] = {
     { FieldMoves_SetChatterTask, FieldMoves_CheckChatter },
 };
 
+static Pokemon *HM_Assistant()
+{
+    Pokemon *sHMAssistant = Pokemon_New(HEAP_ID_FIELD1);
+    Pokemon_InitWith(sHMAssistant, SPECIES_ARCEUS, 1, 0, FALSE, 0, OTID_NOT_SET, 0);
+    Pokemon_CalcLevelAndStats(sHMAssistant);
+    return sHMAssistant;
+}
+
 static inline BOOL FieldMoves_IsMoveUsable(const FieldMoveContext *fieldMoveContext, enum FieldMoveList fieldMove)
 {
     if ((fieldMoveContext->usableMoves & FIELD_MOVE_FLAG(fieldMove)) != 0) {
@@ -180,7 +189,7 @@ FlyContext *FlyContext_New(enum HeapID heapID, FieldSystem *fieldSystem, Pokemon
     memset(ctx, 0, sizeof(FlyContext));
 
     ctx->fieldSystem = fieldSystem;
-    ctx->mon = mon;
+    ctx->mon = HM_Assistant();
     ctx->mapID = mapID;
     ctx->x = x;
     ctx->z = z;
@@ -195,7 +204,7 @@ BOOL FieldMoves_FlyTask(FieldTask *task)
 
     switch (ctx->state) {
     case FLY_STATE_START_CUT_IN:
-        ctx->cutInTask = HMCutIn_StartTask(ctx->fieldSystem, TRUE, ctx->mon, PlayerAvatar_Gender(ctx->fieldSystem->playerAvatar));
+        ctx->cutInTask = HMCutIn_StartTask(ctx->fieldSystem, TRUE, HM_Assistant(), PlayerAvatar_Gender(ctx->fieldSystem->playerAvatar));
         ctx->state++;
         break;
     case FLY_STATE_MAIN:
@@ -857,4 +866,9 @@ static BOOL FieldMoves_ChatterTask(FieldTask *taskMan)
     FieldMoves_FreeTaskData(taskData);
 
     return FALSE;
+}
+
+Pokemon *FieldMoves_GetHMAssistant()
+{
+    return HM_Assistant();
 }
