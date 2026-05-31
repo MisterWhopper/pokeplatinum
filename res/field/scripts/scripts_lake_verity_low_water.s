@@ -41,12 +41,10 @@ LakeVerityLowWater_HideStarly:
 LakeVerityLowWater_OnFrameCyrus:
     LockAll
     ClearHasPartner
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalEnter
+    SetFlag FLAG_HIDE_LAKE_VERITY_LOW_WATER_RIVAL
+    RemoveObject LOCALID_RIVAL
     ApplyMovement LOCALID_PLAYER, LakeVerityLowWater_Movement_PlayerEnter
     WaitMovement
-    BufferRivalName 0
-    Message LakeVerityLowWater_Text_WhatsGoingOn
-    CloseMessage
     AddFreeCamera 46, 53
     ApplyFreeCameraMovement LakeVerityLowWater_Movement_PanToCyrus
     WaitMovement
@@ -60,7 +58,6 @@ LakeVerityLowWater_OnFrameCyrus:
     RestoreCamera
     Message LakeVerityLowWater_Text_AllowMeToPass
     CloseMessage
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalMoveAwayForCyrus
     ApplyMovement LOCALID_PLAYER, LakeVerityLowWater_Movement_PlayerWatchRivalMoveAwayForCyrus
     WaitMovement
     ApplyMovement LOCALID_CYRUS, LakeVerityLowWater_Movement_CyrusLeave
@@ -69,42 +66,13 @@ LakeVerityLowWater_OnFrameCyrus:
     RemoveObject LOCALID_CYRUS
     WaitTime 50, VAR_RESULT
     ApplyMovement LOCALID_PLAYER, LakeVerityLowWater_Movement_PlayerLookAtExit
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalWalkToExit
     WaitMovement
-    BufferRivalName 0
-    Message LakeVerityLowWater_Text_WhatWasThatAbout
-    CloseMessage
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalFacePlayer
-    ApplyMovement LOCALID_PLAYER, LakeVerityLowWater_Movement_PlayerFaceRival
-    WaitMovement
-    WaitTime 30, VAR_RESULT
-    BufferPlayerName 1
-    Message LakeVerityLowWater_Text_LetsCatchThatLegendaryPokemon
     PlayCry SPECIES_MESPRIT
     Message LakeVerityLowWater_Text_LegendaryCry
     WaitCry
     CloseMessage
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalNoticeAndLookForLegendary
     ApplyMovement LOCALID_PLAYER, LakeVerityLowWater_Movement_PlayerWatchRivalLookForLegendary
     WaitMovement
-    WaitTime 15, VAR_RESULT
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalWalkOnSpotWest
-    WaitMovement
-    BufferRivalName 0
-    BufferPlayerName 1
-    Message LakeVerityLowWater_Text_ThatWasTheLegendaryPokemonCrying
-    CloseMessage
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalExclamationMark
-    WaitMovement
-    WaitTime 15, VAR_RESULT
-    BufferPlayerName 1
-    Message LakeVerityLowWater_Text_WaitWeDontHavePokeballs
-    CloseMessage
-    ApplyMovement LOCALID_RIVAL, LakeVerityLowWater_Movement_RivalLeave
-    ApplyMovement LOCALID_PLAYER, LakeVerityLowWater_Movement_PlayerWatchRivalLeave
-    WaitMovement
-    SetFlag FLAG_HIDE_LAKE_VERITY_LOW_WATER_RIVAL
-    RemoveObject LOCALID_RIVAL
     PlaySE SEQ_SE_DP_KAIDAN2
     GoTo LakeVerityLowWater_EndRivalFollower
     End

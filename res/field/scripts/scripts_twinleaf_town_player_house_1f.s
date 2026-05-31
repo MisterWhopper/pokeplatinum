@@ -33,6 +33,9 @@ TwinleafTownPlayerHouse1F_HideRivalsMom:
 
 TwinleafTownPlayerHouse1F_OnFrame_RivalAlreadyLeft:
     LockAll
+    SetFlag FLAG_RIVAL_LEFT_HOME
+    SetVar VAR_RIVAL_HOUSE_STATE, 1
+    SetVar VAR_TWINLEAF_TOWN_GUITARIST_TRIGGER_STATE, 2
     ApplyMovement LOCALID_PLAYER, TwinleafTownPlayerHouse1F_Movement_PlayerFaceMom
     ApplyMovement LOCALID_PLAYER_HOUSE_MOM, TwinleafTownPlayerHouse1F_Movement_MomWalkFromCouchToPlayer
     WaitMovement

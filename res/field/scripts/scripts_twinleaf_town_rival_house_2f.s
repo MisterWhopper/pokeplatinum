@@ -10,24 +10,7 @@
 
 TwinleafTownRivalHouse2F_RivalNoticesPlayerAndLeaves:
     LockAll
-    BufferRivalName 0
-    Message TwinleafTownRivalHouse2F_Text_IdBetterTakeBagAndJournal
-    CloseMessage
-    ApplyMovement LOCALID_RIVAL, TwinleafTownRivalHouse2F_Movement_RivalNoticePlayer
-    WaitMovement
-    Common_SetRivalBGM
-    BufferPlayerName 0
-    Message TwinleafTownRivalHouse2F_Text_IllBeWaitingOnTheRoad
-    CloseMessage
-    ApplyMovement LOCALID_RIVAL, TwinleafTownRivalHouse2F_Movement_RivalLeave
-    ApplyMovement LOCALID_PLAYER, TwinleafTownRivalHouse2F_Movement_PlayerMoveAwayFromStairs
-    WaitMovement
-    PlaySE SEQ_SE_DP_KAIDAN2
     RemoveObject LOCALID_RIVAL
-    Common_FadeToDefaultMusic2
-    SetFlag FLAG_RIVAL_LEFT_HOME
-    SetVar VAR_RIVAL_HOUSE_STATE, 1
-    SetVar VAR_TWINLEAF_TOWN_GUITARIST_TRIGGER_STATE, 2
     ReleaseAll
     End
 

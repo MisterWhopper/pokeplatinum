@@ -78,55 +78,7 @@ TwinleafTownPlayerHouse2F_RivalTriggerSouth:
     End
 
 TwinleafTownPlayerHouse2F_Rival:
-    LockAll
-    ClearFlag FLAG_HIDE_TWINLEAF_TOWN_PLAYER_HOUSE_2F_RIVAL
-    AddObject LOCALID_RIVAL
-    ApplyMovement LOCALID_RIVAL, TwinleafTownPlayerHouse2F_Movement_RivalEnterRoom
-    WaitMovement
-    Common_SetRivalBGM
-    BufferRivalName 0
-    Message TwinleafTownPlayerHouse2F_Text_ThereYouAre
-    CloseMessage
-    CallIfEq VAR_MAP_LOCAL_0, 0, TwinleafTownPlayerHouse2F_RivalApproachPlayerNorth
-    CallIfEq VAR_MAP_LOCAL_0, 1, TwinleafTownPlayerHouse2F_RivalApproachPlayerWest
-    CallIfEq VAR_MAP_LOCAL_0, 2, TwinleafTownPlayerHouse2F_RivalApproachPlayerEast
-    CallIfEq VAR_MAP_LOCAL_0, 3, TwinleafTownPlayerHouse2F_RivalApproachPlayerSouth
-    BufferPlayerName 1
-    Message TwinleafTownPlayerHouse2F_Text_ProfRowanWouldGiveUsPokemon
-    CloseMessage
-    ApplyMovement LOCALID_RIVAL, TwinleafTownPlayerHouse2F_Movement_RivalExclamationMark
-    WaitMovement
-    CallIfEq VAR_MAP_LOCAL_0, 0, TwinleafTownPlayerHouse2F_RivalApproachPCNorth
-    CallIfEq VAR_MAP_LOCAL_0, 1, TwinleafTownPlayerHouse2F_RivalApproachPCWest
-    CallIfEq VAR_MAP_LOCAL_0, 2, TwinleafTownPlayerHouse2F_RivalApproachPCEast
-    CallIfEq VAR_MAP_LOCAL_0, 3, TwinleafTownPlayerHouse2F_RivalApproachPCSouth
-    Message TwinleafTownPlayerHouse2F_Text_IsThisANewPC
-    CloseMessage
-    CallIfEq VAR_MAP_LOCAL_0, 0, TwinleafTownPlayerHouse2F_RivalTurnBackNorth
-    CallIfEq VAR_MAP_LOCAL_0, 1, TwinleafTownPlayerHouse2F_RivalTurnBackWest
-    CallIfEq VAR_MAP_LOCAL_0, 2, TwinleafTownPlayerHouse2F_RivalTurnBackEast
-    CallIfEq VAR_MAP_LOCAL_0, 3, TwinleafTownPlayerHouse2F_RivalTurnBackSouth
-    BufferRivalName 0
-    Message TwinleafTownPlayerHouse2F_Text_WhereWasI
-    CloseMessage
-    CallIfEq VAR_MAP_LOCAL_0, 0, TwinleafTownPlayerHouse2F_RivalWalkBackToPlayerNorth
-    CallIfEq VAR_MAP_LOCAL_0, 1, TwinleafTownPlayerHouse2F_RivalWalkBackToPlayerWest
-    CallIfEq VAR_MAP_LOCAL_0, 2, TwinleafTownPlayerHouse2F_RivalWalkBackToPlayerEast
-    CallIfEq VAR_MAP_LOCAL_0, 3, TwinleafTownPlayerHouse2F_RivalWalkBackToPlayerSouth
-    BufferPlayerName 1
-    Message TwinleafTownPlayerHouse2F_Text_WereGoingToSeeProfRowanAndGetPokemon
-    CloseMessage
-    CallIfEq VAR_MAP_LOCAL_0, 0, TwinleafTownPlayerHouse2F_RivalLeaveNorth
-    CallIfEq VAR_MAP_LOCAL_0, 1, TwinleafTownPlayerHouse2F_RivalLeaveWest
-    CallIfEq VAR_MAP_LOCAL_0, 2, TwinleafTownPlayerHouse2F_RivalLeaveEast
-    CallIfEq VAR_MAP_LOCAL_0, 3, TwinleafTownPlayerHouse2F_RivalLeaveSouth
-    PlaySE SEQ_SE_DP_KAIDAN2
-    RemoveObject LOCALID_RIVAL
-    Common_FadeToDefaultMusic2
-    WaitSE SEQ_SE_DP_KAIDAN2
-    SetFlag FLAG_HIDE_TWINLEAF_TOWN_PLAYER_HOUSE_2F_RIVAL
     SetVar VAR_PLAYER_HOUSE_RIVAL_TRIGGER_STATE, 1
-    ReleaseAll
     End
 
 TwinleafTownPlayerHouse2F_RivalApproachPlayerNorth:

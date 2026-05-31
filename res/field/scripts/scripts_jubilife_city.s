@@ -64,6 +64,9 @@ JubilifeCity_SetCounterpartGraphicsLucas:
 
 JubilifeCity_TriggerFirstArrival:
     LockAll
+    SetFlag FLAG_OBTAINED_COUPON_1
+    SetFlag FLAG_OBTAINED_COUPON_2
+    SetFlag FLAG_OBTAINED_COUPON_3
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     GoToIfEq VAR_0x8004, 173, JubilifeCity_FirstArrivalX173
     GoToIfEq VAR_0x8004, 174, JubilifeCity_FirstArrivalX174
@@ -1324,7 +1327,7 @@ JubilifeCity_TriggerPoketchCampaign:
     CallIfEq VAR_0x8004, 176, JubilifeCity_PoketchCoPresidentWalkToPlayerX176
     Message JubilifeCity_Text_YouCallYourselfAPokemonTrainerAndYetYouHaveNoPoketch
     SetVar VAR_POKETCH_CAMPAIGN_STATE, 2
-    Message JubilifeCity_Text_AllYouHaveToDoIsFindThreeClownsInJubilifeCity
+    GoTo JubilifeCity_GivePoketch
     WaitButton
     CloseMessage
     ReleaseAll
@@ -1424,9 +1427,6 @@ JubilifeCity_IncreaseObtainedCouponsCount:
 
 JubilifeCity_GivePoketch:
     Message JubilifeCity_Text_InReturnForTheseCouponsIPresentYouThisPokemonWatch
-    RemoveItem ITEM_COUPON_1, 1, VAR_RESULT
-    RemoveItem ITEM_COUPON_2, 1, VAR_RESULT
-    RemoveItem ITEM_COUPON_3, 1, VAR_RESULT
     ScrCmd_131
     SetVar VAR_JUBILIFE_CITY_STATE, 2
     RegisterPoketchApp POKETCH_APPID_DIGITALWATCH
@@ -1497,7 +1497,6 @@ JubilifeCity_Clown1:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    GoToIfSet FLAG_OBTAINED_COUPON_1, JubilifeCity_Clown1ObtainedCoupon
     Message JubilifeCity_Text_DoesAPokemonGrowByDefeatingOthersAndGainingExpPoints
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, JubilifeCity_Clown1CorrectAnswer
@@ -1508,11 +1507,6 @@ JubilifeCity_Clown1CorrectAnswer:
     PlaySE SEQ_SE_DP_PINPON
     Message JubilifeCity_Text_DingDingYoureAbsolutelyCorrect1
     Message JubilifeCity_Text_PokemonGrowStrongerByDefeatingOtherPokemonInBattle
-    Message JubilifeCity_Text_HereYouGoYourPoketchCoupon1
-    SetVar VAR_0x8004, ITEM_COUPON_1
-    SetVar VAR_0x8005, 1
-    SetFlag FLAG_OBTAINED_COUPON_1
-    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
@@ -1536,7 +1530,6 @@ JubilifeCity_Clown2:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    GoToIfSet FLAG_OBTAINED_COUPON_2, JubilifeCity_Clown2ObtainedCoupon
     Message JubilifeCity_Text_AskJustLikePokemonTypesTheMovesOfPokemonAlsoHaveTypes
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, JubilifeCity_Clown2CorrectAnswer
@@ -1547,11 +1540,6 @@ JubilifeCity_Clown2CorrectAnswer:
     PlaySE SEQ_SE_DP_PINPON
     Message JubilifeCity_Text_DingDingYoureAbsolutelyCorrect2
     Message JubilifeCity_Text_IfThePokemonsTypeMatchesItsMovesTypeThatMoveIsMadeMuchMorePowerful
-    Message JubilifeCity_Text_HereYouGoYourPoketchCoupon2
-    SetVar VAR_0x8004, ITEM_COUPON_2
-    SetVar VAR_0x8005, 1
-    SetFlag FLAG_OBTAINED_COUPON_2
-    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
@@ -1576,7 +1564,6 @@ JubilifeCity_Clown3:
     LockAll
     FacePlayer
     GoToIfLt VAR_POKETCH_CAMPAIGN_STATE, 2, JubilifeCity_YouShouldStickAround
-    GoToIfSet FLAG_OBTAINED_COUPON_3, JubilifeCity_Clown3ObtainedCoupon
     Message JubilifeCity_Text_CanAPokemonHoldAnItem
     ShowYesNoMenu VAR_RESULT
     GoToIfEq VAR_RESULT, MENU_YES, JubilifeCity_Clown3CorrectAnswer
@@ -1587,12 +1574,6 @@ JubilifeCity_Clown3CorrectAnswer:
     PlaySE SEQ_SE_DP_PINPON
     Message JubilifeCity_Text_DingDingYoureAbsolutelyCorrect3
     Message JubilifeCity_Text_APokemonMayHoldASingleItem
-    Message JubilifeCity_Text_HereYouGoYourPoketchCoupon3
-    SetPosition LOCALID_POKETCH_CO_PRESIDENT, 174, 1, 771, DIR_SOUTH
-    SetVar VAR_0x8004, ITEM_COUPON_3
-    SetVar VAR_0x8005, 1
-    SetFlag FLAG_OBTAINED_COUPON_3
-    Common_GiveItemQuantityNoLineFeed
     CloseMessage
     ReleaseAll
     End
