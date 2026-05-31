@@ -131,3 +131,8 @@ r = run_command(progressitem_py)
 if r.returncode() != 0
     error('Could not generate progression item header')
 endif
+helditem_py = files('src/helditem_proc.py')
+r = run_command(helditem_py)
+if r.returncode() != 0
+    error('Could not generate held item header')
+endif
