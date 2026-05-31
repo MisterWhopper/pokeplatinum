@@ -8,6 +8,7 @@
 #include "heap.h"
 #include "inlines.h"
 #include "item.h"
+#include "moves.h"
 #include "species.h"
 
 static u16 *sLUTBuffer;
@@ -58,19 +59,39 @@ u16 Randomizer_GetSimilarBSTSpeciesWithThreshold(u16 speciesId, u16 threshold)
 u16 Randomizer_GetSpecies()
 {
     // Make sure to only generate valid mons
-    return LCRNG_RandMod(SPECIES_ARCEUS) + 1;
+    return LCRNG_RandMod(SPECIES_ARCEUS) + SPECIES_BULBASAUR;
 }
 
 u16 Randomizer_GetAbility()
 {
-    // return LCRNG_RandMod(lengthof__Abilities);
     return LCRNG_RandMod(124) + 1;
 }
 
 u16 Randomizer_GetMove()
 {
-    // return LCRNG_RandMod(lengthof__Moves);
-    return LCRNG_RandMod(469) + 1;
+    // Ensure we never accidentally give a mon Struggle as an actual learnset move
+    u16 result;
+    u16 counter = 0;
+    do {
+        result = LCRNG_RandMod(469) + 1;
+        counter++;
+    } while (counter <= 1500 && result == MOVE_STRUGGLE);
+    // The odds of rolling Struggle 1500 times in a row are basically zero, but defense-in-depth or w/e
+    return (counter <= 1500 && result != MOVE_STRUGGLE) ? result : MOVE_TACKLE;
+}
+
+static BOOL _Randomizer_IsValidItem(u16 item)
+{
+    switch (item) {
+    case ITEM_REVIVE:
+    case ITEM_MAX_REVIVE:
+    case ITEM_REVIVAL_HERB:
+    case ITEM_REPEL:
+    case ITEM_MAX_REPEL:
+    case ITEM_SUPER_REPEL:
+        return FALSE;
+    }
+    return !((item >= ITEM_UNUSED_113 && item <= ITEM_UNUSED_134) || Item_ProgressesPlayer(item));
 }
 
 u16 Randomizer_GetItem()
@@ -83,6 +104,6 @@ u16 Randomizer_GetItem()
     do {
         result = LCRNG_RandMod(MAX_ITEMS) + 1;
         counter++;
-    } while (counter <= 1500 && (result >= ITEM_UNUSED_113 && result <= ITEM_UNUSED_134) || Item_ProgressesPlayer(result));
-    return counter <= 1500 ? result : ITEM_MAX_REPEL;
+    } while (counter <= 1500 && !_Randomizer_IsValidItem(result));
+    return (counter <= 1500 && _Randomizer_IsValidItem(result)) ? result : ITEM_MAX_POTION;
 }
