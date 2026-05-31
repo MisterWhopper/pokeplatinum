@@ -9,7 +9,7 @@
   ],
   "icon": {
     "sprite": "rare_candy_NCGR",
-    "palette": "rare_candy_NCLR"
+    "palette": "box_of_candy_NCLR"
   },
   "gbaID": "GBA_ITEM_NONE",
   "price": 65535,

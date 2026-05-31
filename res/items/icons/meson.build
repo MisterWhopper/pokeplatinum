@@ -320,6 +320,7 @@ item_icon_pals = files(
     'blue_scarf.pal',
     'blue_shard.pal',
     'bluk_berry.pal',
+    'box_of_candy.pal',
     'brick_mail.pal',
     'brightpowder.pal',
     'bubble_mail.pal',
