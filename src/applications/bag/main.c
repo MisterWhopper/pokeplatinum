@@ -12,6 +12,7 @@
 #include "applications/bag/application.h"
 #include "applications/bag/sprites.h"
 #include "applications/bag/windows.h"
+#include "overlay006/wild_encounters.h"
 
 #include "bag.h"
 #include "bag_context.h"
@@ -2245,6 +2246,10 @@ static BOOL UseItemInBag(BagController *controller, u16 item)
         controller->selectedItemCount = 0;
     } else if (item == ITEM_MAX_REPEL || item == ITEM_SUPER_REPEL || item == ITEM_REPEL) {
         string = TryUseRepel(controller, item);
+    } else if (item == ITEM_REPELLANT_SCENT) {
+        WildEncounters_Toggle();
+        // Black Flute text was used for testing, but then it kinda just ended up being good enough to ship it
+        string = MessageLoader_GetNewString(controller->bagStringsLoader, WildEncounters_AreEnabled() == TRUE ? Bag_Text_UsedRepel : Bag_Text_UsedBlackFlute);
     } else {
         return FALSE;
     }

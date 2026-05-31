@@ -86,6 +86,8 @@ typedef struct UnownFormsGroup {
     const u8 *forms;
 } UnownFormsGroup;
 
+extern BOOL gEnableWildEncounters;
+
 static BOOL ShouldGetRandomEncounter(FieldSystem *fieldSystem, const u32 encounterRate, const u8 tileBehavior);
 static u8 GetTileEncounterRateAndType(FieldSystem *fieldSystem, u8 tileBehavior, u8 *encounterType);
 static BOOL GracePeriodStepsUsed(FieldSystem *fieldSystem, u32 param1);
@@ -231,6 +233,9 @@ static void WildEncounters_ReplaceTrophyGardenEncounters(FieldSystem *fieldSyste
 
 BOOL WildEncounters_TryWildEncounter(FieldSystem *fieldSystem)
 {
+    if (gEnableWildEncounters == FALSE) {
+        return FALSE;
+    }
     FieldBattleDTO *battleParams;
     Pokemon *firstPartyMon;
     u8 tileBehavior;
@@ -750,6 +755,9 @@ static BOOL TryGenerateFishingEncounter(FieldSystem *fieldSystem, Pokemon *param
 
 static BOOL ShouldGetRandomEncounter(FieldSystem *fieldSystem, const u32 encounterRate, const u8 tileBehavior)
 {
+    if (gEnableWildEncounters == FALSE) {
+        return FALSE;
+    }
     u32 encRate = encounterRate << 8;
 
     // lowers effective encounter rate by 95% for the first few steps after each encounter.
@@ -1398,7 +1406,7 @@ static void WildEncounters_ReplaceGreatMarshDailyEncounters(FieldSystem *fieldSy
 
 static BOOL RepelPreventsEncounter(const u8 wildLevel, const WildEncounters_FieldParams *encounterFieldParams)
 {
-    return encounterFieldParams->repelActive && encounterFieldParams->firstBattlerLevel > wildLevel;
+    return gEnableWildEncounters && (encounterFieldParams->repelActive && encounterFieldParams->firstBattlerLevel > wildLevel);
 }
 
 static void AddRoamerToEnemyParty(const u32 trainerID, Roamer *roamer, FieldBattleDTO *battle)
@@ -1547,4 +1555,18 @@ static void InitEncounterFieldParams(FieldSystem *fieldSystem, Pokemon *firstPar
     }
 
     encounterFieldParams->trainerID = TrainerInfo_ID(SaveData_GetTrainerInfo(fieldSystem->saveData));
+}
+
+void WildEncounters_Toggle()
+{
+    if (gEnableWildEncounters == TRUE) {
+        gEnableWildEncounters = FALSE;
+    } else if (gEnableWildEncounters == FALSE) {
+        gEnableWildEncounters = TRUE;
+    }
+}
+
+BOOL WildEncounters_AreEnabled()
+{
+    return gEnableWildEncounters;
 }

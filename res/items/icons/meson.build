@@ -539,6 +539,7 @@ item_icon_pals = files(
     'red_shard.pal',
     'repeat_ball.pal',
     'repel.pal',
+    'repellant_scent.pal',
     'revival_herb.pal',
     'revive.pal',
     'rindo_berry.pal',

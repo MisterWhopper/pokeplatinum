@@ -1,0 +1,30 @@
+{
+  "name": "Repellant Scent",
+  "plural": "Repellant Scent",
+  "article": "a",
+  "description": [
+    "A crime against Pokemon kind.\n",
+    "Prevents wild Pokémon from appearing\n", 
+    "until it is washed off.\n"
+  ],
+  "icon": {
+    "sprite": "repel_NCGR",
+    "palette": "repellant_scent_NCLR"
+  },
+  "gbaID": "GBA_ITEM_NONE",
+  "price": 7500,
+  "effectParam": 250,
+  "holdEffect": "HOLD_EFFECT_NONE",
+  "pluckEffect": "PLUCK_EFFECT_NONE",
+  "flingEffect": "FLING_EFFECT_NONE",
+  "flingPower": 255,
+  "naturalGiftPower": 0,
+  "naturalGiftType": null,
+  "preventToss": true,
+  "canRegister": true,
+  "fieldPocket": "POCKET_KEY_ITEMS",
+  "battlePocket": "BATTLE_POCKET_MASK_NONE",
+  "fieldUseFunc": "ITEM_USE_FUNC_BAG_MESSAGE",
+  "battleUseFunc": 0,
+  "itemUseParams": {}
+}

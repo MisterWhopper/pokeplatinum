@@ -55,6 +55,8 @@ static void SoftReset(enum OSResetParameter resetParam);
 static void HeapCanaryFailed(int resetParam, int param1);
 static void CheckHeapCanary(void);
 
+BOOL gEnableWildEncounters = TRUE;
+
 static Application sApplication;
 // This variable doesn't really makes sense. If it's set to off, the game will
 // repeatedly try to restore the backlight to its saved state.

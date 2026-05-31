@@ -23,16 +23,14 @@ EternaCityUndergroundManHouse_UndergroundMan:
     GoToIfSet FLAG_ACCEPTED_UNDERGROUND_MAN_AS_MENTOR, EternaCityUndergroundManHouse_GoToCurrentMission
     GoToIfSet FLAG_EXPLORER_KIT_RECEIVED, EternaCityUndergroundManHouse_LetMeMentorYouAsYouBecomeAFullFledgedSpelunker
     Message EternaCityUndergroundManHouse_Text_YouCanCallMeTheUndergroundManIllMakeAGiftOfThisToYou
-    SetVar VAR_0x8004, ITEM_EXPLORER_KIT
+    SetVar VAR_0x8004, ITEM_REPELLANT_SCENT
     SetVar VAR_0x8005, 1
     Common_GiveItemQuantity
     SetFlag FLAG_EXPLORER_KIT_RECEIVED
-    ClearFlag FLAG_HAS_ACTIVE_UNDERGROUND_MISSION
-    Message EternaCityUndergroundManHouse_Text_LetMeMentorYouIntoBecomingAFullFledgedSpelunker
-    ShowYesNoMenu VAR_RESULT
-    GoToIfEq VAR_RESULT, MENU_NO, EternaCityUndergroundManHouse_ICantForceYouToAcceptMyProposalIfYoureNotInclined
-    SetFlag FLAG_ACCEPTED_UNDERGROUND_MAN_AS_MENTOR
-    GoTo EternaCityUndergroundManHouse_GoToCurrentMission
+    WaitButton
+    CloseMessage
+    ReleaseAll
+    End
 
 EternaCityUndergroundManHouse_LetMeMentorYouAsYouBecomeAFullFledgedSpelunker:
     Message EternaCityUndergroundManHouse_Text_LetMeMentorYouAsYouBecomeAFullFledgedSpelunker

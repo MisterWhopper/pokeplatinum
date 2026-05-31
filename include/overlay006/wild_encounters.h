@@ -59,5 +59,7 @@ BOOL WildEncounters_TryMudEncounter(FieldSystem *fieldSystem, FieldBattleDTO **p
 void CreateWildMon_HoneyTree(FieldSystem *fieldSystem, FieldBattleDTO *param1);
 void CreateWildMon_Scripted(FieldSystem *fieldSystem, u16 param1, u8 param2, FieldBattleDTO *param3);
 BOOL WildEncounters_TileHasEncounterRate(FieldSystem *fieldSystem, u8 param1);
+void WildEncounters_Toggle();
+BOOL WildEncounters_AreEnabled();
 
 #endif // POKEPLATINUM_WILD_ENCOUNTERS_H
