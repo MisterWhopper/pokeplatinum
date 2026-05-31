@@ -158,10 +158,6 @@ enum RowanIntroState {
     RI_STATE_FADE_IN_AVATAR_END,
     RI_STATE_DELAY_BEFORE_END_2,
     RI_STATE_AVATAR_SHRINK_ANIMATION,
-    RI_STATE_RANDOMIZER_PROMPT,
-    RI_STATE_RANDOMIZER_ENABLE_CHOICE,
-    RI_STATE_RANDOMIZER_ENABLED,
-    RI_STATE_RANDOMIZER_DISABLED,
     RI_STATE_END,
     RI_STATE_EXIT,
 };
@@ -2943,36 +2939,6 @@ static BOOL RowanIntro_Run(RowanIntro *manager)
         break;
     case RI_STATE_DELAY_BEFORE_END_0:
         if (RowanIntro_Delay(manager, 30) == TRUE) {
-            manager->state = RI_STATE_RANDOMIZER_PROMPT;
-        }
-        break;
-    case RI_STATE_RANDOMIZER_PROMPT:
-        if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_RandomizerPrompt, TRUE) == TRUE) {
-            manager->state = RI_STATE_RANDOMIZER_ENABLE_CHOICE;
-        }
-        break;
-    case RI_STATE_RANDOMIZER_ENABLE_CHOICE:
-        if (RowanIntro_ChoiceBox(manager, CC_YESNO, FALSE) == TRUE) {
-            switch (manager->playerChoice) {
-            case 1: {
-                Bg_ClearTilemap(manager->bgConfig, BG_LAYER_MAIN_0);
-            }
-                manager->state = RI_STATE_RANDOMIZER_ENABLED;
-                break;
-            case 2:
-            case MENU_CANCEL:
-                manager->state = RI_STATE_RANDOMIZER_DISABLED;
-                break;
-            }
-        }
-        break;
-    case RI_STATE_RANDOMIZER_DISABLED:
-        if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_RandomizerDisabled, TRUE) == TRUE) {
-            manager->state = RI_STATE_DIALOGUE_END;
-        }
-        break;
-    case RI_STATE_RANDOMIZER_ENABLED:
-        if (RowanIntro_DisplayMessage(manager, RowanIntro_Text_RandomizerEnabled, TRUE) == TRUE) {
             manager->state = RI_STATE_DIALOGUE_END;
         }
         break;

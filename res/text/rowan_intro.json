@@ -10,27 +10,6 @@
       ]
     },
     {
-      "id": "RowanIntro_Text_RandomizerEnabled",
-      "en_US": [
-        "Yippee! Random mons it is\r"
-      ]
-    },
-    {
-      "id": "RowanIntro_Text_RandomizerDisabled",
-      "en_US": [
-          "Ya boring!\r"
-      ]
-    },
-    {
-      "id": "RowanIntro_Text_RandomizerPrompt",
-      "en_US": [
-        "This version of Platinum was\n",
-        "modded by MisterWhopper!\r",
-        "Would you like to enable the\n",
-        "automatic randomizer feature?\r"
-      ]
-    },
-    {
       "id": "RowanIntro_Text_MyNameRowan",
       "en_US": [
         "My name is Rowan.\r",
