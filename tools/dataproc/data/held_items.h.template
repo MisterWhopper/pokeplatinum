@@ -1,0 +1,14 @@
+#ifndef POKEPLATINUM_GENERATED_HELD_ITEMS_H
+#define POKEPLATINUM_GENERATED_HELD_ITEMS_H
+
+#include "items.h"
+#include "constants/items.h"
+#include "generated/items.h"
+
+static const u16 Item_Held_LUT[] = {
+/* =========== MAGIC CONTENT MARKER =========== */
+};
+
+
+#endif // POKEPLATINUM_GENERATED_HELD_ITEMS_H
+

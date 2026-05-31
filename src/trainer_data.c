@@ -401,7 +401,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
-            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, Randomizer_GetHeldItem());
             Pokemon_SetBallSeal(trmon[i].cbSeal, mon, heapID);
             Pokemon_SetValue(mon, MON_DATA_FORM, &form);
             Party_AddPokemon(dto->parties[battler], mon);
@@ -437,7 +437,7 @@ static void TrainerData_BuildParty(FieldBattleDTO *dto, int battler, enum HeapID
             ivs = trmon[i].ivScale * MAX_IVS_SINGLE_STAT / MAX_IV_SCALE;
 
             Pokemon_InitWith(mon, species, trmon[i].level, ivs, TRUE, rnd, OTID_NOT_SHINY, 0);
-            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, &trmon[i].item);
+            Pokemon_SetValue(mon, MON_DATA_HELD_ITEM, Randomizer_GetHeldItem());
 
             for (j = 0; j < 4; j++) {
                 Pokemon_SetMoveSlot(mon, Randomizer_GetMove(), j);

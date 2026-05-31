@@ -1,6 +1,7 @@
 #include "randomizer.h"
 
 #include "constants/items.h"
+#include "generated/held_items.h"
 #include "generated/items.h"
 #include "generated/pokemon_bsts.h"
 #include "generated/progression_items.h"
@@ -112,4 +113,14 @@ u16 Randomizer_GetItem()
         counter++;
     } while (counter <= 1500 && !_Randomizer_IsValidItem(result));
     return (counter <= 1500 && _Randomizer_IsValidItem(result)) ? result : ITEM_MAX_POTION;
+}
+
+u16 Randomizer_GetHeldItem()
+{
+    u16 result;
+    u16 counter = 0;
+    do {
+        result = Item_Held_LUT[LCRNG_RandMod(NELEMS(Item_Held_LUT))];
+    } while (counter <= 1500 && !_Randomizer_IsValidItem(result));
+    return (counter <= 1500 && _Randomizer_IsValidItem(result)) ? result : ITEM_SITRUS_BERRY;
 }
