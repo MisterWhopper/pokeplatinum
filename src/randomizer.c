@@ -89,6 +89,12 @@ static BOOL _Randomizer_IsValidItem(u16 item)
     case ITEM_REPEL:
     case ITEM_MAX_REPEL:
     case ITEM_SUPER_REPEL:
+    case ITEM_MAGMA_STONE: // Does nothing
+    case ITEM_CHERISH_BALL:
+    case ITEM_CONTEST_PASS:
+    case ITEM_RED_CHAIN:
+    case ITEM_RULE_BOOK:
+    case ITEM_SEAL_BAG:
         return FALSE;
     }
     return !((item >= ITEM_UNUSED_113 && item <= ITEM_UNUSED_134) || Item_ProgressesPlayer(item));
