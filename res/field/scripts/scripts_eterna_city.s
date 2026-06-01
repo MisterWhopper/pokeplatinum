@@ -41,7 +41,7 @@ EternaCity_OnTransition:
     End
 
 EternaCity_CheckShouldBlockExits:
-    CheckItem ITEM_EXPLORER_KIT, 1, VAR_MAP_LOCAL_0
+    CheckItem ITEM_REPELLANT_SCENT, 1, VAR_MAP_LOCAL_0
     GoToIfEq VAR_MAP_LOCAL_0, TRUE, EternaCity_SetVarDontBlockExits
     End
 
