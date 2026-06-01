@@ -27,6 +27,7 @@ EternaCityUndergroundManHouse_UndergroundMan:
     SetVar VAR_0x8005, 1
     Common_GiveItemQuantity
     SetFlag FLAG_EXPLORER_KIT_RECEIVED
+    ClearFlag FLAG_HAS_ACTIVE_UNDERGROUND_MISSION
     WaitButton
     CloseMessage
     ReleaseAll

@@ -65,7 +65,7 @@ u16 Randomizer_GetSpecies()
 
 u16 Randomizer_GetAbility()
 {
-    return LCRNG_RandMod(124) + 1;
+    return LCRNG_RandMod(123) + 1;
 }
 
 u16 Randomizer_GetMove()
