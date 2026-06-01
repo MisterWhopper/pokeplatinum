@@ -16,6 +16,7 @@
 #include "map_matrix.h"
 #include "narc.h"
 #include "player_avatar.h"
+#include "randomizer.h"
 #include "save_player.h"
 #include "special_encounter.h"
 #include "terrain_collision_manager.h"
@@ -444,24 +445,7 @@ static BOOL IsMunchlaxTree(const u32 trainerId, const u8 treeId)
 
 int HoneyTree_GetSpecies(FieldSystem *fieldSystem)
 {
-    u8 treeId = GetTreeIdFromMapId(fieldSystem->location->mapId);
-    GF_ASSERT(treeId != NUM_HONEY_TREES);
-
-    int *narcData;
-    int species;
-    PlayerHoneyTreeStates *treeDat = SpecialEncounter_GetPlayerHoneyTreeStates(SaveData_GetSpecialEncounters(fieldSystem->saveData));
-    HoneyTree *tree = SpecialEncounter_GetHoneyTree(treeId, treeDat);
-
-    if ((GAME_VERSION == VERSION_DIAMOND) || (GAME_VERSION == VERSION_PLATINUM)) {
-        narcData = NARC_AllocAtEndAndReadWholeMemberByIndexPair(NARC_INDEX_ARC__ENCDATA_EX, sEncounterTableIndexes_DPt[tree->encounterTableIndex], HEAP_ID_FIELD1);
-    } else {
-        narcData = NARC_AllocAtEndAndReadWholeMemberByIndexPair(NARC_INDEX_ARC__ENCDATA_EX, sEncounterTableIndexes_P_Unused[tree->encounterTableIndex], HEAP_ID_FIELD1);
-    }
-
-    species = narcData[tree->encounterSlot];
-    Heap_Free(narcData);
-
-    return species;
+    return Randomizer_GetSpecies();
 }
 
 void ov5_021F0030(void *param0, const int param1, MapPropManager *const mapPropManager)
