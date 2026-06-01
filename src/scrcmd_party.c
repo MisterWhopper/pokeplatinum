@@ -37,6 +37,9 @@ BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
     u16 heldItem = ScriptContext_GetVar(ctx);
     u16 *success = ScriptContext_GetVarPointer(ctx);
 
+    species = Randomizer_GetSpecies();
+    heldItem = Randomizer_GetHeldItem();
+
     Party *unused = SaveData_GetParty(fieldSystem->saveData);
     *success = Pokemon_GiveMonFromScript(HEAP_ID_FIELD2, fieldSystem->saveData, species, level, heldItem, metLocation, metTerrain);
 
