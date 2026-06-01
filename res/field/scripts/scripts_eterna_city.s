@@ -414,6 +414,7 @@ EternaCity_TriggerBlockExitSouth:
     CallIfEq VAR_0x8004, 307, EternaCity_PokemonBreederFMoveBackX307
     ApplyMovement LOCALID_PLAYER, EternaCity_Movement_PlayerWalkNorth
     WaitMovement
+    SetVar VAR_ETERNA_CITY_BLOCK_EXITS_STATE, 0
     ReleaseAll
     End
 
