@@ -1004,6 +1004,12 @@
     .short \successVar
     .endm
 
+    .macro GiveRandomPokemon level, successVar
+    .short SCRCMD_GIVERANDOMPOKEMON
+    .short \level
+    .short \successVar
+    .endm
+
     @ eggGiverTextId corresponds to an entry in special_met_location_names.gmm.
     .macro GiveEgg species, eggGiverTextId
     .short SCRCMD_GIVEEGG

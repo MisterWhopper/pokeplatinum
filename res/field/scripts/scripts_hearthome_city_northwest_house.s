@@ -35,7 +35,7 @@ HearthomeCityNorthwestHouse_AcceptEevee:
     BufferPlayerName 0
     Message HearthomeCityNorthwestHouse_Text_PlayerAcceptedTheEevee
     WaitFanfare
-    GivePokemon SPECIES_EEVEE, 20, ITEM_NONE, VAR_RESULT
+    GiveRandomPokemon 20, VAR_RESULT
     SetFlag FLAG_RECEIVED_HEARTHOME_CITY_NORTHWEST_HOUSE_EEVEE
     Message HearthomeCityNorthwestHouse_Text_WouldYouLikeToNicknameEevee
     ShowYesNoMenu VAR_RESULT
