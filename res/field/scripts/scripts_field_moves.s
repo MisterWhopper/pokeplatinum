@@ -296,9 +296,6 @@ _0512:
     GoTo _0671
 
 _051F:
-    FindPartySlotWithMove VAR_RESULT, MOVE_SURF
-    SetVar VAR_0x8004, VAR_RESULT
-    BufferPartyMonNickname 0, VAR_RESULT
     Message FieldMoves_Text_PokemonUsedSurf
     CloseMessage
     UseSurf VAR_0x8004
