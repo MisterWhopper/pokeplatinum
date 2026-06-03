@@ -1413,6 +1413,7 @@ static void AddRoamerToEnemyParty(const u32 trainerID, Roamer *roamer, FieldBatt
 {
     Pokemon *mon = Pokemon_New(HEAP_ID_FIELD1);
     int roamerSpecies = Roamer_GetData(roamer, ROAMER_DATA_SPECIES);
+    roamerSpecies = Randomizer_GetSimilarBSTSpeciesWithThreshold(roamerSpecies, 10);
     u8 roamerLevel = Roamer_GetData(roamer, ROAMER_DATA_LEVEL);
     u32 roamerCombinedIVs = Roamer_GetData(roamer, ROAMER_DATA_IVS);
     u32 roamerPersonality = Roamer_GetData(roamer, ROAMER_DATA_PERSONALITY);
