@@ -118,23 +118,7 @@ BOOL HoneyTree_TryInteract(FieldSystem *fieldSystem, int *eventId)
 
 u16 HoneyTree_GetTreeSlatherStatus(FieldSystem *fieldSystem)
 {
-    u8 treeId;
-    PlayerHoneyTreeStates *treeDat;
-    HoneyTree *tree;
-
-    treeId = GetTreeIdFromMapId(fieldSystem->location->mapId);
-    GF_ASSERT(treeId != NUM_HONEY_TREES);
-
-    treeDat = SpecialEncounter_GetPlayerHoneyTreeStates(SaveData_GetSpecialEncounters(fieldSystem->saveData));
-    tree = SpecialEncounter_GetHoneyTree(treeId, treeDat);
-
-    if (SixHoursSinceSlathered(tree->minutesRemaining)) {
-        return TREE_STATUS_ENCOUNTER; // tree can have Pokemon
-    } else if (tree->minutesRemaining != 0) {
-        return TREE_STATUS_SLATHERED; // tree is slathered
-    } else {
-        return TREE_STATUS_BARE; // tree is bare
-    }
+    return TREE_STATUS_BARE; // tree is bare
 }
 
 void HoneyTree_SlatherTree(FieldSystem *fieldSystem)
@@ -399,48 +383,12 @@ static u8 GetTreeIdFromMapId(const int mapId)
 
 static const BOOL SixHoursSinceSlathered(const int minutesLeft)
 {
-    if ((0 < minutesLeft) && (minutesLeft <= (18 * 60))) {
-        return TRUE;
-    } else {
-        return FALSE;
-    }
+    return TRUE;
 }
 
 static BOOL IsMunchlaxTree(const u32 trainerId, const u8 treeId)
 {
-    u8 i, j;
-    u8 munchlaxTreeIds[4];
-
-    munchlaxTreeIds[0] = (trainerId >> 24) & 0xff;
-    munchlaxTreeIds[1] = (trainerId >> 16) & 0xff;
-    munchlaxTreeIds[2] = (trainerId >> 8) & 0xff;
-    munchlaxTreeIds[3] = trainerId & 0xff;
-
-    munchlaxTreeIds[0] %= NUM_HONEY_TREES;
-    munchlaxTreeIds[1] %= NUM_HONEY_TREES;
-    munchlaxTreeIds[2] %= NUM_HONEY_TREES;
-    munchlaxTreeIds[3] %= NUM_HONEY_TREES;
-
-    // Increments tree IDs if they are equal, so the player will always have 4 possible Munchlax trees.
-    for (i = 1; i < 4; i++) {
-        for (j = 0; j < i; j++) {
-            if (munchlaxTreeIds[j] == munchlaxTreeIds[i]) {
-                munchlaxTreeIds[i]++;
-
-                if (munchlaxTreeIds[i] >= NUM_HONEY_TREES) {
-                    munchlaxTreeIds[i] = 0;
-                }
-            }
-        }
-    }
-
-    for (i = 0; i < 4; i++) {
-        if (treeId == munchlaxTreeIds[i]) {
-            return TRUE;
-        }
-    }
-
-    return FALSE;
+    return TRUE;
 }
 
 int HoneyTree_GetSpecies(FieldSystem *fieldSystem)
