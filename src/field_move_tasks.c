@@ -189,7 +189,7 @@ FlyContext *FlyContext_New(enum HeapID heapID, FieldSystem *fieldSystem, Pokemon
     memset(ctx, 0, sizeof(FlyContext));
 
     ctx->fieldSystem = fieldSystem;
-    ctx->mon = HM_Assistant();
+    ctx->mon = mon;
     ctx->mapID = mapID;
     ctx->x = x;
     ctx->z = z;
@@ -204,7 +204,7 @@ BOOL FieldMoves_FlyTask(FieldTask *task)
 
     switch (ctx->state) {
     case FLY_STATE_START_CUT_IN:
-        ctx->cutInTask = HMCutIn_StartTask(ctx->fieldSystem, TRUE, HM_Assistant(), PlayerAvatar_Gender(ctx->fieldSystem->playerAvatar));
+        ctx->cutInTask = HMCutIn_StartTask(ctx->fieldSystem, TRUE, ctx->mon, PlayerAvatar_Gender(ctx->fieldSystem->playerAvatar));
         ctx->state++;
         break;
     case FLY_STATE_MAIN:
