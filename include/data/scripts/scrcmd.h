@@ -156,6 +156,7 @@ ScriptCommand(SCRCMD_COUNTSEALOCCURENCE,                                   ScrCm
 ScriptCommand(SCRCMD_GIVEORTAKESEAL,                                       ScrCmd_GiveOrTakeSeal)
 ScriptCommand(SCRCMD_GETPARTYMONFORM,                                      ScrCmd_GetPartyMonForm)
 ScriptCommand(SCRCMD_GIVEPOKEMON,                                          ScrCmd_GivePokemon)
+ScriptCommand(SCRCMD_GIVERANDOMPOKEMON,                                    ScrCmd_GiveRandomPokemon)
 ScriptCommand(SCRCMD_GIVEEGG,                                              ScrCmd_GiveEgg)
 ScriptCommand(SCRCMD_RESETPARTYMONMOVESLOT_UNUSED,                         ScrCmd_ResetPartyMonMoveSlot_Unused)
 ScriptCommand(SCRCMD_CHECKPARTYMONHASMOVE,                                 ScrCmd_CheckPartyMonHasMove)

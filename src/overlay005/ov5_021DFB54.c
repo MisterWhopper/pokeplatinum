@@ -631,7 +631,7 @@ void FieldTask_StartUseSurf(FieldTask *task, int direction, int partySlot)
 {
     MonRideTask monRideTask;
     FieldSystem *fieldSystem = FieldTask_GetFieldSystem(task);
-    Pokemon *partyMon = GetPokemonByIndex(fieldSystem, partySlot);
+    Pokemon *partyMon = FieldMoves_GetHMAssistant();
 
     MonRideTask_Init(fieldSystem, partyMon, &monRideTask);
     SurfTask_Start(fieldSystem, direction, &monRideTask);

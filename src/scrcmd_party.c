@@ -43,6 +43,22 @@ BOOL ScrCmd_GivePokemon(ScriptContext *ctx)
     return FALSE;
 }
 
+BOOL ScrCmd_GiveRandomPokemon(ScriptContext *ctx)
+{
+    int metLocation = MapHeader_GetMapLabelTextID(ctx->fieldSystem->location->mapId);
+    int metTerrain = TERRAIN_MAX;
+    FieldSystem *fieldSystem = ctx->fieldSystem;
+    u16 level = ScriptContext_GetVar(ctx);
+    u16 *success = ScriptContext_GetVarPointer(ctx);
+    u16 heldItem = Randomizer_GetHeldItem();
+    u16 species = Randomizer_GetSpecies();
+
+    Party *unused = SaveData_GetParty(fieldSystem->saveData);
+    *success = Pokemon_GiveMonFromScript(HEAP_ID_FIELD2, fieldSystem->saveData, species, level, heldItem, metLocation, metTerrain);
+
+    return FALSE;
+}
+
 BOOL ScrCmd_GetPartyMonSpecies(ScriptContext *ctx)
 {
     FieldSystem *fieldSystem = ctx->fieldSystem;

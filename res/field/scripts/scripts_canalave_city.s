@@ -682,12 +682,7 @@ CanalaveCity_RivalLibrary:
     PlaySE SEQ_SE_CONFIRM
     LockAll
     FacePlayer
-    CheckItem ITEM_HM04, 1, VAR_RESULT
-    GoToIfEq VAR_RESULT, TRUE, CanalaveCity_EnterLibrary
-    FindPartySlotWithMove VAR_RESULT, MOVE_STRENGTH
-    GoToIfNe VAR_RESULT, MAX_PARTY_SIZE, CanalaveCity_EnterLibrary
-    BufferRivalName 0
-    Message CanalaveCity_Text_DidntGetHMStrength
+    GoTo CanalaveCity_EnterLibrary
     WaitButton
     CloseMessage
     ReleaseAll

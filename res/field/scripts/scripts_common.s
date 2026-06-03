@@ -472,7 +472,7 @@ CommonScript_HoneyTreeWithHoney:
     GetHoneyTreeStatus VAR_RESULT
     GoToIfEq VAR_RESULT, TREE_STATUS_BARE, CommonScript_HoneyTreeBareWithHoney
     GoToIfEq VAR_RESULT, TREE_STATUS_SLATHERED, CommonScript_HoneyTreeSlatheredWithHoney
-    GoToIfEq VAR_RESULT, TREE_STATUS_ENCOUNTER, CommonScript_HoneyTreeEncounter
+    GoToIfEq VAR_RESULT, TREE_STATUS_ENCOUNTER, CommonScript_HoneyTreeBareWithHoney
     End
 
 CommonScript_HoneyTreeBareNoHoney:
@@ -526,6 +526,7 @@ CommonScript_SlatherHoneyTree:
     Message CommonStrings_Text_BarkWasSlathered
     WaitButton
     CloseMessage
+    GoTo CommonScript_HoneyTreeEncounter
     ReleaseAll
     End
 

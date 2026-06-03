@@ -36,7 +36,7 @@ VeilstoneCityNortheastHouse_AcceptPorygon:
     BufferPlayerName 0
     Message VeilstoneCityNortheastHouse_Text_PlayerAcceptedThePorygon
     WaitFanfare
-    GivePokemon SPECIES_PORYGON, 25, ITEM_NONE, VAR_RESULT
+    GiveRandomPokemon 25, VAR_RESULT
     SetFlag FLAG_RECEIVED_VEILSTONE_CITY_NORTHEAST_HOUSE_PORYGON
     Message VeilstoneCityNortheastHouse_Text_AskNicknamePorygon
     ShowYesNoMenu VAR_RESULT

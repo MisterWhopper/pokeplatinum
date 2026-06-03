@@ -41,7 +41,7 @@ EternaCity_OnTransition:
     End
 
 EternaCity_CheckShouldBlockExits:
-    CheckItem ITEM_EXPLORER_KIT, 1, VAR_MAP_LOCAL_0
+    CheckItem ITEM_REPELLANT_SCENT, 1, VAR_MAP_LOCAL_0
     GoToIfEq VAR_MAP_LOCAL_0, TRUE, EternaCity_SetVarDontBlockExits
     End
 
@@ -414,6 +414,7 @@ EternaCity_TriggerBlockExitSouth:
     CallIfEq VAR_0x8004, 307, EternaCity_PokemonBreederFMoveBackX307
     ApplyMovement LOCALID_PLAYER, EternaCity_Movement_PlayerWalkNorth
     WaitMovement
+    SetVar VAR_ETERNA_CITY_BLOCK_EXITS_STATE, 0
     ReleaseAll
     End
 
