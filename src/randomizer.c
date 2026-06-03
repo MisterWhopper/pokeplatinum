@@ -74,11 +74,21 @@ u16 Randomizer_GetMove()
     u16 result;
     u16 counter = 0;
     do {
-        result = LCRNG_RandMod(469) + 1;
+        result = LCRNG_RandMod(MAX_MOVES) + 1;
         counter++;
     } while (counter <= 1500 && result == MOVE_STRUGGLE);
     // The odds of rolling Struggle 1500 times in a row are basically zero, but defense-in-depth or w/e
     return (counter <= 1500 && result != MOVE_STRUGGLE) ? result : MOVE_TACKLE;
+}
+
+static inline BOOL _Randomizer_IsUnusedItem(u16 item)
+{
+    return item >= ITEM_UNUSED_113 && item <= ITEM_UNUSED_134;
+}
+
+static inline BOOL _Randomizer_IsMailItem(u16 item)
+{
+    return item >= ITEM_GRASS_MAIL && item <= ITEM_BRICK_MAIL;
 }
 
 static BOOL _Randomizer_IsValidItem(u16 item)
@@ -98,7 +108,7 @@ static BOOL _Randomizer_IsValidItem(u16 item)
     case ITEM_SEAL_BAG:
         return FALSE;
     }
-    return !((item >= ITEM_UNUSED_113 && item <= ITEM_UNUSED_134) || Item_ProgressesPlayer(item));
+    return !(_Randomizer_IsUnusedItem(item) || Item_ProgressesPlayer(item) || _Randomizer_IsMailItem(item));
 }
 
 u16 Randomizer_GetItem()
