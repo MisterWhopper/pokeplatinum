@@ -989,5 +989,5 @@ void Encounter_NewVsGiratinaOrigin(FieldTask *task, u16 species, u8 level, int *
     dto->terrain = TERRAIN_GIRATINA;
 
     GameRecords_IncrementRecordValue(SaveData_GetGameRecords(fieldSystem->saveData), RECORD_WILD_BATTLES_FOUGHT);
-    StartEncounter(task, dto, EncEffects_CutInEffect(dto), EncEffects_BGM(dto), resultMaskPtr);
+    StartEncounter(task, dto, ENCEFF_CUTIN_MYTHICAL, SEQ_BATTLE_GIRATINA, resultMaskPtr);
 }
