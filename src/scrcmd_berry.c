@@ -76,6 +76,9 @@ BOOL ScrCmd_PlantBerry(ScriptContext *ctx)
     MapObject **targetObject = FieldSystem_GetScriptMemberPtr(ctx->fieldSystem, SCRIPT_MANAGER_TARGET_OBJECT);
     GameRecords *gameRecords = SaveData_GetGameRecords(ctx->fieldSystem->saveData);
     u16 berryItemID = ScriptContext_GetVar(ctx);
+    if (berryItemID == ITEM_HABIBI_BERRY) {
+        return FALSE;
+    }
 
     BerryPatches_PlantBerry(ctx->fieldSystem, *targetObject, berryItemID);
     GameRecords_IncrementRecordValue(gameRecords, RECORD_BERRIES_PLANTED);
