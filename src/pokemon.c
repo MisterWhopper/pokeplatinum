@@ -4782,8 +4782,17 @@ static void BoxPokemon_CalcAbility(BoxPokemon *boxMon)
     int monSpecies = BoxPokemon_GetValue(boxMon, MON_DATA_SPECIES, NULL);
     u32 monPersonality = BoxPokemon_GetValue(boxMon, MON_DATA_PERSONALITY, NULL);
     int monForm = BoxPokemon_GetValue(boxMon, MON_DATA_FORM, NULL);
+    int monHeldItem = BoxPokemon_GetValue(boxMon, MON_DATA_HELD_ITEM, NULL);
+    int monCurrentAbility = BoxPokemon_GetValue(boxMon, MON_DATA_ABILITY, NULL);
     int monAbility1 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_1);
     int monAbility2 = SpeciesData_GetFormValue(monSpecies, monForm, SPECIES_DATA_ABILITY_2);
+
+    if (monCurrentAbility != ABILITY_NONE && monHeldItem == ITEM_HABIBI_BERRY) {
+        monHeldItem = ITEM_NONE;
+        BoxPokemon_SetValue(boxMon, MON_DATA_HELD_ITEM, &monHeldItem);
+        BoxPokemon_ExitDecryptionContext(boxMon, reencrypt);
+        return;
+    }
 
     if (monAbility2 != ABILITY_NONE) {
         if (monPersonality & 1) {

@@ -477,6 +477,13 @@
       "garbage": 3
     },
     {
+      "id": "PartyMenu_Text_MonNewAbility",
+      "en_US": [
+        "{STRVAR_1 1, 0, 0} got the\n",
+        "{STRVAR_1 1, 1, 0} ability!"
+      ]
+    },
+    {
       "id": "PartyMenu_Text_MonWokeUp",
       "en_US": [
         "{STRVAR_1 1, 0, 0}\n",

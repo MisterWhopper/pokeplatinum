@@ -39,6 +39,7 @@ typedef struct ItemPartyParam {
     u8 giveFriendshipLow : 1;
     u8 giveFriendshipMed : 1;
     u8 giveFriendshipHigh : 1;
+    u8 rerollAbility : 1;
     s8 hpEVs;
     s8 atkEVs;
     s8 defEVs;
@@ -69,7 +70,7 @@ typedef struct ItemData {
     u8 fieldUseFunc;
     u8 battleUseFunc;
     u8 partyUse;
-    u8 padding_0D;
+    u8 rerollAbility;
     union {
         u8 dummy;
         ItemPartyParam partyUseParam;
@@ -143,6 +144,7 @@ enum ItemDataParam {
     ITEM_PARAM_FRIENDSHIP_LOW,
     ITEM_PARAM_FRIENDSHIP_MED,
     ITEM_PARAM_FRIENDSHIP_HIGH,
+    ITEM_PARAM_REROLL_ABILITY,
 };
 
 /**

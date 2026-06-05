@@ -1947,10 +1947,6 @@ static void MakeItemActionsMenu(BagController *controller)
     currentPocketType = controller->bagCtx->accessiblePockets[controller->bagCtx->currPocketIdx].pocketType;
 
     if (controller->bagCtx->mode == BAG_MODE_NORMAL) {
-        if (currentPocketType == POCKET_BERRIES) {
-            itemActions[itemActionsIdx] = ITEM_ACTION_CHECK_TAG;
-            itemActionsIdx++;
-        }
 
         if (controller->bagCtx->mapLoadType == MAP_LOAD_TYPE_COLOSSEUM
             || controller->bagCtx->mapLoadType == MAP_LOAD_TYPE_UNION) {
@@ -1981,6 +1977,13 @@ static void MakeItemActionsMenu(BagController *controller)
 
             if (currentPocketType != POCKET_TMHMS) {
                 itemActions[itemActionsIdx] = ITEM_ACTION_TRASH;
+                itemActionsIdx++;
+            }
+        }
+        if (currentPocketType == POCKET_BERRIES) {
+            // Using `CHECK TAG` on Habibi causes DeSmuME to crash. Rather than fix it, remove the option
+            if (controller->bagCtx->selectedItem != ITEM_HABIBI_BERRY) {
+                itemActions[itemActionsIdx] = ITEM_ACTION_CHECK_TAG;
                 itemActionsIdx++;
             }
         }

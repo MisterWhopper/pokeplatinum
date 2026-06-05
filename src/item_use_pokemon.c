@@ -142,6 +142,11 @@ u8 Pokemon_CheckItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, enum HeapID 
 
     ItemData *item = Item_Load(itemId, ITEM_FILE_TYPE_DATA, heapID);
 
+    if (itemId == ITEM_HABIBI_BERRY) {
+        Heap_Free(item);
+        return TRUE;
+    }
+
     if (Item_Get(item, ITEM_PARAM_PARTY_USE) != TRUE) {
         Heap_Free(item);
         return FALSE;
@@ -238,6 +243,11 @@ u8 Party_CheckItemEffectsOnMember(Party *party, u16 itemId, u8 partySlot, u8 mov
 
 u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location, enum HeapID heapID)
 {
+    if (itemId == ITEM_HABIBI_BERRY) {
+        Pokemon_CalcAbility(mon);
+        return TRUE;
+    }
+
     // For some reason, the original developer decided to use an array to store what should have been individual variables
     // For more clarity on what each slot is used for, and to make them look more like individual variables,
     // convenience macros vApply... are defined at the top of this file.
@@ -245,13 +255,13 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
 
     ItemData *item = Item_Load(itemId, ITEM_FILE_TYPE_DATA, heapID);
 
-    if (Item_Get(item, ITEM_PARAM_PARTY_USE) != TRUE) {
+    u8 effectApplied = FALSE;
+    u8 effectFound = FALSE;
+
+    if (Item_Get(item, ITEM_PARAM_PARTY_USE) != TRUE && itemId != ITEM_HABIBI_BERRY) {
         Heap_Free(item);
         return FALSE;
     }
-
-    u8 effectApplied = FALSE;
-    u8 effectFound = FALSE;
 
     vApplyStatus = Pokemon_GetValue(mon, MON_DATA_STATUS, NULL);
     vApplyStatusTmp = vApplyStatus;
@@ -364,6 +374,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
     APPLY_EV_EFFECT(ITEM_PARAM_GIVE_SPATK_EVS, ITEM_PARAM_SPATK_EVS, MON_DATA_SPATK_EV, vApplyEVSpAttack, APPLY_EFFECTS_EV_SUM_EXCLUDE_SPATTACK);
     APPLY_EV_EFFECT(ITEM_PARAM_GIVE_SPDEF_EVS, ITEM_PARAM_SPDEF_EVS, MON_DATA_SPDEF_EV, vApplyEVSpDefense, APPLY_EFFECTS_EV_SUM_EXCLUDE_SPDEFENSE);
 
+    effectFound = itemId == ITEM_HABIBI_BERRY ? TRUE : effectFound;
     if ((effectApplied == FALSE) && (effectFound == TRUE)) {
         Heap_Free(item);
         return 0;
@@ -394,6 +405,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
         }
     }
 
+    effectApplied = itemId == ITEM_HABIBI_BERRY ? TRUE : effectApplied;
     Heap_Free(item);
     return effectApplied;
 }

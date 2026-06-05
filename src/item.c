@@ -184,6 +184,8 @@ s32 Item_Get(ItemData *itemData, enum ItemDataParam param)
         return (s32)itemData->battlePocket;
     case ITEM_PARAM_PARTY_USE:
         return (s32)itemData->partyUse;
+    case ITEM_PARAM_REROLL_ABILITY:
+        return (s32)itemData->rerollAbility;
     default:
         // Must use a switch-case to match; any non-BOOL input on itemData->partyUse will implicitly fall-through
         // to return 0 below.

@@ -56,8 +56,11 @@ static int sub_020860AC(void *applicationPtr);
 
 static u32 monLevelBeforeItemApplied = 0;
 
-static u8 sub_02084B70(u16 itemID)
+static u8 DetermineMsgForItem(u16 itemID)
 {
+    if (itemID == ITEM_HABIBI_BERRY) {
+        return 25;
+    }
     ItemData *itemData;
     s32 itemParam;
 
@@ -233,7 +236,7 @@ static void BufferUsedItemMessage(PartyMenuApplication *application, u16 param1,
     mon = Party_GetPokemonBySlotIndex(application->partyMenu->party, application->currPartySlot);
     StringTemplate_SetNickname(application->template, 0, Pokemon_GetBoxPokemon(mon));
 
-    switch (sub_02084B70(param1)) {
+    switch (DetermineMsgForItem(param1)) {
     case 4:
         string = MessageLoader_GetNewString(application->messageLoader, PartyMenu_Text_MonWasCuredOfPoison);
         StringTemplate_Format(application->template, application->tmpString, string);
@@ -347,6 +350,11 @@ static void BufferUsedItemMessage(PartyMenuApplication *application, u16 param1,
         String_Free(string);
         break;
     case 25:
+        string = MessageLoader_GetNewString(application->messageLoader, PartyMenu_Text_MonNewAbility);
+        StringTemplate_SetAbilityName(application->template, 1, Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL));
+        StringTemplate_Format(application->template, application->tmpString, string);
+        String_Free(string);
+        break;
     case 26:
         string = MessageLoader_GetNewString(application->messageLoader, PartyMenu_Text_MovesPPIncreased);
         StringTemplate_SetMoveName(application->template, 0, param2);
@@ -363,7 +371,7 @@ static void BufferUsedItemMessage(PartyMenuApplication *application, u16 param1,
 
 void sub_020852B8(PartyMenuApplication *application)
 {
-    switch (sub_02084B70(application->partyMenu->usedItemID)) {
+    switch (DetermineMsgForItem(application->partyMenu->usedItemID)) {
     case 0:
     case 28:
         break;
