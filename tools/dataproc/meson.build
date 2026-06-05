@@ -136,3 +136,8 @@ r = run_command(helditem_py)
 if r.returncode() != 0
     error('Could not generate held item header')
 endif
+add_version_py = files('src/add_version.py')
+r = run_command(add_version_py)
+if r.returncode() != 0
+    error('Could not template the version #')
+endif

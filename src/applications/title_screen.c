@@ -176,6 +176,7 @@ typedef struct TitleScreen {
         u16 blinkCounter;
     };
     Window pressStartWindow;
+    Window versionWindow;
     VecFx32 titleCamTarget;
     VecFx32 titleCamPos;
     BOOL enableInputs;
@@ -906,6 +907,16 @@ static void TitleScreen_UpdateIntroCamera(TitleScreen *titleScreen, TitleScreenG
     gfx->introFrameCounter++;
 }
 
+static const WindowTemplate sVersionWindowTemplate = {
+    .bgLayer = TITLE_SCREEN_LAYER_COPYRIGHT,
+    .tilemapLeft = 2,
+    .tilemapTop = 0,
+    .width = 28,
+    .height = 2,
+    .palette = 2,
+    .baseTile = 1
+};
+
 static const WindowTemplate sPressStartWindowTemplate = {
     .bgLayer = TITLE_SCREEN_LAYER_PRESS_START,
     .tilemapLeft = 2,
@@ -1305,9 +1316,9 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
     Graphics_LoadTilemapToBgLayer(NARC_INDEX_DEMO__TITLE__OP_DEMO, 12, bgConfig, TITLE_SCREEN_LAYER_LOGO_BG_2, 0, 0, FALSE, heapID);
 
     // "GAME FREAK Presents"
-    Graphics_LoadTilesToBgLayer(NARC_INDEX_DEMO__TITLE__TITLEDEMO, gf_presents_NCGR, bgConfig, TITLE_SCREEN_LAYER_COPYRIGHT, 0, 0, FALSE, heapID);
-    Graphics_LoadTilemapToBgLayer(NARC_INDEX_DEMO__TITLE__TITLEDEMO, gf_presents_NSCR, bgConfig, TITLE_SCREEN_LAYER_COPYRIGHT, 0, 0, FALSE, heapID);
-    Graphics_LoadPalette(NARC_INDEX_DEMO__TITLE__TITLEDEMO, gf_presents_NCLR, PAL_LOAD_MAIN_BG, PLTT_OFFSET(1), 3 * PALETTE_SIZE_BYTES, heapID);
+    // Graphics_LoadTilesToBgLayer(NARC_INDEX_DEMO__TITLE__TITLEDEMO, gf_presents_NCGR, bgConfig, TITLE_SCREEN_LAYER_COPYRIGHT, 0, 0, FALSE, heapID);
+    // Graphics_LoadTilemapToBgLayer(NARC_INDEX_DEMO__TITLE__TITLEDEMO, gf_presents_NSCR, bgConfig, TITLE_SCREEN_LAYER_COPYRIGHT, 0, 0, FALSE, heapID);
+    // Graphics_LoadPalette(NARC_INDEX_DEMO__TITLE__TITLEDEMO, gf_presents_NCLR, PAL_LOAD_MAIN_BG, PLTT_OFFSET(1), 3 * PALETTE_SIZE_BYTES, heapID);
 
     Bg_MaskPalette(TITLE_SCREEN_LAYER_GIRATINA, COLOR_BLACK);
     Bg_MaskPalette(TITLE_SCREEN_LAYER_PRESS_START, COLOR_BLACK);
@@ -1340,6 +1351,23 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
         0,
         NULL);
 
+    Window_AddFromTemplate(bgConfig, &titleScreen->versionWindow, &sVersionWindowTemplate);
+    Window_FillRectWithColor(&titleScreen->versionWindow, 0, 0, 0, TILES_TO_PIXELS(28), TILES_TO_PIXELS(2));
+    MessageLoader_GetString(msgLoader, TitleScreen_Text_Version, buffer);
+
+    xpos = Font_CalcCenterAlignment(FONT_SYSTEM, buffer, 1, titleScreen->versionWindow.width * TILE_HEIGHT_PIXELS);
+
+    Text_AddPrinterWithParamsColorAndSpacing(
+        &titleScreen->versionWindow,
+        FONT_SYSTEM,
+        buffer,
+        xpos,
+        0,
+        TEXT_SPEED_INSTANT,
+        TEXT_COLOR(1, 1, 0),
+        1,
+        0,
+        NULL);
     String_Free(buffer);
     MessageLoader_Free(msgLoader);
 
@@ -1347,11 +1375,17 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
     u16 shadowColor = GX_RGB(21, 0, 0);
     Bg_LoadPalette(TITLE_SCREEN_LAYER_PRESS_START, &letterColor, sizeof(u16), PLTT_OFFSET(2) + 1 * sizeof(u16));
     Bg_LoadPalette(TITLE_SCREEN_LAYER_PRESS_START, &shadowColor, sizeof(u16), PLTT_OFFSET(2) + 2 * sizeof(u16));
+
+    letterColor = GX_RGB(255, 255, 255);
+    shadowColor = GX_RGB(0, 0, 0);
+    Bg_LoadPalette(TITLE_SCREEN_LAYER_COPYRIGHT, &letterColor, sizeof(u16), PLTT_OFFSET(2) + 1 * sizeof(u16));
+    Bg_LoadPalette(TITLE_SCREEN_LAYER_COPYRIGHT, &shadowColor, sizeof(u16), PLTT_OFFSET(2) + 2 * sizeof(u16));
 }
 
 static void TitleScreen_Release2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleScreen *titleScreen)
 {
     Window_Remove(&titleScreen->pressStartWindow);
+    Window_Remove(&titleScreen->versionWindow);
 }
 
 static void TitleScreen_UpdateLight1(TitleScreen *titleScreen)
