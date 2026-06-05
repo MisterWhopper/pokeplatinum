@@ -410,6 +410,9 @@ PastoriaCity_RivalPostBattle:
     BufferRivalName 0
     BufferPlayerName 1
     Message PastoriaCity_Text_YouDidGetTougher
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     ApplyMovement LOCALID_RIVAL, PastoriaCity_Movement_RivalLeaveAfterBattle
     WaitMovement

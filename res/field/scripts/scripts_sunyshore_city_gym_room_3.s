@@ -55,7 +55,7 @@ SunyshoreGymRoom3_Volkner:
     GoTo SunyshoreGymRoom3_VolknerTryGiveTM57
 
 SunyshoreGymRoom3_VolknerTryGiveTM57:
-    SetVar VAR_0x8004, ITEM_TM57
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, SunyshoreGymRoom3_VolknerCannotGiveTM57
     Common_GiveItemQuantity

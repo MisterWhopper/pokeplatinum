@@ -113,6 +113,9 @@ CelesticTownCave_DefeatedCyrus:
     ClearFlag FLAG_HIDE_CELESTIC_TOWN_CYNTHIA
     SetVar VAR_CELESTIC_TOWN_STATE, 1
     Message CelesticTownCave_Text_Remarkable
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     WaitTime 15, VAR_RESULT
     FadeScreenOut

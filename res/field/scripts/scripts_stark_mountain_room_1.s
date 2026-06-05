@@ -37,6 +37,9 @@ StarkMountainOutside_OnFrameTeamGalactic:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, StarkMountainRoom1_LostBattle
     Message StarkMountainRoom1_Text_HowDareYou
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 2
+    Common_GiveItemQuantity
     CloseMessage
     WaitTime 15, VAR_RESULT
     ApplyMovement LOCALID_MARS, StarkMountainRoom1_Movement_MarsExclamationMark

@@ -81,6 +81,9 @@ ValorCavern_Saturn:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, ValorCavern_LostBattleCommanderSaturn
     Message ValorCavern_Text_SaturnPostBattle
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     FadeScreenOut
     WaitFadeScreen

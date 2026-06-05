@@ -203,6 +203,9 @@ LakeVerity_Mars:
     Message LakeVerity_Text_MarsDefeat
     Message LakeVerity_Text_WerePullingOut
     Message LakeVerity_Text_NowWeveGotAllLakePokemon
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     FadeScreenOut
     WaitFadeScreen

@@ -44,7 +44,7 @@ OreburghGym_Roark:
     End
 
 OreburghGym_RoarkGiveTM76:
-    SetVar VAR_0x8004, ITEM_TM76
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, OreburghGym_RoarkGiveTM76BagFull
     Common_GiveItemQuantity

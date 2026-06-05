@@ -72,7 +72,7 @@ PastoriaGym_Wake:
     End
 
 PastoriaGym_WakeTryGiveTm55:
-    SetVar VAR_0x8004, ITEM_TM55
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, PastoriaGym_WakeCannotGiveTm55
     Common_GiveItemQuantity

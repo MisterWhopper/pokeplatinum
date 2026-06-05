@@ -53,6 +53,9 @@ Route209GateToHearthomeCity_PostRivalBattle:
     BufferRivalName 0
     BufferPlayerName 1
     Message Route209GateToHearthomeCity_Text_MySurefireWinningStrategyDoesntWork
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     CallIfEq VAR_0x8005, 5, Route209GateToHearthomeCity_RivalLeaveZ5

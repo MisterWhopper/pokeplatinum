@@ -62,6 +62,9 @@ DistortionWorldB7F_Cyrus:
     GoToIfEq VAR_RESULT, FALSE, DistortionWorldB7F_LostBattle
     SetVar VAR_DISTORTION_WORLD_PROGRESS, 10
     Message DistortionWorldB7F_Text_YoullDestroyThisWorld
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 6
+    Common_GiveItemQuantity
     CloseMessage
     GetPlayerMapPos VAR_0x8004, VAR_0x8005
     GoToIfEq VAR_0x8004, 86, DistortionWorldB7F_PlayerWatchCyrusLeave

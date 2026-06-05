@@ -46,7 +46,7 @@ SnowpointGym_Candice:
     GoTo SnowpointGym_CandiceTryGiveTM72
 
 SnowpointGym_CandiceTryGiveTM72:
-    SetVar VAR_0x8004, ITEM_TM72
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, SnowpointGym_CandiceCannotGiveTM72
     Common_GiveItemQuantity

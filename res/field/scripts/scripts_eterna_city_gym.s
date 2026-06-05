@@ -86,7 +86,7 @@ EternaGym_Gardenia:
     End
 
 EternaGym_GardeniaTryGiveTM86Again:
-    SetVar VAR_0x8004, ITEM_TM86
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, EternaGym_GardeniaGiveTM86BagFullAgain
     Common_GiveItemQuantity
@@ -114,7 +114,7 @@ EternaGym_Gardenia_AlreadyHaveForestbadge:
     End
 
 EternaGym_GardeniaGiveTM86:
-    SetVar VAR_0x8004, ITEM_TM86
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, EternaGym_GardeniaGiveTM86BagFull
     Common_GiveItemQuantity

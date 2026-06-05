@@ -87,6 +87,9 @@ ValleyWindworksBuilding_Mars:
     CheckWonBattle VAR_RESULT
     GoToIfEq VAR_RESULT, FALSE, ValleyWindworksBuilding_BlackOut
     Message ValleyWindworksBuilding_Text_OopsIMessedThatOneUp
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     ApplyMovement LOCALID_CHARON, ValleyWindworksBuilding_Movement_CharonWalkOnSpotSouth
     WaitMovement

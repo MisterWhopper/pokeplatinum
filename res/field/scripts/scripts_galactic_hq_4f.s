@@ -59,6 +59,9 @@ GalacticHQ4F_Cyrus:
 
 GalacticHQ4F_GiveMasterBall:
     Common_GiveItemQuantity
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 3
+    Common_GiveItemQuantity
     Return
 
 GalacticHQ4F_BlackOut:

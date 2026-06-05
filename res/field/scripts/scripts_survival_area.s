@@ -209,6 +209,8 @@ SurvivalArea_PostRivalBattle:
     BufferRivalName 0
     BufferPlayerName 1
     Message SurvivalArea_Text_KeepGettingTougher
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
     WaitButton
     CloseMessage
     ReleaseAll

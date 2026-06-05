@@ -86,7 +86,7 @@ HearthomeGym_FantinaMain:
     GoTo HearthomeGym_FantinaTryGiveTM65
 
 HearthomeGym_FantinaTryGiveTM65:
-    SetVar VAR_0x8004, ITEM_TM65
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, HearthomeGym_FantinaCannotGiveTM65
     Common_GiveItemQuantity

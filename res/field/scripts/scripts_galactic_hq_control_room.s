@@ -46,6 +46,9 @@ GalacticHQControlRoom_Saturn:
     SetFlag FLAG_DEFEATED_GALACTIC_HQ_CONTROL_ROOM_SATURN
     SetVar FLAG_GALACTIC_HQ_CONTROL_ROOM_STATE, 1
     Message GalacticHQControlRoom_Text_WhatMakesYouSoTough
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
+    SetVar VAR_0x8005, 1
+    Common_GiveItemQuantity
     CloseMessage
     GetPlayerDir VAR_0x8004
     SetVar VAR_MAP_LOCAL_2, VAR_0x8004

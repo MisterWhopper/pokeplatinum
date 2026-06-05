@@ -49,7 +49,7 @@ CanalaveGym_Byron:
     GoTo CanalaveGym_ByronTryGiveTM91
 
 CanalaveGym_ByronTryGiveTM91:
-    SetVar VAR_0x8004, ITEM_TM91
+    SetVar VAR_0x8004, ITEM_HABIBI_BERRY
     SetVar VAR_0x8005, 1
     GoToIfCannotFitItem VAR_0x8004, VAR_0x8005, VAR_RESULT, CanalaveGym_ByronCannotGiveTM91
     Common_GiveItemQuantity
