@@ -14,6 +14,13 @@ enum SummaryPoffinFeedMsg {
     SUMMARY_MSG_MON_WONT_EAT_MORE = 0xFF,
 };
 
+enum SummaryMonStatDisplayMode {
+    SUMMARY_NORMAL_STATS = 0,
+    SUMMARY_IV_STATS,
+    SUMMARY_EV_STATS,
+    NUM_SUMMARY_STAT_DISP_MODES
+};
+
 void PokemonSummaryScreen_DrawStaticWindows(PokemonSummaryScreen *summaryScreen);
 void PokemonSummaryScreen_AddExtraWindows(PokemonSummaryScreen *summaryScreen);
 void PokemonSummaryScreen_RemoveExtraWindows(PokemonSummaryScreen *summaryScreen);
@@ -34,5 +41,6 @@ void PokemonSummaryScreen_PrintHMMovesCantBeForgotten(PokemonSummaryScreen *summ
 void PokemonSummaryScreen_PrintContestMoveAttributes(PokemonSummaryScreen *summaryScreen, u32 move);
 void PokemonSummaryScreen_ClearContestAttributeWindows(PokemonSummaryScreen *summaryScreen);
 void PokemonSummaryScreen_PrintPoffinFeedMsg(PokemonSummaryScreen *summaryScreen, enum SummaryPoffinFeedMsg msg);
+void PokemonSummaryScreen_ToggleStatDisplayMode(PokemonSummaryScreen *summaryScreen);
 
 #endif // POKEPLATINUM_POKEMON_SUMMARY_SCREEN_WINDOW_H

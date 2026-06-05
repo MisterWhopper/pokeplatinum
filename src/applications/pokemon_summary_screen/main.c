@@ -584,6 +584,11 @@ static int HandleInput_Main(PokemonSummaryScreen *summaryScreen)
         return SUMMARY_STATE_TRANSITION_OUT;
     }
 
+    if (JOY_REPEAT(PAD_BUTTON_START)) {
+        PokemonSummaryScreen_ToggleStatDisplayMode(summaryScreen);
+        Sound_PlayEffect(SEQ_SE_CONFIRM);
+        return SUMMARY_STATE_HANDLE_INPUT;
+    }
     if (JOY_REPEAT(PAD_KEY_LEFT)) {
         ChangePage(summaryScreen, -1);
         return SUMMARY_STATE_HANDLE_INPUT;
@@ -1104,6 +1109,18 @@ static void SetMonDataFromMon(PokemonSummaryScreen *summaryScreen, Pokemon *mon,
     monData->spAttack = Pokemon_GetValue(mon, MON_DATA_SP_ATK, NULL);
     monData->spDefense = Pokemon_GetValue(mon, MON_DATA_SP_DEF, NULL);
     monData->speed = Pokemon_GetValue(mon, MON_DATA_SPEED, NULL);
+    monData->ivAtk = Pokemon_GetValue(mon, MON_DATA_ATK_IV, NULL);
+    monData->ivDef = Pokemon_GetValue(mon, MON_DATA_DEF_IV, NULL);
+    monData->ivSpA = Pokemon_GetValue(mon, MON_DATA_SPATK_IV, NULL);
+    monData->ivSpD = Pokemon_GetValue(mon, MON_DATA_SPDEF_IV, NULL);
+    monData->ivSpeed = Pokemon_GetValue(mon, MON_DATA_SPEED_IV, NULL);
+    monData->ivHp = Pokemon_GetValue(mon, MON_DATA_HP_IV, NULL);
+    monData->evAtk = Pokemon_GetValue(mon, MON_DATA_ATK_EV, NULL);
+    monData->evDef = Pokemon_GetValue(mon, MON_DATA_DEF_EV, NULL);
+    monData->evSpA = Pokemon_GetValue(mon, MON_DATA_SPATK_EV, NULL);
+    monData->evSpD = Pokemon_GetValue(mon, MON_DATA_SPDEF_EV, NULL);
+    monData->evSpeed = Pokemon_GetValue(mon, MON_DATA_SPEED_EV, NULL);
+    monData->evHp = Pokemon_GetValue(mon, MON_DATA_HP_EV, NULL);
     monData->ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
     monData->nature = Pokemon_GetNature(mon);
 
@@ -1478,10 +1495,10 @@ static void ChangeSummaryMon(PokemonSummaryScreen *summaryScreen, s8 delta)
 
     SetMonData(summaryScreen);
     PlayMonCry(summaryScreen);
+
     PokemonSummaryScreen_PrintNicknameAndGender(summaryScreen);
     PokemonSummaryScreen_PrintLevel(summaryScreen);
     PokemonSummaryScreen_PrintItemName(summaryScreen);
-
     if (summaryScreen->page == SUMMARY_PAGE_INFO) {
         DrawExperienceProgressBar(summaryScreen);
     } else if (summaryScreen->page == SUMMARY_PAGE_SKILLS) {

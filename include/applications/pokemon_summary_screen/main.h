@@ -380,6 +380,18 @@ typedef struct PokemonSummaryMonData {
     u16 spAttack;
     u16 spDefense;
     u16 speed;
+    u8 ivAtk;
+    u8 ivDef;
+    u8 ivSpA;
+    u8 ivSpD;
+    u8 ivSpeed;
+    u8 ivHp;
+    u8 evAtk;
+    u8 evDef;
+    u8 evSpA;
+    u8 evSpD;
+    u8 evSpeed;
+    u8 evHp;
     u8 ability;
     u8 nature;
 
