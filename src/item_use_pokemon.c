@@ -296,7 +296,7 @@ u8 Pokemon_ApplyItemEffects(Pokemon *mon, u16 itemId, u16 moveSlot, u16 location
         if (vApplyLevel < MAX_POKEMON_LEVEL) {
 
             u32 expToNextLevel = Pokemon_GetExpToNextLevel(mon);
-            if (vApplyLevel >= LevelCap_LUT[currentBadge] && itemId != ITEM_RARE_CANDY) {
+            if (gEnforceLevelCaps && vApplyLevel >= LevelCap_LUT[currentBadge] && itemId != ITEM_RARE_CANDY) {
                 // This *should* edge the mon, but never allow it to level up
                 expToNextLevel -= 1;
             }
