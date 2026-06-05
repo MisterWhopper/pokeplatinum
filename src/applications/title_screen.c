@@ -909,8 +909,8 @@ static void TitleScreen_UpdateIntroCamera(TitleScreen *titleScreen, TitleScreenG
 
 static const WindowTemplate sVersionWindowTemplate = {
     .bgLayer = TITLE_SCREEN_LAYER_COPYRIGHT,
-    .tilemapLeft = 2,
-    .tilemapTop = 19,
+    .tilemapLeft = 0,
+    .tilemapTop = 22,
     .width = 28,
     .height = 2,
     .palette = 2,
@@ -1331,7 +1331,7 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
         TEXT_BANK_TITLE_SCREEN,
         heapID);
 
-    String *buffer = String_Init(64, heapID);
+    String *buffer = String_Init(128, heapID);
 
     Window_AddFromTemplate(bgConfig, &titleScreen->pressStartWindow, &sPressStartWindowTemplate);
     Window_FillRectWithColor(&titleScreen->pressStartWindow, 0, 0, 0, TILES_TO_PIXELS(28), TILES_TO_PIXELS(2));
@@ -1355,8 +1355,6 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
     Window_FillRectWithColor(&titleScreen->versionWindow, 0, 0, 0, TILES_TO_PIXELS(28), TILES_TO_PIXELS(2));
     MessageLoader_GetString(msgLoader, TitleScreen_Text_Version, buffer);
 
-    xpos = Font_CalcCenterAlignment(FONT_SYSTEM, buffer, 1, titleScreen->versionWindow.width * TILE_HEIGHT_PIXELS);
-
     Text_AddPrinterWithParamsColorAndSpacing(
         &titleScreen->versionWindow,
         FONT_SYSTEM,
@@ -1364,7 +1362,7 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
         0,
         0,
         TEXT_SPEED_INSTANT,
-        TEXT_COLOR(1, 1, 0),
+        TEXT_COLOR(1, 2, 0),
         1,
         0,
         NULL);
@@ -1377,7 +1375,7 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
     Bg_LoadPalette(TITLE_SCREEN_LAYER_PRESS_START, &shadowColor, sizeof(u16), PLTT_OFFSET(2) + 2 * sizeof(u16));
 
     letterColor = GX_RGB(255, 255, 255);
-    shadowColor = GX_RGB(0, 0, 0);
+    // shadowColor = GX_RGB(10, 10, 10);
     Bg_LoadPalette(TITLE_SCREEN_LAYER_COPYRIGHT, &letterColor, sizeof(u16), PLTT_OFFSET(2) + 1 * sizeof(u16));
     Bg_LoadPalette(TITLE_SCREEN_LAYER_COPYRIGHT, &shadowColor, sizeof(u16), PLTT_OFFSET(2) + 2 * sizeof(u16));
 }

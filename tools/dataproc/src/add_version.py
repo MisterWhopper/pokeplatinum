@@ -25,8 +25,8 @@ def try_get_git_short_hash() -> str:
 
 def try_get_version() -> str:
     if VERSION_FILE.exists() and VERSION_FILE.is_file():
-        return VERSION_FILE.read_text()
-    return try_get_git_short_hash()
+        return f"v{VERSION_FILE.read_text()}"
+    return f"git-{try_get_git_short_hash()}"
 
 
 def main():

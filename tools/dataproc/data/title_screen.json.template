@@ -7,7 +7,7 @@
     },
     {
       "id": "TitleScreen_Text_Version",
-      "en_US": "v${version}"
+      "en_US": "${version}"
     }
   ]
 }
