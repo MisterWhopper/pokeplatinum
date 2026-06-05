@@ -910,7 +910,7 @@ static void TitleScreen_UpdateIntroCamera(TitleScreen *titleScreen, TitleScreenG
 static const WindowTemplate sVersionWindowTemplate = {
     .bgLayer = TITLE_SCREEN_LAYER_COPYRIGHT,
     .tilemapLeft = 2,
-    .tilemapTop = 0,
+    .tilemapTop = 19,
     .width = 28,
     .height = 2,
     .palette = 2,
@@ -1361,7 +1361,7 @@ static void TitleScreen_Load2DGfx(BgConfig *bgConfig, enum HeapID heapID, TitleS
         &titleScreen->versionWindow,
         FONT_SYSTEM,
         buffer,
-        xpos,
+        0,
         0,
         TEXT_SPEED_INSTANT,
         TEXT_COLOR(1, 1, 0),
