@@ -10,6 +10,7 @@
 #include "applications/poketch/poketch_system.h"
 #include "overlay005/ov5_021EA714.h"
 #include "overlay005/save_info_window.h"
+#include "text/bank/title_screen.h"
 
 #include "bg_window.h"
 #include "field_overworld_state.h"
@@ -34,6 +35,7 @@ static const int sSaveInfoLabels[] = {
     SAVE_INFO_LABEL_PLAYER_NAME,
     SAVE_INFO_LABEL_BADGE_COUNT,
     SAVE_INFO_LABEL_POKEDEX_COUNT,
+    SAVE_INFO_LABEL_GAME_VERSION,
     SAVE_INFO_LABEL_PLAY_TIME
 };
 
@@ -41,6 +43,7 @@ static const int sSaveInfoValues[] = {
     SAVE_INFO_PLAYER_NAME,
     SAVE_INFO_BADGE_COUNT,
     SAVE_INFO_POKEDEX_COUNT,
+    SAVE_INFO_GAME_VERSION,
     SAVE_INFO_PLAY_TIME
 };
 
@@ -64,6 +67,7 @@ static void SaveInfo_SetValues(SaveInfo *saveInfo, const FieldSystem *fieldSyste
 
 static void SaveInfoWindow_SetStrings(StringTemplate *strTemplate, const SaveInfo *saveInfo)
 {
+    MessageLoader *msgLoader = MessageLoader_Init(MSG_LOADER_LOAD_ON_DEMAND, NARC_INDEX_MSGDATA__PL_MSG, TEXT_BANK_TITLE_SCREEN, HEAP_ID_SAVE);
     StringTemplate_SetLocationName(strTemplate, 0, saveInfo->mapLabelTextID);
     StringTemplate_SetPlayerName(strTemplate, 1, saveInfo->trainerInfo);
     StringTemplate_SetNumber(strTemplate, 2, TrainerInfo_BadgeCount(saveInfo->trainerInfo), 1, PADDING_MODE_NONE, CHARSET_MODE_EN);
@@ -82,6 +86,12 @@ static void SaveInfoWindow_SetStrings(StringTemplate *strTemplate, const SaveInf
     }
 
     StringTemplate_SetNumber(strTemplate, 3, saveInfo->pokedexCount, maxDigits, padding, CHARSET_MODE_EN);
+
+    String *buffer = String_Init(64, HEAP_ID_SAVE);
+    MessageLoader_GetString(msgLoader, TitleScreen_Text_Version, buffer);
+    StringTemplate_SetString(strTemplate, 6, buffer, 0, 0, 0);
+    String_Free(buffer);
+    Heap_Free(msgLoader);
 
     int playTimeHours = PlayTime_GetHours(saveInfo->playTime);
 

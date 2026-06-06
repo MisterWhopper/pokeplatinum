@@ -19,22 +19,30 @@
     },
     {
       "id": "pl_msg_00000534_00004",
-      "en_US": "TIME:"
+      "en_US": "VER:"
     },
     {
       "id": "pl_msg_00000534_00005",
-      "en_US": "{STRVAR_1 3, 1, 0}"
+      "en_US": "TIME:"
     },
     {
       "id": "pl_msg_00000534_00006",
-      "en_US": "{STRVAR_1 50, 2, 0}"
+      "en_US": "{STRVAR_1 3, 1, 0}"
     },
     {
       "id": "pl_msg_00000534_00007",
-      "en_US": "{STRVAR_1 52, 3, 0}"
+      "en_US": "{STRVAR_1 50, 2, 0}"
     },
     {
       "id": "pl_msg_00000534_00008",
+      "en_US": "{STRVAR_1 52, 3, 0}"
+    },
+    {
+      "id": "pl_msg_00000534_00009",
+      "en_US": "{STRVAR_1 52, 6, 0}"
+    },
+    {
+      "id": "pl_msg_00000534_00010",
       "en_US": "{STRVAR_1 52, 4, 0}:{STRVAR_1 51, 5, 0}"
     }
   ]

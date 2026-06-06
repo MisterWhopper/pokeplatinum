@@ -759,7 +759,8 @@ static const WindowTemplate sYesNoWindowTemplate = {
     .width = 6,
     .height = 4,
     .palette = FIELD_MESSAGE_PALETTE_INDEX,
-    .baseTile = 0x21F,
+    // going to be so honest, I don't understand this value. I just lowered it a lot until it worked
+    .baseTile = 0x11F,
 };
 
 const ScrCmdFunc gFieldScriptCommands[] = {
