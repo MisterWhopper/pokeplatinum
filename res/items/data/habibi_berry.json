@@ -22,7 +22,7 @@
   "naturalGiftType": "TYPE_DRAGON",
   "preventToss": false,
   "canRegister": false,
-  "fieldPocket": "POCKET_KEY_ITEMS",
+  "fieldPocket": "POCKET_BERRIES",
   "battlePocket": "BATTLE_POCKET_MASK_NONE",
   "fieldUseFunc": "ITEM_USE_FUNC_BERRY",
   "battleUseFunc": 0,
