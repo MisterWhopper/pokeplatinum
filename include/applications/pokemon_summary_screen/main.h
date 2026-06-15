@@ -394,6 +394,7 @@ typedef struct PokemonSummaryMonData {
     u8 evHp;
     u8 ability;
     u8 nature;
+    u8 friendship;
 
     u16 moves[LEARNED_MOVES_MAX];
     u8 curPP[LEARNED_MOVES_MAX];

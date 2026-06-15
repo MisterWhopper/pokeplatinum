@@ -1037,7 +1037,7 @@ static u8 BattlePartyTask_UseAllMovePPRestorationItem(BattleParty *battleParty)
 
 static u8 BattlePartyTask_Exit(BattleParty *battleParty)
 {
-    PaletteData_StartFade(battleParty->palette, (0x2 | 0x8), 0xffff, -8, 0, 16, 0);
+    PaletteData_StartFade(battleParty->palette, 0x2 | 0x8, 0xffff, -8, 0, 16, 0);
     return TASK_STATE_FINISH_TASK;
 }
 
@@ -1731,7 +1731,7 @@ static BOOL CheckSelectedMoveIsHM(BattleParty *battleParty)
         move = battleParty->partyPokemon[battleParty->context->selectedPartyIndex].moves[battleParty->context->selectedMoveSlot].move;
     }
 
-    return Item_IsHMMove(move);
+    return FALSE;
 }
 
 static void ClearMoveStats(BattleParty *battleParty)

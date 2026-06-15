@@ -1210,9 +1210,10 @@ static void DrawSkillsPageWindows(PokemonSummaryScreen *summaryScreen)
 
     u32 hpWindowWidth = Window_GetWidth(&summaryScreen->extraWindows[SUMMARY_WINDOW_HP]) * 8;
 
-    u16 hp, atk, def, spAtk, spDef, speed = 0;
+    u16 maxHP, hp, atk, def, spAtk, spDef, speed = 0;
     switch (sSummaryStatMode) {
     case SUMMARY_IV_STATS:
+        maxHP = summaryScreen->monData.friendship;
         hp = summaryScreen->monData.ivHp;
         atk = summaryScreen->monData.ivAtk;
         def = summaryScreen->monData.ivDef;
@@ -1221,6 +1222,7 @@ static void DrawSkillsPageWindows(PokemonSummaryScreen *summaryScreen)
         speed = summaryScreen->monData.ivSpeed;
         break;
     case SUMMARY_EV_STATS:
+        maxHP = summaryScreen->monData.maxHP;
         hp = summaryScreen->monData.evHp;
         atk = summaryScreen->monData.evAtk;
         def = summaryScreen->monData.evDef;
@@ -1229,6 +1231,7 @@ static void DrawSkillsPageWindows(PokemonSummaryScreen *summaryScreen)
         speed = summaryScreen->monData.evSpeed;
         break;
     default:
+        maxHP = summaryScreen->monData.maxHP;
         hp = summaryScreen->monData.curHP;
         atk = summaryScreen->monData.attack;
         def = summaryScreen->monData.defense;
@@ -1238,7 +1241,7 @@ static void DrawSkillsPageWindows(PokemonSummaryScreen *summaryScreen)
         break;
     }
 
-    PrintCurrentAndMaxInfo(summaryScreen, 0, PokemonSummary_Text_Slash, PokemonSummary_Text_TemplateCurrentHp, PokemonSummary_Text_TemplateMaxHp, hp, summaryScreen->monData.maxHP, 3, hpWindowWidth / 2, 0);
+    PrintCurrentAndMaxInfo(summaryScreen, 0, PokemonSummary_Text_Slash, PokemonSummary_Text_TemplateCurrentHp, PokemonSummary_Text_TemplateMaxHp, hp, maxHP, 3, hpWindowWidth / 2, 0);
     SetAndFormatNumberBuf(summaryScreen, PokemonSummary_Text_TemplateAttack, atk, 3, PADDING_MODE_NONE);
     PrintStringToWindow(summaryScreen, &summaryScreen->extraWindows[SUMMARY_WINDOW_ATTACK], DetermineTextColorForStat(summaryScreen, MON_DATA_ATK), ALIGN_RIGHT);
     SetAndFormatNumberBuf(summaryScreen, PokemonSummary_Text_TemplateDefense, def, 3, PADDING_MODE_NONE);

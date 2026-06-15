@@ -816,15 +816,6 @@ static int HandleInput_SelectMove(PokemonSummaryScreen *summaryScreen)
     if (JOY_NEW(PAD_BUTTON_A)) {
         Sound_PlayEffect(SEQ_SE_DP_DECIDE);
 
-        if (summaryScreen->cursor != LEARNED_MOVES_MAX) {
-            if (Item_IsHMMove(summaryScreen->monData.moves[summaryScreen->cursor]) == TRUE && summaryScreen->data->move != MOVE_NONE) {
-                Sprite_SetDrawFlag2(summaryScreen->sprites[SUMMARY_SPRITE_MOVE_CATEGORY_ICON], FALSE);
-                DrawEmptyHearts(summaryScreen);
-                PokemonSummaryScreen_PrintHMMovesCantBeForgotten(summaryScreen);
-                return SUMMARY_STATE_WAIT_HM_MSG_INPUT;
-            }
-        }
-
         summaryScreen->data->selectedMoveSlot = summaryScreen->cursor;
         summaryScreen->data->returnMode = SUMMARY_RETURN_SELECT;
         return SUMMARY_STATE_TRANSITION_OUT;
@@ -1122,6 +1113,7 @@ static void SetMonDataFromMon(PokemonSummaryScreen *summaryScreen, Pokemon *mon,
     monData->evSpeed = Pokemon_GetValue(mon, MON_DATA_SPEED_EV, NULL);
     monData->evHp = Pokemon_GetValue(mon, MON_DATA_HP_EV, NULL);
     monData->ability = Pokemon_GetValue(mon, MON_DATA_ABILITY, NULL);
+    monData->friendship = Pokemon_GetValue(mon, MON_DATA_FRIENDSHIP, NULL);
     monData->nature = Pokemon_GetNature(mon);
 
     u16 i;

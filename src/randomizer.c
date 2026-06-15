@@ -26,6 +26,52 @@ void Randomizer_Free()
     Heap_Free(sLUTBuffer);
 }
 
+static inline BOOL _Randomizer_IsUnusedItem(u16 item)
+{
+    return item >= ITEM_UNUSED_113 && item <= ITEM_UNUSED_134;
+}
+
+static inline BOOL _Randomizer_IsMailItem(u16 item)
+{
+    return item >= ITEM_GRASS_MAIL && item <= ITEM_BRICK_MAIL;
+}
+
+static BOOL _Randomizer_IsValidItem(u16 item)
+{
+    switch (item) {
+    case ITEM_REVIVE:
+    case ITEM_MAX_REVIVE:
+    case ITEM_REVIVAL_HERB:
+    case ITEM_REPEL:
+    case ITEM_MAX_REPEL:
+    case ITEM_SUPER_REPEL:
+    case ITEM_MAGMA_STONE: // Does nothing
+    case ITEM_CHERISH_BALL:
+    case ITEM_CONTEST_PASS:
+    case ITEM_RED_CHAIN:
+    case ITEM_RULE_BOOK:
+    case ITEM_SEAL_BAG:
+        return FALSE;
+    }
+    return !(_Randomizer_IsUnusedItem(item) || Item_ProgressesPlayer(item) || _Randomizer_IsMailItem(item));
+}
+
+static BOOL _Randomizer_IsValidMove(u16 moveId)
+{
+    switch (moveId) {
+    case MOVE_STRUGGLE:
+    case MOVE_CUT:
+    case MOVE_ROCK_SMASH:
+    case MOVE_DEFOG:
+    case MOVE_SURF:
+    case MOVE_FLY:
+    case MOVE_WATERFALL:
+    case MOVE_STRENGTH:
+        return FALSE;
+    }
+    return TRUE;
+}
+
 u16 Randomizer_GetSimilarBSTSpecies(u16 speciesId)
 {
     u16 bst = Pokemon_BST_LUT[speciesId];
@@ -76,39 +122,9 @@ u16 Randomizer_GetMove()
     do {
         result = LCRNG_RandMod(MAX_MOVES) + 1;
         counter++;
-    } while (counter <= 1500 && result == MOVE_STRUGGLE);
+    } while (counter <= 1500 && !_Randomizer_IsValidMove(result));
     // The odds of rolling Struggle 1500 times in a row are basically zero, but defense-in-depth or w/e
-    return (counter <= 1500 && result != MOVE_STRUGGLE) ? result : MOVE_TACKLE;
-}
-
-static inline BOOL _Randomizer_IsUnusedItem(u16 item)
-{
-    return item >= ITEM_UNUSED_113 && item <= ITEM_UNUSED_134;
-}
-
-static inline BOOL _Randomizer_IsMailItem(u16 item)
-{
-    return item >= ITEM_GRASS_MAIL && item <= ITEM_BRICK_MAIL;
-}
-
-static BOOL _Randomizer_IsValidItem(u16 item)
-{
-    switch (item) {
-    case ITEM_REVIVE:
-    case ITEM_MAX_REVIVE:
-    case ITEM_REVIVAL_HERB:
-    case ITEM_REPEL:
-    case ITEM_MAX_REPEL:
-    case ITEM_SUPER_REPEL:
-    case ITEM_MAGMA_STONE: // Does nothing
-    case ITEM_CHERISH_BALL:
-    case ITEM_CONTEST_PASS:
-    case ITEM_RED_CHAIN:
-    case ITEM_RULE_BOOK:
-    case ITEM_SEAL_BAG:
-        return FALSE;
-    }
-    return !(_Randomizer_IsUnusedItem(item) || Item_ProgressesPlayer(item) || _Randomizer_IsMailItem(item));
+    return (counter <= 1500 && _Randomizer_IsValidMove(result)) ? result : MOVE_TACKLE;
 }
 
 u16 Randomizer_GetItem()
